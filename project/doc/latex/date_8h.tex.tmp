@@ -1,0 +1,83 @@
+\hypertarget{date_8h}{}\section{Referencia del Archivo /home/eduuardoperez/pr3/championship/project/date.h}
+\label{date_8h}\index{/home/eduuardoperez/pr3/championship/project/date.\+h@{/home/eduuardoperez/pr3/championship/project/date.\+h}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+Dependencia gráfica adjunta para date.\+h\+:
+% FIG 0
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+% FIG 1
+\subsection*{Estructuras de datos}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_date}{Date}
+\begin{DoxyCompactList}\small\item\em Clase \hyperlink{class_date}{Date}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{date_8h_a8a0e31b0e008f351714d2db14d3a7280}{operator$<$$<$} (ostream \&, const \hyperlink{class_date}{Date} \&)
+\begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
+istream \& \hyperlink{date_8h_a9882d8e21eea8baab9f724b394322d87}{operator$>$$>$} (istream \&, \hyperlink{class_date}{Date} \&)
+\begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\item 
+string \hyperlink{date_8h_a07592214b1cb5f1484b8968fb94ce319}{Uint2\+String} (unsigned int)
+\begin{DoxyCompactList}\small\item\em Método Uint2\+String. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+\begin{DoxyAuthor}{Autor}
+Eduardo Perez (\href{mailto:edujpp1@gmail.com}{\tt edujpp1@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Versión}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Fecha}
+Noviembre, 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones}
+\index{date.\+h@{date.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!date.\+h@{date.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(ostream \&, const Date \&)}{operator<<(ostream &, const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{, }
+\item[{const {\bf Date} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{date_8h_a8a0e31b0e008f351714d2db14d3a7280}{}\label{date_8h_a8a0e31b0e008f351714d2db14d3a7280}
+
+
+operator $<$$<$ 
+
+\begin{DoxyReturn}{Devuelve}
+ostream\& date 
+\end{DoxyReturn}
+\index{date.\+h@{date.\+h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!date.\+h@{date.\+h}}
+\subsubsection[{\texorpdfstring{operator$>$$>$(istream \&, Date \&)}{operator>>(istream &, Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{, }
+\item[{{\bf Date} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{date_8h_a9882d8e21eea8baab9f724b394322d87}{}\label{date_8h_a9882d8e21eea8baab9f724b394322d87}
+
+
+operator $>$$>$ 
+
+\begin{DoxyReturn}{Devuelve}
+istream\& date 
+\end{DoxyReturn}
+\index{date.\+h@{date.\+h}!Uint2\+String@{Uint2\+String}}
+\index{Uint2\+String@{Uint2\+String}!date.\+h@{date.\+h}}
+\subsubsection[{\texorpdfstring{Uint2\+String(unsigned int)}{Uint2String(unsigned int)}}]{\setlength{\rightskip}{0pt plus 5cm}string Uint2\+String (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{int}
+\end{DoxyParamCaption}
+)}\hypertarget{date_8h_a07592214b1cb5f1484b8968fb94ce319}{}\label{date_8h_a07592214b1cb5f1484b8968fb94ce319}
+
+
+Método Uint2\+String. 
+
+\begin{DoxyReturn}{Devuelve}
+tipo int convertido a string 
+\end{DoxyReturn}
