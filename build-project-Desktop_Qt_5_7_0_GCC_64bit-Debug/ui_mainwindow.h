@@ -86,8 +86,8 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Championship", 0));
-        label->setText(QApplication::translate("MainWindow", "Championship", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Championship-PR3_ULA", 0));
+        label->setText(QApplication::translate("MainWindow", "Championship-PR3_ULA", 0));
         label_2->setText(QString());
         salirpb->setText(QApplication::translate("MainWindow", "Salir", 0));
         registrarEventopb->setText(QApplication::translate("MainWindow", "Registrar Evento", 0));

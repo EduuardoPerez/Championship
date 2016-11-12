@@ -3,7 +3,7 @@
  * @brief Implementación de la clase Participant
  * @author Eduardo Perez (edujpp1@gmail.com)
  * @author Angely Azuaje (angiibri4@gmail.com)
- * @version 3.0
+ * @version 1.0
  * @date Noviembre, 2016
  */
 #include "participant.h"
@@ -82,7 +82,7 @@ void Participant::setPicture(string picture)
 
 void Participant::assign(unsigned int id, string name, string lastName,
                          Date bornDate, unsigned int age, string category,
-                         Date inscriptionDate)
+                         Date inscriptionDate, string picture)
 {
   this->id = id;
   this->name = name;
@@ -91,17 +91,7 @@ void Participant::assign(unsigned int id, string name, string lastName,
   this->age = age;
   this->category = category;
   this->inscriptionDate = inscriptionDate;
-}
-
-void Participant::assign(unsigned int id, string name, string lastName,
-                         Date bornDate, unsigned int age, string category)
-{
-  this->id = id;
-  this->name = name;
-  this->lastName = lastName;
-  this->bornDate = bornDate;
-  this->age = age;
-  this->category = category;
+  this->picture = picture;
 }
 
 Participant Participant::operator=(const Participant& participant)
@@ -181,8 +171,7 @@ istream& operator>>(istream& participant, Participant &aux)
   if(!participant.fail())
     picture = cadenaAuxiliar;
 
-  aux.assign(id, name, lastName, bornDate, age, category, inscriptionDate);
-  aux.setPicture(picture);
+  aux.assign(id,name,lastName,bornDate,age,category,inscriptionDate,picture);
   return(participant);
 }
 

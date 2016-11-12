@@ -3,7 +3,7 @@
  * @brief Clase Participant
  * @author Eduardo Perez (edujpp1@gmail.com)
  * @author Angely Azuaje (angiibri4@gmail.com)
- * @version 3.0
+ * @version 1.0
  * @date Noviembre, 2016
 */
 #ifndef PARTICIPANT_H
@@ -102,7 +102,7 @@ public:
 
   /**
    * @brief Observador getPicture
-   * @return this->picture
+   * @return dirección lógica de this->picture
    */
   inline string getPicture() const
   {
@@ -152,12 +152,7 @@ public:
   /**
    * @brief Método assign
    */
-  void assign(unsigned int, string, string, Date, unsigned int, string, Date);
-
-  /**
-   * @brief Método assign sin el último parámetro Date
-   */
-  void assign(unsigned int, string, string, Date, unsigned int, string);
+  void assign(unsigned int,string,string,Date,unsigned int,string,Date,string);
 
   /**
    * @brief operator =

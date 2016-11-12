@@ -1,12 +1,1 @@
-1 Nombre del evento | 
-2 fecha inicio del evento | 
-3 fecha fin del evento | 
-4 Valor de la inscripción | 
-5 Hora de inicio del evento | 
-6 Lugar del evento | 
-7 Fecha inicio entrega de material | 
-8 fecha fin entrega de material | 
-9 Hora inicio entrega de material | 
-10 Hora fin de entrega de material | 
-11 Lugar de entrega de material | 
-12 Descripción del evento
+1 Nombre del evento | 2 fecha inicio del evento | 3 fecha fin del evento | 4 Valor de la inscripción | 5 Hora de inicio del evento | 6 Lugar del evento | 7 Fecha inicio entrega de material | 8 fecha fin entrega de material | 9 Hora inicio entrega de material | 10 Hora fin de entrega de material | 11 Lugar de entrega de material | 12 Descripción del evento

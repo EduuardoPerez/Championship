@@ -2,7 +2,7 @@
  @file date.cpp
  @brief Implementación de la clase Date
  @author Eduardo Perez (edujpp1@gmail.com)
- @version 2.0
+ @version 1.0
  @date Noviembre, 2016
 */
 #include "date.h"
@@ -62,14 +62,6 @@ void Date::fromString(string date)
   this->year = year;
 }
 
-string Date::toString()
-{
-  string date;
-  date = Uint2String(this->day)+'/'+Uint2String(this->month)+'/'+
-      Uint2String(this->year);
-  return(date);
-}
-
 int Date::cmpDate(Date date)
 {
   if(this->year != date.year )
@@ -80,7 +72,6 @@ int Date::cmpDate(Date date)
 
   return(this->day - date.day);
 }
-
 
 void Date::assign(unsigned int day, unsigned int month, unsigned int year)
 {
@@ -133,11 +124,4 @@ istream& operator>>(istream& date, Date &aux)
 
   aux.assign(day, month, year);
   return(date);
-}
-
-string Uint2String(unsigned int integer)
-{
-    stringstream flux;
-    flux << integer;
-    return(flux.str());
 }
