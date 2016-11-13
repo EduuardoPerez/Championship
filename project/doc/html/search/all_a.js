@@ -1,4 +1,29 @@
 var searchData=
 [
-  ['tostring',['toString',['../class_date.html#adebdb45904dc2fbfacc66aa7528e0c04',1,'Date']]]
+  ['setage',['setAge',['../class_participant.html#a4de112fc8f335175bbb9997c7440785e',1,'Participant']]],
+  ['setborndate',['setBornDate',['../class_participant.html#a92d064eb8d903317d0b4f0240a4fb08f',1,'Participant']]],
+  ['setcategory',['setCategory',['../class_participant.html#af91cf9adf356fa0f0c0cf8c9fe76a294',1,'Participant']]],
+  ['setdatebegev',['setDateBegEv',['../class_event.html#ac8d69d760bad23c2aefea2c5b48cb8f8',1,'Event']]],
+  ['setdatebegmate',['setDateBegMate',['../class_event.html#a9db054102d874e7af959143dcc3c9077',1,'Event']]],
+  ['setdatefinev',['setDateFinEv',['../class_event.html#aec7119f73d4b29560476d9a2d2550992',1,'Event']]],
+  ['setdatefinmate',['setDateFinMate',['../class_event.html#aa99f913f889b15275e3da60b014e0283',1,'Event']]],
+  ['setday',['setDay',['../class_date.html#aafe200d5fe2aa294a91d20a6b97afe75',1,'Date']]],
+  ['setdescription',['setDescription',['../class_event.html#a10101412d581dc0a23e6bde775e8330b',1,'Event']]],
+  ['seteventhour',['setEventHour',['../class_event.html#a79f9395703795827cbd264612695e73a',1,'Event']]],
+  ['seteventname',['setEventName',['../class_event.html#aa72ec9ac1dc30b3afdf8a0da60d92e31',1,'Event']]],
+  ['seteventplace',['setEventPlace',['../class_event.html#a7c7f3267118fbd613738b415465dbcac',1,'Event']]],
+  ['sethourfinmate',['setHourFinMate',['../class_event.html#ad7e81513dcb7b9fddb7f670171b0402c',1,'Event']]],
+  ['sethourinimate',['setHourIniMate',['../class_event.html#afcfecbce4f34e3bbc8c5b9b1143015f5',1,'Event']]],
+  ['setid',['setId',['../class_participant.html#a180a58ee8ad5b7c6ea8981bdd5697ed6',1,'Participant']]],
+  ['setinscriptiondate',['setInscriptionDate',['../class_participant.html#ab8b20c06f6ef4f9a93c3a0eb4aa486f6',1,'Participant']]],
+  ['setinscripvalue',['setInscripValue',['../class_event.html#acf286ffb8186b161f9fc4833884c5f98',1,'Event']]],
+  ['setlastname',['setLastName',['../class_participant.html#af885b7075cc7765a25a612a52301c382',1,'Participant']]],
+  ['setmateplace',['setMatePlace',['../class_event.html#ac2df54c72bf6a913ef8cea23f9164561',1,'Event']]],
+  ['setmonth',['setMonth',['../class_date.html#aae2c1d1158d2760ba4d5a23c528fd24d',1,'Date']]],
+  ['setname',['setName',['../class_participant.html#a57c6abad16681cf90ad7e6afaaa197ca',1,'Participant']]],
+  ['setpicture',['setPicture',['../class_event.html#a6ebd602ac071857bc3603713f372af16',1,'Event::setPicture()'],['../class_participant.html#a8ed3db539a1ab6c04b110968347f45fb',1,'Participant::setPicture()']]],
+  ['setyear',['setYear',['../class_date.html#abf7cafce8365f4ad601c270bb3f0f02d',1,'Date']]],
+  ['sportywindow',['SportyWindow',['../class_sporty_window.html',1,'SportyWindow'],['../class_sporty_window.html#a9f7df59d49800c0b226b19a4ee083f34',1,'SportyWindow::SportyWindow()']]],
+  ['sportywindow_2ecpp',['sportywindow.cpp',['../sportywindow_8cpp.html',1,'']]],
+  ['sportywindow_2eh',['sportywindow.h',['../sportywindow_8h.html',1,'']]]
 ];

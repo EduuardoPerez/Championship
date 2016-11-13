@@ -224,7 +224,7 @@ public:
    * @brief Método assign
    */
   void assign(string, Date, Date, float, string, string, Date, Date, string,
-              string, string, string);
+              string, string, string, string);
 
   /**
    * @brief operator =

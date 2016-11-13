@@ -19,18 +19,28 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     participant.cpp \
     date.cpp \
-    event.cpp
+    event.cpp \
+    sportywindow.cpp \
+    organizingwindow.cpp \
+    regeventwindow.cpp
 
 HEADERS  += mainwindow.h \
     participant.h \
     date.h \
-    event.h
+    event.h \
+    sportywindow.h \
+    organizingwindow.h \
+    regeventwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    sportywindow.ui \
+    organizingwindow.ui \
+    regeventwindow.ui
 
 RESOURCES += \
     img/logo.qrc \
-    img/fondo1.qrc
+    img/fondo1.qrc \
+    img/logo-big.qrc
 
 LIBS += -L"$$_PRO_FILE_PWD_/3rdparty/Librerias/aleph" \
        -lAleph -lm -lgsl -lgslcblas -lgmp -lmpfr -lasprintf -lpthread -lc

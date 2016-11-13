@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SportyWindow</class>
+ <widget class="QDialog" name="SportyWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Eventos</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img/logo.qrc">
+    <normaloff>:/logo/logo.png</normaloff>:/logo/logo.png</iconset>
+  </property>
+  <widget class="QTableWidget" name="qtEventList">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>140</y>
+     <width>600</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="alternatingRowColors">
+    <bool>false</bool>
+   </property>
+   <property name="rowCount">
+    <number>0</number>
+   </property>
+   <property name="columnCount">
+    <number>2</number>
+   </property>
+   <column>
+    <property name="text">
+     <string>Evento</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Fecha de Inicio del Evento</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="pbSelEvento">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>380</y>
+     <width>600</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Seleccionar Evento</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="qlTitulo">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>40</y>
+     <width>341</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>40</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Eventos</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbSalir">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>460</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbRegresar">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>460</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Regresar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="img/logo.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pbSalir</sender>
+   <signal>clicked()</signal>
+   <receiver>SportyWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>706</x>
+     <y>476</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>773</x>
+     <y>462</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbRegresar</sender>
+   <signal>clicked()</signal>
+   <receiver>SportyWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>127</x>
+     <y>472</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>160</x>
+     <y>473</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

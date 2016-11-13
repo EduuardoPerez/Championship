@@ -1,3 +1,5 @@
 <map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
-<area shape="rect" id="node1" href="$class_participant.html" title="Clase Participant. " alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node2" href="$class_organizing_window.html" title="Clase OrganizingWindow. " alt="" coords="123,5,253,32"/>
+<area shape="rect" id="node3" href="$class_reg_event_window.html" title="Clase RegEventWindow. " alt="" coords="125,56,251,83"/>
+<area shape="rect" id="node4" href="$class_sporty_window.html" title="Clase SportyWindow. " alt="" coords="135,107,241,133"/>
 </map>

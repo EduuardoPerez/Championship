@@ -17,7 +17,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,12 +25,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QLabel *label;
-    QLabel *label_2;
-    QPushButton *salirpb;
-    QPushButton *registrarEventopb;
-    QTableWidget *tableWidget;
-    QPushButton *verEventopb;
+    QLabel *qlTitulo;
+    QLabel *qlImg;
+    QPushButton *pbSalir;
+    QPushButton *pbOrganizador;
+    QPushButton *pbDeportista;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -43,57 +41,42 @@ public:
         MainWindow->setWindowIcon(icon);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(110, 20, 341, 55));
+        qlTitulo = new QLabel(centralWidget);
+        qlTitulo->setObjectName(QStringLiteral("qlTitulo"));
+        qlTitulo->setGeometry(QRect(110, 20, 341, 55));
         QFont font;
         font.setPointSize(40);
-        label->setFont(font);
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(60, 90, 441, 351));
-        label_2->setPixmap(QPixmap(QString::fromUtf8(":/fondo1/fondo1.jpg")));
-        label_2->setScaledContents(true);
-        salirpb = new QPushButton(centralWidget);
-        salirpb->setObjectName(QStringLiteral("salirpb"));
-        salirpb->setGeometry(QRect(620, 440, 80, 20));
-        registrarEventopb = new QPushButton(centralWidget);
-        registrarEventopb->setObjectName(QStringLiteral("registrarEventopb"));
-        registrarEventopb->setGeometry(QRect(610, 400, 99, 20));
-        tableWidget = new QTableWidget(centralWidget);
-        if (tableWidget->columnCount() < 1)
-            tableWidget->setColumnCount(1);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        if (tableWidget->rowCount() < 1)
-            tableWidget->setRowCount(1);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(520, 90, 201, 241));
-        tableWidget->setAutoFillBackground(false);
-        tableWidget->setDragEnabled(false);
-        tableWidget->setAlternatingRowColors(false);
-        tableWidget->setRowCount(1);
-        verEventopb = new QPushButton(centralWidget);
-        verEventopb->setObjectName(QStringLiteral("verEventopb"));
-        verEventopb->setGeometry(QRect(518, 330, 201, 20));
+        qlTitulo->setFont(font);
+        qlImg = new QLabel(centralWidget);
+        qlImg->setObjectName(QStringLiteral("qlImg"));
+        qlImg->setGeometry(QRect(50, 90, 441, 351));
+        qlImg->setPixmap(QPixmap(QString::fromUtf8(":/fondo1/fondo1.jpg")));
+        qlImg->setScaledContents(true);
+        pbSalir = new QPushButton(centralWidget);
+        pbSalir->setObjectName(QStringLiteral("pbSalir"));
+        pbSalir->setGeometry(QRect(650, 460, 80, 20));
+        pbOrganizador = new QPushButton(centralWidget);
+        pbOrganizador->setObjectName(QStringLiteral("pbOrganizador"));
+        pbOrganizador->setGeometry(QRect(580, 320, 99, 20));
+        pbDeportista = new QPushButton(centralWidget);
+        pbDeportista->setObjectName(QStringLiteral("pbDeportista"));
+        pbDeportista->setGeometry(QRect(590, 250, 80, 20));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
-        QObject::connect(salirpb, SIGNAL(clicked()), MainWindow, SLOT(close()));
+        QObject::connect(pbSalir, SIGNAL(clicked()), MainWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Championship-PR3_ULA", 0));
-        label->setText(QApplication::translate("MainWindow", "Championship-PR3_ULA", 0));
-        label_2->setText(QString());
-        salirpb->setText(QApplication::translate("MainWindow", "Salir", 0));
-        registrarEventopb->setText(QApplication::translate("MainWindow", "Registrar Evento", 0));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Eventos", 0));
-        verEventopb->setText(QApplication::translate("MainWindow", "Ver Evento", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Championship", 0));
+        qlTitulo->setText(QApplication::translate("MainWindow", "Championship", 0));
+        qlImg->setText(QString());
+        pbSalir->setText(QApplication::translate("MainWindow", "Salir", 0));
+        pbOrganizador->setText(QApplication::translate("MainWindow", "Organizador", 0));
+        pbDeportista->setText(QApplication::translate("MainWindow", "Deportista", 0));
     } // retranslateUi
 
 };

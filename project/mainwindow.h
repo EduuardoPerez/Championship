@@ -2,7 +2,6 @@
  * @file mainwindow.h
  * @brief Clase MainWindow
  * @author Eduardo Perez (edujpp1@gmail.com)
- * @author Angely Azuaje (angiibri4@gmail.com)
  * @version 1.0
  * @date Noviembre, 2016
 */
@@ -10,6 +9,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStyle>
+#include <QDesktopWidget>
+#include "sportywindow.h"
+#include "organizingwindow.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,11 +26,22 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    /**
+     * @brief MainWindow
+     * @param parent padre de componentes
+     */
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+  void on_pbDeportista_clicked();
+
+  void on_pbOrganizador_clicked();
+
 private:
     Ui::MainWindow *ui;
+    SportyWindow *sporty_i;
+    OrganizingWindow *organizing_i;
 };
 
 #endif // MAINWINDOW_H

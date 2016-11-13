@@ -2,7 +2,6 @@
  * @file participant.h
  * @brief Clase Participant
  * @author Eduardo Perez (edujpp1@gmail.com)
- * @author Angely Azuaje (angiibri4@gmail.com)
  * @version 1.0
  * @date Noviembre, 2016
 */

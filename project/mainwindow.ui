@@ -14,11 +14,11 @@
    <string>Championship</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="img/logo.qrc">
+   <iconset>
     <normaloff>:/logo/logo.png</normaloff>:/logo/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="qlTitulo">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -36,10 +36,10 @@
      <string>Championship</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="qlImg">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>50</x>
       <y>90</y>
       <width>441</width>
       <height>351</height>
@@ -49,17 +49,17 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="img/fondo1.qrc">:/fondo1/fondo1.jpg</pixmap>
+     <pixmap>:/fondo1/fondo1.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="salirpb">
+   <widget class="QPushButton" name="pbSalir">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>440</y>
+      <x>650</x>
+      <y>460</y>
       <width>80</width>
       <height>20</height>
      </rect>
@@ -68,76 +68,39 @@
      <string>Salir</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="registrarEventopb">
+   <widget class="QPushButton" name="pbOrganizador">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>400</y>
+      <x>580</x>
+      <y>320</y>
       <width>99</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Registrar Evento</string>
+     <string>Organizador</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QPushButton" name="pbDeportista">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>90</y>
-      <width>201</width>
-      <height>241</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="dragEnabled">
-     <bool>false</bool>
-    </property>
-    <property name="alternatingRowColors">
-     <bool>false</bool>
-    </property>
-    <property name="rowCount">
-     <number>1</number>
-    </property>
-    <row/>
-    <column>
-     <property name="text">
-      <string>Eventos</string>
-     </property>
-     <property name="toolTip">
-      <string/>
-     </property>
-     <property name="whatsThis">
-      <string/>
-     </property>
-    </column>
-   </widget>
-   <widget class="QPushButton" name="verEventopb">
-    <property name="geometry">
-     <rect>
-      <x>518</x>
-      <y>330</y>
-      <width>201</width>
+      <x>590</x>
+      <y>250</y>
+      <width>80</width>
       <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ver Evento</string>
+     <string>Deportista</string>
     </property>
    </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="img/logo.qrc"/>
-  <include location="img/fondo1.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
-   <sender>salirpb</sender>
+   <sender>pbSalir</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>

@@ -122,7 +122,8 @@ void Event::setPicture(string picture)
 void Event::assign(string eventName, Date dateBegEv, Date dateFinEv,
                    float inscripValue, string eventHour, string eventPlace,
                    Date dateBegMate, Date dateFinMate, string hourIniMate,
-                   string hourFinMate, string matePlace, string description)
+                   string hourFinMate, string matePlace, string description,
+                   string picture)
 {
   this->eventName = eventName;
   this->dateBegEv = dateBegEv;
@@ -136,6 +137,7 @@ void Event::assign(string eventName, Date dateBegEv, Date dateFinEv,
   this->hourFinMate = hourFinMate;
   this->matePlace = matePlace;
   this->description = description;
+  this->picture = picture;
 }
 
 Event Event::operator=(const Event& event)
@@ -252,7 +254,6 @@ istream& operator>>(istream& event, Event &aux){
 
   aux.assign(eventName, dateBegEv, dateFinEv, inscripValue, eventHour,
              eventPlace, dateBegMate, dateFinMate, hourIniMate, hourFinMate,
-             matePlace, description);
-  aux.setPicture(picture);
+             matePlace, description, picture);
   return(event);
 }
