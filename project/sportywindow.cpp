@@ -33,7 +33,7 @@ SportyWindow::~SportyWindow()
   delete ui;
 }
 
-void SportyWindow::on_pbSelEvento_clicked()
+void SportyWindow::on_pbVerEvento_clicked()
 {
 
 }

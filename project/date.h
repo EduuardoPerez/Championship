@@ -83,11 +83,17 @@ public:
   void fromString(string);
 
   /**
+   * @brief Método toString
+   * @return tipo Date convertido a string
+   */
+  string toString();
+
+  /**
    * @brief Método cmpDate
    * @return entero negativo si this es menor que date, 0 si this es igual a
    * date, entero positivo si this es mayor que date.
    */
-  int cmpDate(Date);
+  int cmpDate(const Date&);
 
   /**
    * @brief Método assign
@@ -118,5 +124,11 @@ ostream& operator <<(ostream&,const Date&);
  * @return istream& date
  */
 istream& operator >>(istream&, Date&);
+
+/**
+ * @brief Método Uint2String
+ * @return tipo int convertido a string
+ */
+string Uint2String(unsigned int);
 
 #endif // DATE_H

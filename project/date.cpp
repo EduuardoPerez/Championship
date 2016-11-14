@@ -62,7 +62,15 @@ void Date::fromString(string date)
   this->year = year;
 }
 
-int Date::cmpDate(Date date)
+string Date::toString()
+{
+  string date;
+  date = Uint2String(this->day)+'/'+Uint2String(this->month)+'/'+
+      Uint2String(this->year);
+  return(date);
+}
+
+int Date::cmpDate(const Date& date)
 {
   if(this->year != date.year )
     return(this->year - date.year);

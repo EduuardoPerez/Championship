@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     event.cpp \
     sportywindow.cpp \
     organizingwindow.cpp \
-    regeventwindow.cpp
+    regeventwindow.cpp \
+    modeventwindow.cpp
 
 HEADERS  += mainwindow.h \
     participant.h \
@@ -30,12 +31,14 @@ HEADERS  += mainwindow.h \
     event.h \
     sportywindow.h \
     organizingwindow.h \
-    regeventwindow.h
+    regeventwindow.h \
+    modeventwindow.h
 
 FORMS    += mainwindow.ui \
     sportywindow.ui \
     organizingwindow.ui \
-    regeventwindow.ui
+    regeventwindow.ui \
+    modeventwindow.ui
 
 RESOURCES += \
     img/logo.qrc \

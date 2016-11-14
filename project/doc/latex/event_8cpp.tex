@@ -16,10 +16,14 @@ Dependencia gráfica adjunta para event.\+cpp\+:\nopagebreak
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
+int \hyperlink{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}{operator$<$} (const \hyperlink{class_event}{Event} \&event1, const \hyperlink{class_event}{Event} \&event2)
+\begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{event_8cpp_a91de7df4316bfc12fce6283858843121}{operator$<$$<$} (ostream \&event, const \hyperlink{class_event}{Event} \&e)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
 istream \& \hyperlink{event_8cpp_a7d68062f42bc7a2e68eef1767e4ea8ec}{operator$>$$>$} (istream \&event, \hyperlink{class_event}{Event} \&aux)
-\begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\item 
+string \hyperlink{event_8cpp_aa36788e1fe302221cb9446e85b88155f}{Uint2\+String} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Método Uint2\+String. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
@@ -37,6 +41,25 @@ Noviembre, 2016
 
 
 \subsection{Documentación de las funciones}
+\index{event.\+cpp@{event.\+cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!event.\+cpp@{event.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$<$(const Event \&event1, const Event \&event2)}{operator<(const Event &event1, const Event &event2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Event} \&}]{, }
+\item[{const {\bf Event} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}{}\label{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}
+
+
+operator $<$ 
+
+\begin{DoxyReturn}{Devuelve}
+1 si this es menor a event, 0 si no lo es. 
+\end{DoxyReturn}
+
+
+Definición en la línea 168 del archivo event.\+cpp.
+
 \index{event.\+cpp@{event.\+cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!event.\+cpp@{event.\+cpp}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(ostream \&event, const Event \&e)}{operator<<(ostream &event, const Event &e)}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
@@ -54,7 +77,7 @@ ostream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 168 del archivo event.\+cpp.
+Definición en la línea 175 del archivo event.\+cpp.
 
 \index{event.\+cpp@{event.\+cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!event.\+cpp@{event.\+cpp}}
@@ -73,5 +96,23 @@ istream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 186 del archivo event.\+cpp.
+Definición en la línea 193 del archivo event.\+cpp.
+
+\index{event.\+cpp@{event.\+cpp}!Uint2\+String@{Uint2\+String}}
+\index{Uint2\+String@{Uint2\+String}!event.\+cpp@{event.\+cpp}}
+\subsubsection[{\texorpdfstring{Uint2\+String(unsigned int num)}{Uint2String(unsigned int num)}}]{\setlength{\rightskip}{0pt plus 5cm}string Uint2\+String (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{int}
+\end{DoxyParamCaption}
+)}\hypertarget{event_8cpp_aa36788e1fe302221cb9446e85b88155f}{}\label{event_8cpp_aa36788e1fe302221cb9446e85b88155f}
+
+
+Método Uint2\+String. 
+
+\begin{DoxyReturn}{Devuelve}
+tipo int convertido a string 
+\end{DoxyReturn}
+
+
+Definición en la línea 268 del archivo event.\+cpp.
 

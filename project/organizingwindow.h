@@ -13,6 +13,7 @@
 #include <QDesktopWidget>
 #include "event.h"
 #include "regeventwindow.h"
+#include "modeventwindow.h"
 
 namespace Ui {
   class OrganizingWindow;
@@ -35,6 +36,8 @@ public:
 
 private slots:
   void on_pbRegistrar_clicked();
+
+  void on_pbModificar_clicked();
 
 private:
   Ui::OrganizingWindow *ui;

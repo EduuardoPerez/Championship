@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Evento</string>
+   <string>Championship</string>
   </property>
   <property name="windowIcon">
    <iconset resource="img/logo.qrc">
@@ -46,9 +46,9 @@
   <widget class="QLabel" name="qlTitulo">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>200</x>
      <y>20</y>
-     <width>341</width>
+     <width>391</width>
      <height>55</height>
     </rect>
    </property>
@@ -58,7 +58,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Championship</string>
+    <string>Lista de Eventos</string>
    </property>
   </widget>
   <widget class="QTableWidget" name="qtEventList">
@@ -185,6 +185,22 @@
     <hint type="destinationlabel">
      <x>589</x>
      <y>414</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbModificar</sender>
+   <signal>clicked()</signal>
+   <receiver>OrganizingWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>381</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>69</x>
+     <y>378</y>
     </hint>
    </hints>
   </connection>

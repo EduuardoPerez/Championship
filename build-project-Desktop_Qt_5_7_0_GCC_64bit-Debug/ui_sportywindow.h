@@ -25,7 +25,7 @@ class Ui_SportyWindow
 {
 public:
     QTableWidget *qtEventList;
-    QPushButton *pbSelEvento;
+    QPushButton *pbVerEvento;
     QLabel *qlTitulo;
     QPushButton *pbSalir;
     QPushButton *pbRegresar;
@@ -52,12 +52,12 @@ public:
         qtEventList->setAlternatingRowColors(false);
         qtEventList->setRowCount(0);
         qtEventList->setColumnCount(2);
-        pbSelEvento = new QPushButton(SportyWindow);
-        pbSelEvento->setObjectName(QStringLiteral("pbSelEvento"));
-        pbSelEvento->setGeometry(QRect(100, 380, 600, 20));
+        pbVerEvento = new QPushButton(SportyWindow);
+        pbVerEvento->setObjectName(QStringLiteral("pbVerEvento"));
+        pbVerEvento->setGeometry(QRect(100, 380, 600, 20));
         qlTitulo = new QLabel(SportyWindow);
         qlTitulo->setObjectName(QStringLiteral("qlTitulo"));
-        qlTitulo->setGeometry(QRect(300, 40, 341, 55));
+        qlTitulo->setGeometry(QRect(160, 40, 471, 55));
         QFont font;
         font.setPointSize(40);
         qlTitulo->setFont(font);
@@ -77,13 +77,13 @@ public:
 
     void retranslateUi(QDialog *SportyWindow)
     {
-        SportyWindow->setWindowTitle(QApplication::translate("SportyWindow", "Eventos", 0));
+        SportyWindow->setWindowTitle(QApplication::translate("SportyWindow", "Championship", 0));
         QTableWidgetItem *___qtablewidgetitem = qtEventList->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("SportyWindow", "Evento", 0));
         QTableWidgetItem *___qtablewidgetitem1 = qtEventList->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QApplication::translate("SportyWindow", "Fecha de Inicio del Evento", 0));
-        pbSelEvento->setText(QApplication::translate("SportyWindow", "Seleccionar Evento", 0));
-        qlTitulo->setText(QApplication::translate("SportyWindow", "Eventos", 0));
+        pbVerEvento->setText(QApplication::translate("SportyWindow", "Ver Evento", 0));
+        qlTitulo->setText(QApplication::translate("SportyWindow", "Eventos Disponibles", 0));
         pbSalir->setText(QApplication::translate("SportyWindow", "Salir", 0));
         pbRegresar->setText(QApplication::translate("SportyWindow", "Regresar", 0));
     } // retranslateUi

@@ -113,6 +113,13 @@ int Participant::operator==(const Participant& participant)
   return(0);
 }
 
+int operator<(const Participant& p1, const Participant& p2)
+{
+  if(p1.getId()<p2.getId())
+    return(1);
+  return(0);
+}
+
 ostream& operator<<(ostream& participant, const Participant& p)
 {
   participant << p.getId() << "|";

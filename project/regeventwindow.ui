@@ -11,12 +11,16 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Evento</string>
+   <string>Championship</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img/logo.qrc">
+    <normaloff>:/logo/logo.png</normaloff>:/logo/logo.png</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
      <width>791</width>
      <height>491</height>
@@ -178,7 +182,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="nombreventole_2"/>
+           <widget class="QLineEdit" name="leEventName"/>
           </item>
          </layout>
         </item>
@@ -232,7 +236,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechIniciode_2">
+             <widget class="QDateEdit" name="deDateBegEv">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -262,7 +266,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechFinde_2">
+             <widget class="QDateEdit" name="deDateFinEv">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -298,7 +302,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="valorinscripciontle_2"/>
+           <widget class="QLineEdit" name="leInscripValue"/>
           </item>
          </layout>
         </item>
@@ -342,7 +346,18 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horaeventole_2"/>
+           <widget class="QTimeEdit" name="teEventHour">
+            <property name="calendarPopup">
+             <bool>false</bool>
+            </property>
+            <property name="time">
+             <time>
+              <hour>0</hour>
+              <minute>0</minute>
+              <second>0</second>
+             </time>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -372,7 +387,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lugareventole_2"/>
+           <widget class="QLineEdit" name="leEventPlace"/>
           </item>
          </layout>
         </item>
@@ -430,7 +445,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechIniciomaterialde_2">
+             <widget class="QDateEdit" name="deDateBegMate">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -460,7 +475,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechFinmaterialde_2">
+             <widget class="QDateEdit" name="deDateFinMate">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -509,7 +524,20 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horainimaterialle_2"/>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="teHourBegMate"/>
           </item>
          </layout>
         </item>
@@ -536,7 +564,20 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horafinmaterialle_2"/>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="teHourFinMate"/>
           </item>
          </layout>
         </item>
@@ -567,7 +608,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lugarmaterialle_2"/>
+           <widget class="QLineEdit" name="leMatePlace"/>
           </item>
          </layout>
         </item>
@@ -627,7 +668,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="dirImgtl_2">
+           <widget class="QLabel" name="lePicture">
             <property name="text">
              <string/>
             </property>
@@ -676,7 +717,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLineEdit" name="descripcionle_2"/>
+         <widget class="QLineEdit" name="leDescription"/>
         </item>
        </layout>
       </item>
@@ -801,25 +842,13 @@
     </item>
    </layout>
   </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>leEventName</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="img/logo.qrc"/>
+ </resources>
  <connections>
-  <connection>
-   <sender>pbSalir</sender>
-   <signal>clicked()</signal>
-   <receiver>RegEventWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>701</x>
-     <y>478</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>606</x>
-     <y>462</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pbRegresar</sender>
    <signal>clicked()</signal>
@@ -827,12 +856,28 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>112</x>
-     <y>479</y>
+     <x>122</x>
+     <y>477</y>
     </hint>
     <hint type="destinationlabel">
-     <x>174</x>
-     <y>469</y>
+     <x>167</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbSalir</sender>
+   <signal>clicked()</signal>
+   <receiver>RegEventWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>697</x>
+     <y>474</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>465</y>
     </hint>
    </hints>
   </connection>

@@ -1,7 +1,8 @@
 <map id="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/mainwindow.h" name="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/mainwindow.h">
 <area shape="rect" id="node5" href="$sportywindow_8h.html" title="Clase SportyWindow. " alt="" coords="238,184,351,211"/>
-<area shape="rect" id="node7" href="$organizingwindow_8h.html" title="Clase OrganizingWindow. " alt="" coords="423,109,559,136"/>
-<area shape="rect" id="node8" href="$event_8h.html" title="Clase Event. " alt="" coords="681,184,746,211"/>
-<area shape="rect" id="node15" href="$regeventwindow_8h.html" title="Clase RegEventWindow. " alt="" coords="427,184,554,211"/>
-<area shape="rect" id="node10" href="$date_8h.html" title="Clase Date. " alt="" coords="748,259,807,285"/>
+<area shape="rect" id="node7" href="$organizingwindow_8h.html" title="Clase OrganizingWindow. " alt="" coords="532,109,668,136"/>
+<area shape="rect" id="node8" href="$event_8h.html" title="Clase Event. " alt="" coords="966,184,1031,211"/>
+<area shape="rect" id="node15" href="$regeventwindow_8h.html" title="Clase RegEventWindow. " alt="" coords="689,184,815,211"/>
+<area shape="rect" id="node19" href="$modeventwindow_8h.html" title="Clase ModEventWindow. " alt="" coords="427,184,562,211"/>
+<area shape="rect" id="node10" href="$date_8h.html" title="Clase Date. " alt="" coords="1056,259,1115,285"/>
 </map>

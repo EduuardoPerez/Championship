@@ -22,6 +22,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -51,7 +52,7 @@ public:
     QGridLayout *gridLayout_5;
     QHBoxLayout *horizontalLayout_27;
     QLabel *nombreEventotl_2;
-    QLineEdit *nombreventole_2;
+    QLineEdit *leEventName;
     QSpacerItem *horizontalSpacer_35;
     QVBoxLayout *verticalLayout_9;
     QHBoxLayout *horizontalLayout_28;
@@ -59,24 +60,24 @@ public:
     QHBoxLayout *horizontalLayout_29;
     QSpacerItem *horizontalSpacer_36;
     QLabel *label_13;
-    QDateEdit *fechIniciode_2;
+    QDateEdit *deDateBegEv;
     QSpacerItem *horizontalSpacer_37;
     QLabel *label_14;
-    QDateEdit *fechFinde_2;
+    QDateEdit *deDateFinEv;
     QSpacerItem *horizontalSpacer_38;
     QHBoxLayout *horizontalLayout_30;
     QLabel *valorinscripciontl_2;
-    QLineEdit *valorinscripciontle_2;
+    QLineEdit *leInscripValue;
     QSpacerItem *horizontalSpacer_39;
     QSpacerItem *verticalSpacer_12;
     QHBoxLayout *horizontalLayout_31;
     QHBoxLayout *horizontalLayout_32;
     QLabel *horaeventotl_2;
-    QLineEdit *horaeventole_2;
+    QTimeEdit *teEventHour;
     QSpacerItem *horizontalSpacer_40;
     QHBoxLayout *horizontalLayout_33;
     QLabel *lugareventotl_2;
-    QLineEdit *lugareventole_2;
+    QLineEdit *leEventPlace;
     QSpacerItem *verticalSpacer_13;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_10;
@@ -85,36 +86,38 @@ public:
     QHBoxLayout *horizontalLayout_35;
     QSpacerItem *horizontalSpacer_41;
     QLabel *label_15;
-    QDateEdit *fechIniciomaterialde_2;
+    QDateEdit *deDateBegMate;
     QSpacerItem *horizontalSpacer_42;
     QLabel *label_16;
-    QDateEdit *fechFinmaterialde_2;
+    QDateEdit *deDateFinMate;
     QSpacerItem *horizontalSpacer_43;
     QSpacerItem *horizontalSpacer_44;
     QHBoxLayout *horizontalLayout_36;
     QLabel *horainimaterialtl_2;
-    QLineEdit *horainimaterialle_2;
+    QSpacerItem *horizontalSpacer_2;
+    QTimeEdit *teHourBegMate;
     QSpacerItem *horizontalSpacer_45;
     QHBoxLayout *horizontalLayout_37;
     QLabel *horafinmaterialtl_2;
-    QLineEdit *horafinmaterialle_2;
+    QSpacerItem *horizontalSpacer;
+    QTimeEdit *teHourFinMate;
     QSpacerItem *verticalSpacer_14;
     QHBoxLayout *horizontalLayout_38;
     QHBoxLayout *horizontalLayout_39;
     QLabel *lugarmaterialtl_2;
-    QLineEdit *lugarmaterialle_2;
+    QLineEdit *leMatePlace;
     QSpacerItem *horizontalSpacer_46;
     QHBoxLayout *horizontalLayout_40;
     QLabel *label_7;
     QSpacerItem *horizontalSpacer_47;
     QPushButton *examinarpb_2;
     QSpacerItem *horizontalSpacer_48;
-    QLabel *dirImgtl_2;
+    QLabel *lePicture;
     QSpacerItem *verticalSpacer_15;
     QHBoxLayout *horizontalLayout_41;
     QLabel *descripciontl_2;
     QSpacerItem *horizontalSpacer_49;
-    QLineEdit *descripcionle_2;
+    QLineEdit *leDescription;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_42;
     QSpacerItem *horizontalSpacer_53;
@@ -131,9 +134,12 @@ public:
         if (RegEventWindow->objectName().isEmpty())
             RegEventWindow->setObjectName(QStringLiteral("RegEventWindow"));
         RegEventWindow->resize(800, 500);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/logo/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        RegEventWindow->setWindowIcon(icon);
         layoutWidget = new QWidget(RegEventWindow);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 791, 491));
+        layoutWidget->setGeometry(QRect(10, 0, 791, 491));
         gridLayout_4 = new QGridLayout(layoutWidget);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -216,10 +222,10 @@ public:
 
         horizontalLayout_27->addWidget(nombreEventotl_2);
 
-        nombreventole_2 = new QLineEdit(layoutWidget);
-        nombreventole_2->setObjectName(QStringLiteral("nombreventole_2"));
+        leEventName = new QLineEdit(layoutWidget);
+        leEventName->setObjectName(QStringLiteral("leEventName"));
 
-        horizontalLayout_27->addWidget(nombreventole_2);
+        horizontalLayout_27->addWidget(leEventName);
 
 
         gridLayout_5->addLayout(horizontalLayout_27, 0, 0, 1, 1);
@@ -251,11 +257,11 @@ public:
 
         horizontalLayout_29->addWidget(label_13);
 
-        fechIniciode_2 = new QDateEdit(layoutWidget);
-        fechIniciode_2->setObjectName(QStringLiteral("fechIniciode_2"));
-        fechIniciode_2->setCalendarPopup(true);
+        deDateBegEv = new QDateEdit(layoutWidget);
+        deDateBegEv->setObjectName(QStringLiteral("deDateBegEv"));
+        deDateBegEv->setCalendarPopup(true);
 
-        horizontalLayout_29->addWidget(fechIniciode_2);
+        horizontalLayout_29->addWidget(deDateBegEv);
 
         horizontalSpacer_37 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -266,11 +272,11 @@ public:
 
         horizontalLayout_29->addWidget(label_14);
 
-        fechFinde_2 = new QDateEdit(layoutWidget);
-        fechFinde_2->setObjectName(QStringLiteral("fechFinde_2"));
-        fechFinde_2->setCalendarPopup(true);
+        deDateFinEv = new QDateEdit(layoutWidget);
+        deDateFinEv->setObjectName(QStringLiteral("deDateFinEv"));
+        deDateFinEv->setCalendarPopup(true);
 
-        horizontalLayout_29->addWidget(fechFinde_2);
+        horizontalLayout_29->addWidget(deDateFinEv);
 
         horizontalSpacer_38 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -289,10 +295,10 @@ public:
 
         horizontalLayout_30->addWidget(valorinscripciontl_2);
 
-        valorinscripciontle_2 = new QLineEdit(layoutWidget);
-        valorinscripciontle_2->setObjectName(QStringLiteral("valorinscripciontle_2"));
+        leInscripValue = new QLineEdit(layoutWidget);
+        leInscripValue->setObjectName(QStringLiteral("leInscripValue"));
 
-        horizontalLayout_30->addWidget(valorinscripciontle_2);
+        horizontalLayout_30->addWidget(leInscripValue);
 
 
         gridLayout_5->addLayout(horizontalLayout_30, 1, 0, 1, 1);
@@ -317,10 +323,12 @@ public:
 
         horizontalLayout_32->addWidget(horaeventotl_2);
 
-        horaeventole_2 = new QLineEdit(layoutWidget);
-        horaeventole_2->setObjectName(QStringLiteral("horaeventole_2"));
+        teEventHour = new QTimeEdit(layoutWidget);
+        teEventHour->setObjectName(QStringLiteral("teEventHour"));
+        teEventHour->setCalendarPopup(false);
+        teEventHour->setTime(QTime(0, 0, 0));
 
-        horizontalLayout_32->addWidget(horaeventole_2);
+        horizontalLayout_32->addWidget(teEventHour);
 
 
         horizontalLayout_31->addLayout(horizontalLayout_32);
@@ -336,10 +344,10 @@ public:
 
         horizontalLayout_33->addWidget(lugareventotl_2);
 
-        lugareventole_2 = new QLineEdit(layoutWidget);
-        lugareventole_2->setObjectName(QStringLiteral("lugareventole_2"));
+        leEventPlace = new QLineEdit(layoutWidget);
+        leEventPlace->setObjectName(QStringLiteral("leEventPlace"));
 
-        horizontalLayout_33->addWidget(lugareventole_2);
+        horizontalLayout_33->addWidget(leEventPlace);
 
 
         horizontalLayout_31->addLayout(horizontalLayout_33);
@@ -376,11 +384,11 @@ public:
 
         horizontalLayout_35->addWidget(label_15);
 
-        fechIniciomaterialde_2 = new QDateEdit(layoutWidget);
-        fechIniciomaterialde_2->setObjectName(QStringLiteral("fechIniciomaterialde_2"));
-        fechIniciomaterialde_2->setCalendarPopup(true);
+        deDateBegMate = new QDateEdit(layoutWidget);
+        deDateBegMate->setObjectName(QStringLiteral("deDateBegMate"));
+        deDateBegMate->setCalendarPopup(true);
 
-        horizontalLayout_35->addWidget(fechIniciomaterialde_2);
+        horizontalLayout_35->addWidget(deDateBegMate);
 
         horizontalSpacer_42 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -391,11 +399,11 @@ public:
 
         horizontalLayout_35->addWidget(label_16);
 
-        fechFinmaterialde_2 = new QDateEdit(layoutWidget);
-        fechFinmaterialde_2->setObjectName(QStringLiteral("fechFinmaterialde_2"));
-        fechFinmaterialde_2->setCalendarPopup(true);
+        deDateFinMate = new QDateEdit(layoutWidget);
+        deDateFinMate->setObjectName(QStringLiteral("deDateFinMate"));
+        deDateFinMate->setCalendarPopup(true);
 
-        horizontalLayout_35->addWidget(fechFinmaterialde_2);
+        horizontalLayout_35->addWidget(deDateFinMate);
 
         horizontalSpacer_43 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -418,10 +426,14 @@ public:
 
         horizontalLayout_36->addWidget(horainimaterialtl_2);
 
-        horainimaterialle_2 = new QLineEdit(layoutWidget);
-        horainimaterialle_2->setObjectName(QStringLiteral("horainimaterialle_2"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_36->addWidget(horainimaterialle_2);
+        horizontalLayout_36->addItem(horizontalSpacer_2);
+
+        teHourBegMate = new QTimeEdit(layoutWidget);
+        teHourBegMate->setObjectName(QStringLiteral("teHourBegMate"));
+
+        horizontalLayout_36->addWidget(teHourBegMate);
 
 
         gridLayout_6->addLayout(horizontalLayout_36, 0, 2, 1, 1);
@@ -437,10 +449,14 @@ public:
 
         horizontalLayout_37->addWidget(horafinmaterialtl_2);
 
-        horafinmaterialle_2 = new QLineEdit(layoutWidget);
-        horafinmaterialle_2->setObjectName(QStringLiteral("horafinmaterialle_2"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_37->addWidget(horafinmaterialle_2);
+        horizontalLayout_37->addItem(horizontalSpacer);
+
+        teHourFinMate = new QTimeEdit(layoutWidget);
+        teHourFinMate->setObjectName(QStringLiteral("teHourFinMate"));
+
+        horizontalLayout_37->addWidget(teHourFinMate);
 
 
         gridLayout_6->addLayout(horizontalLayout_37, 1, 2, 1, 1);
@@ -461,10 +477,10 @@ public:
 
         horizontalLayout_39->addWidget(lugarmaterialtl_2);
 
-        lugarmaterialle_2 = new QLineEdit(layoutWidget);
-        lugarmaterialle_2->setObjectName(QStringLiteral("lugarmaterialle_2"));
+        leMatePlace = new QLineEdit(layoutWidget);
+        leMatePlace->setObjectName(QStringLiteral("leMatePlace"));
 
-        horizontalLayout_39->addWidget(lugarmaterialle_2);
+        horizontalLayout_39->addWidget(leMatePlace);
 
 
         horizontalLayout_38->addLayout(horizontalLayout_39);
@@ -493,10 +509,10 @@ public:
 
         horizontalLayout_40->addItem(horizontalSpacer_48);
 
-        dirImgtl_2 = new QLabel(layoutWidget);
-        dirImgtl_2->setObjectName(QStringLiteral("dirImgtl_2"));
+        lePicture = new QLabel(layoutWidget);
+        lePicture->setObjectName(QStringLiteral("lePicture"));
 
-        horizontalLayout_40->addWidget(dirImgtl_2);
+        horizontalLayout_40->addWidget(lePicture);
 
 
         horizontalLayout_38->addLayout(horizontalLayout_40);
@@ -519,10 +535,10 @@ public:
 
         horizontalLayout_41->addItem(horizontalSpacer_49);
 
-        descripcionle_2 = new QLineEdit(layoutWidget);
-        descripcionle_2->setObjectName(QStringLiteral("descripcionle_2"));
+        leDescription = new QLineEdit(layoutWidget);
+        leDescription->setObjectName(QStringLiteral("leDescription"));
 
-        horizontalLayout_41->addWidget(descripcionle_2);
+        horizontalLayout_41->addWidget(leDescription);
 
 
         verticalLayout_8->addLayout(horizontalLayout_41);
@@ -576,41 +592,43 @@ public:
 
         gridLayout_4->addItem(verticalSpacer_17, 1, 1, 1, 1);
 
+        layoutWidget->raise();
+        leEventName->raise();
 
         retranslateUi(RegEventWindow);
-        QObject::connect(pbSalir, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
         QObject::connect(pbRegresar, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
+        QObject::connect(pbSalir, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(RegEventWindow);
     } // setupUi
 
     void retranslateUi(QDialog *RegEventWindow)
     {
-        RegEventWindow->setWindowTitle(QApplication::translate("RegEventWindow", "Evento", 0));
+        RegEventWindow->setWindowTitle(QApplication::translate("RegEventWindow", "Championship", 0));
         pbRegresar->setText(QApplication::translate("RegEventWindow", "Regresar", 0));
         pbSalir->setText(QApplication::translate("RegEventWindow", "Salir", 0));
         nombreEventotl_2->setText(QApplication::translate("RegEventWindow", "Nombre del Evento: ", 0));
         label_5->setText(QApplication::translate("RegEventWindow", "                                           Fechas en las que se realizar\303\241 el evento\n"
 "(si el evento se realizar\303\241 en un solo d\303\255a seleccione 01/01/0000 como fecha fin)", 0));
         label_13->setText(QApplication::translate("RegEventWindow", "Inicio: ", 0));
-        fechIniciode_2->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
+        deDateBegEv->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         label_14->setText(QApplication::translate("RegEventWindow", "Fin: ", 0));
-        fechFinde_2->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
+        deDateFinEv->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         valorinscripciontl_2->setText(QApplication::translate("RegEventWindow", "Valor de la inscripci\303\263n (Bs.)", 0));
         horaeventotl_2->setText(QApplication::translate("RegEventWindow", "Hora de inicio del evento: ", 0));
         lugareventotl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se realizara el evento: ", 0));
         label_6->setText(QApplication::translate("RegEventWindow", "             Fechas en las que se entregar\303\241 el material necesario para el evento\n"
 "(si el evento se realizar\303\241 en un solo d\303\255a seleccione 01/01/0000 como fecha fin)", 0));
         label_15->setText(QApplication::translate("RegEventWindow", "Inicio: ", 0));
-        fechIniciomaterialde_2->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
+        deDateBegMate->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         label_16->setText(QApplication::translate("RegEventWindow", "Fin: ", 0));
-        fechFinmaterialde_2->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
+        deDateFinMate->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         horainimaterialtl_2->setText(QApplication::translate("RegEventWindow", "Hora de inicio de la entrega del material: ", 0));
         horafinmaterialtl_2->setText(QApplication::translate("RegEventWindow", "Hora de fin de la entrega del material: ", 0));
         lugarmaterialtl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se realizar\303\241 la entrega del material: ", 0));
         label_7->setText(QApplication::translate("RegEventWindow", "Incluir una imagen referente al evento:", 0));
         examinarpb_2->setText(QApplication::translate("RegEventWindow", "Examinar", 0));
-        dirImgtl_2->setText(QString());
+        lePicture->setText(QString());
         descripciontl_2->setText(QApplication::translate("RegEventWindow", "Descripcion del evento:", 0));
         pbRegistrar->setText(QApplication::translate("RegEventWindow", "Registrar", 0));
         label_8->setText(QApplication::translate("RegEventWindow", "Registrar Evento", 0));

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Eventos</string>
+   <string>Championship</string>
   </property>
   <property name="windowIcon">
    <iconset resource="img/logo.qrc">
@@ -52,7 +52,7 @@
     </property>
    </column>
   </widget>
-  <widget class="QPushButton" name="pbSelEvento">
+  <widget class="QPushButton" name="pbVerEvento">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -62,15 +62,15 @@
     </rect>
    </property>
    <property name="text">
-    <string>Seleccionar Evento</string>
+    <string>Ver Evento</string>
    </property>
   </widget>
   <widget class="QLabel" name="qlTitulo">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>160</x>
      <y>40</y>
-     <width>341</width>
+     <width>471</width>
      <height>55</height>
     </rect>
    </property>
@@ -80,7 +80,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Eventos</string>
+    <string>Eventos Disponibles</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pbSalir">

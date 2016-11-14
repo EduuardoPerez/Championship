@@ -48,7 +48,7 @@ public:
         pbRegresar->setGeometry(QRect(60, 450, 80, 20));
         qlTitulo = new QLabel(OrganizingWindow);
         qlTitulo->setObjectName(QStringLiteral("qlTitulo"));
-        qlTitulo->setGeometry(QRect(240, 20, 341, 55));
+        qlTitulo->setGeometry(QRect(200, 20, 391, 55));
         QFont font;
         font.setPointSize(40);
         qlTitulo->setFont(font);
@@ -80,16 +80,17 @@ public:
         QObject::connect(pbRegresar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
         QObject::connect(pbSalir, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
         QObject::connect(pbRegistrar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
+        QObject::connect(pbModificar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(OrganizingWindow);
     } // setupUi
 
     void retranslateUi(QDialog *OrganizingWindow)
     {
-        OrganizingWindow->setWindowTitle(QApplication::translate("OrganizingWindow", "Evento", 0));
+        OrganizingWindow->setWindowTitle(QApplication::translate("OrganizingWindow", "Championship", 0));
         pbSalir->setText(QApplication::translate("OrganizingWindow", "Salir", 0));
         pbRegresar->setText(QApplication::translate("OrganizingWindow", "Regresar", 0));
-        qlTitulo->setText(QApplication::translate("OrganizingWindow", "Championship", 0));
+        qlTitulo->setText(QApplication::translate("OrganizingWindow", "Lista de Eventos", 0));
         QTableWidgetItem *___qtablewidgetitem = qtEventList->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("OrganizingWindow", "Evento", 0));
         QTableWidgetItem *___qtablewidgetitem1 = qtEventList->horizontalHeaderItem(1);

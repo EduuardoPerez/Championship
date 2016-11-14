@@ -32,7 +32,8 @@ public:
   ~SportyWindow();
 
 private slots:
-  void on_pbSelEvento_clicked();
+
+  void on_pbVerEvento_clicked();
 
 private:
   Ui::SportyWindow *ui;

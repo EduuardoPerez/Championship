@@ -11,6 +11,13 @@
 #include <QDialog>
 #include <QStyle>
 #include <QDesktopWidget>
+
+#include <QMessageBox>
+//#include <QFileDialog>
+
+#include <ahSort.H>
+#include <tpl_dynSetTree.H>
+
 #include "organizingwindow.h"
 
 namespace Ui {
@@ -34,6 +41,8 @@ public:
 
 private slots:
   void on_pbRegresar_clicked();
+
+  void on_pbRegistrar_clicked();
 
 private:
   Ui::RegEventWindow *ui;

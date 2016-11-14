@@ -30,11 +30,11 @@ struct qt_meta_stringdata_SportyWindow_t {
 static const qt_meta_stringdata_SportyWindow_t qt_meta_stringdata_SportyWindow = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "SportyWindow"
-QT_MOC_LITERAL(1, 13, 22), // "on_pbSelEvento_clicked"
+QT_MOC_LITERAL(1, 13, 22), // "on_pbVerEvento_clicked"
 QT_MOC_LITERAL(2, 36, 0) // ""
 
     },
-    "SportyWindow\0on_pbSelEvento_clicked\0"
+    "SportyWindow\0on_pbVerEvento_clicked\0"
     ""
 };
 #undef QT_MOC_LITERAL
@@ -67,7 +67,7 @@ void SportyWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         SportyWindow *_t = static_cast<SportyWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pbSelEvento_clicked(); break;
+        case 0: _t->on_pbVerEvento_clicked(); break;
         default: ;
         }
     }

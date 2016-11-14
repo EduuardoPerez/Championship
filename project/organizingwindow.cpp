@@ -39,3 +39,11 @@ void OrganizingWindow::on_pbRegistrar_clicked()
   regEvent_i->setModal(false);
   regEvent_i->show();
 }
+
+void OrganizingWindow::on_pbModificar_clicked()
+{
+  ModEventWindow *modEvent_i;
+  modEvent_i = new ModEventWindow(this);
+  modEvent_i->setModal(false);
+  modEvent_i->show();
+}

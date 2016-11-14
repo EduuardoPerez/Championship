@@ -1,10 +1,12 @@
 <map id="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/event.h" name="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/event.h">
-<area shape="rect" id="node2" href="$event_8cpp.html" title="Implementación de la clase Event. " alt="" coords="223,109,381,165"/>
-<area shape="rect" id="node3" href="$organizingwindow_8h.html" title="Clase OrganizingWindow. " alt="" coords="406,109,622,165"/>
+<area shape="rect" id="node2" href="$event_8cpp.html" title="Implementación de la clase Event. " alt="" coords="348,109,507,165"/>
+<area shape="rect" id="node3" href="$organizingwindow_8h.html" title="Clase OrganizingWindow. " alt="" coords="531,109,747,165"/>
 <area shape="rect" id="node4" href="$mainwindow_8h.html" title="Clase MainWindow. " alt="" coords="195,213,380,269"/>
-<area shape="rect" id="node7" href="$regeventwindow_8h.html" title="Clase RegEventWindow. " alt="" coords="411,213,617,269"/>
-<area shape="rect" id="node9" href="$organizingwindow_8cpp.html" title="Implementación de la clase OrganizingWindow. " alt="" coords="641,213,872,269"/>
+<area shape="rect" id="node7" href="$regeventwindow_8h.html" title="Clase RegEventWindow. " alt="" coords="419,213,625,269"/>
+<area shape="rect" id="node9" href="$modeventwindow_8h.html" title="Clase ModEventWindow. " alt="" coords="649,213,864,269"/>
+<area shape="rect" id="node11" href="$organizingwindow_8cpp.html" title="Implementación de la clase OrganizingWindow. " alt="" coords="888,213,1119,269"/>
 <area shape="rect" id="node5" href="$main_8cpp_source.html" title="/home/eduuardoperez\l/pr3/championship&#45;PR3\l_ULA/project/main.cpp" alt="" coords="5,317,164,373"/>
 <area shape="rect" id="node6" href="$mainwindow_8cpp.html" title="Implementación de la clase MainWindow. " alt="" coords="188,317,387,373"/>
 <area shape="rect" id="node8" href="$regeventwindow_8cpp.html" title="Implementación de la clase RegEventWindow. " alt="" coords="411,317,633,373"/>
+<area shape="rect" id="node10" href="$modeventwindow_8cpp.html" title="Implementación de la clase ModEventWindow. " alt="" coords="657,317,885,373"/>
 </map>

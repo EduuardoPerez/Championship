@@ -165,6 +165,13 @@ int Event::operator==(const Event& event)
   return(0);
 }
 
+int operator<(const Event& event1, const Event& event2)
+{
+  if(event1.getDateBegEv().cmpDate(event2.getDateBegEv())<0)
+    return(1);
+  return(0);
+}
+
 ostream& operator<<(ostream& event, const Event& e)
 {
   event << e.getEventName() << "|";
@@ -256,4 +263,11 @@ istream& operator>>(istream& event, Event &aux){
              eventPlace, dateBegMate, dateFinMate, hourIniMate, hourFinMate,
              matePlace, description, picture);
   return(event);
+}
+
+string Uint2String(unsigned int num)
+{
+    stringstream flux;
+    flux << num;
+    return(flux.str());
 }

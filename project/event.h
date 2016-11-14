@@ -234,11 +234,17 @@ public:
 
   /**
    * @brief operator ==
-   * @return 1 si this es igual a participant, 0 si no lo es.
+   * @return 1 si this es igual a event, 0 si no lo es.
    */
   int operator==(const Event &);
 
 };
+
+/**
+ * @brief operator <
+ * @return 1 si this es menor a event, 0 si no lo es.
+ */
+int operator<(const Event&, const Event&);
 
 /**
  * @brief operator <<
