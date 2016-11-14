@@ -82,11 +82,11 @@ void RegEventWindow::on_pbRegistrar_clicked()
 
     ifstream fileIn;
     ofstream fileOut;
-    fileIn.open("../BD/eventos.txt", ios::in);
+    fileIn.open("../BD/eventos.txt");
 
     if(!fileIn.good())
-      msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido registrar "
-                  "el evento\n");
+      msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido registrar"
+                  " el evento\n");
 
     else
     {
@@ -103,98 +103,40 @@ void RegEventWindow::on_pbRegistrar_clicked()
 
       if(nameTree.exist(event.getEventName()))
       {
-        msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que "
-                    "usted ha ingresado, utilice un nombre diferente\n");
         nameTree.empty();
+        msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
+                    " usted ha ingresado, utilice un nombre diferente\n");
       }
 
       else
       {
-        nameTree.empty();
-        eventTree.insert(event);
-        qDebug() << QString::fromStdString(event.getEventName());
-        fileOut.open("../BD/eventos.txt", ios::out);
+        Event *ret;
 
-        eventTree.for_each_preorder([] (const auto& item)
-        {
-          qDebug() << QString::fromStdString(item.getDateBegEv().toString());
-        });
+        qDebug() << QString::fromStdString(event.getEventName());
+
+        if(eventTree.search(event) != nullptr)
+          ret = eventTree.search(event);
+
+        qDebug() << QString::fromStdString((*ret).getEventName());
+
+
+        nameTree.empty();
+        fileOut.open("../BD/eventos.txt");
 
         if(!fileOut.good())
           msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido "
                       "registrar el evento\n");
         else
         {
-          eventTree.for_each_preorder([&fileOut] (const auto& item)
+          for(auto it=eventTree.begin(); it.has_curr(); it.next())
           {
-            fileOut << item;
-            //qDebug() << QString::fromStdString(item.getDateBegEv().toString());
-          });
+            fileOut << it.get_curr();
+          }
           fileOut.close();
           msj.setText("\nEl evento fue registrado exitosamente\n");
         }
       }
-
     }
-
-    /*
-    cout << "Preorden: \n\t";
-    tree.for_each_preorder([] (auto & item)
-    {
-      cout << item << ',';
-    });;
-    cout << endl;
-    */
-    /*
-    else{
-        Evento aux = evento;
-
-        if(BuscarEvento(archivo_entrada, nombre_evento, aux)){
-            archivo_entrada.close();
-            return(2);
-        }
-        else{
-            archivo_entrada.close();
-            archivo_salida.open(nombre_archivo.c_str(), ios::out | ios::app);
-
-            if(!archivo_salida.good())
-                return(1);
-            else{
-                archivo_salida << evento;
-                archivo_salida.close();
-                return(3);
-            }
-        }
-    }
-  */
-
-    /*
-      int auxInt = registrarEvento("eventos.txt", nombre, evento);
-        switch(auxInt){
-            case 1:
-
-                break;
-            case 2:
-                informacion.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que usted ha ingresado\n");
-                break;
-            case 3:
-                informacion.setText("\nEl evento fue registrado exitosamente\n");
-                break;
-        }*/
-
-    /*
-
-  bool BuscarEvento(ifstream& archivo_entrada, string nombre, Evento& evento){
-
-      bool encontro = false;
-
-      while(!archivo_entrada.eof() && !encontro && archivo_entrada>>evento)
-          if(nombre == evento.verNombre())
-              encontro = true;
-
-      return (encontro);
   }
-  */
-    }
-    msj.exec();
+  msj.exec();
 }
