@@ -70,7 +70,7 @@ string Date::toString()
   return(date);
 }
 
-int Date::cmpDate(const Date& date)
+int Date::cmpDate(const Date& date) const
 {
   if(this->year != date.year )
     return(this->year - date.year);
@@ -99,6 +99,20 @@ Date Date::operator=(const Date& date)
 
 int Date::operator==(const Date& date){
   if (this->day==date.day && this->month==date.month && this->year==date.year)
+    return(1);
+  return(0);
+}
+
+int operator<(const Date& date1, const Date& date2)
+{
+  if(date1.cmpDate(date2)<0)
+    return(1);
+  return(0);
+}
+
+int operator>(const Date& date1, const Date& date2)
+{
+  if(date1.cmpDate(date2)>0)
     return(1);
   return(0);
 }

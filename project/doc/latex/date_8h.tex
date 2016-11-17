@@ -31,6 +31,10 @@ class \hyperlink{class_date}{Date}
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
+int \hyperlink{date_8h_a120c2347889c178a52f4fd4f87e9af9c}{operator$<$} (const \hyperlink{class_date}{Date} \&, const \hyperlink{class_date}{Date} \&)
+\begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
+int \hyperlink{date_8h_a0c1dae79a1ed5353407630268fa43907}{operator$>$} (const \hyperlink{class_date}{Date} \&, const \hyperlink{class_date}{Date} \&)
+\begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{date_8h_a8a0e31b0e008f351714d2db14d3a7280}{operator$<$$<$} (ostream \&, const \hyperlink{class_date}{Date} \&)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
 istream \& \hyperlink{date_8h_a9882d8e21eea8baab9f724b394322d87}{operator$>$$>$} (istream \&, \hyperlink{class_date}{Date} \&)
@@ -54,6 +58,25 @@ Noviembre, 2016
 
 
 \subsection{Documentación de las funciones}
+\index{date.\+h@{date.\+h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!date.\+h@{date.\+h}}
+\subsubsection[{\texorpdfstring{operator$<$(const Date \&, const Date \&)}{operator<(const Date &, const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Date} \&}]{, }
+\item[{const {\bf Date} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{date_8h_a120c2347889c178a52f4fd4f87e9af9c}{}\label{date_8h_a120c2347889c178a52f4fd4f87e9af9c}
+
+
+operator $<$ 
+
+\begin{DoxyReturn}{Devuelve}
+1 si this es menor a date, 0 si no lo es. 
+\end{DoxyReturn}
+
+
+Definición en la línea 106 del archivo date.\+cpp.
+
 \index{date.\+h@{date.\+h}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!date.\+h@{date.\+h}}
 \subsubsection[{\texorpdfstring{operator$<$$<$(ostream \&, const Date \&)}{operator<<(ostream &, const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
@@ -71,7 +94,26 @@ ostream\& date
 \end{DoxyReturn}
 
 
-Definición en la línea 106 del archivo date.\+cpp.
+Definición en la línea 120 del archivo date.\+cpp.
+
+\index{date.\+h@{date.\+h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!date.\+h@{date.\+h}}
+\subsubsection[{\texorpdfstring{operator$>$(const Date \&, const Date \&)}{operator>(const Date &, const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Date} \&}]{, }
+\item[{const {\bf Date} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{date_8h_a0c1dae79a1ed5353407630268fa43907}{}\label{date_8h_a0c1dae79a1ed5353407630268fa43907}
+
+
+operator $>$ 
+
+\begin{DoxyReturn}{Devuelve}
+1 si this es mayor a date, 0 si no lo es. 
+\end{DoxyReturn}
+
+
+Definición en la línea 113 del archivo date.\+cpp.
 
 \index{date.\+h@{date.\+h}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!date.\+h@{date.\+h}}
@@ -90,7 +132,7 @@ istream\& date
 \end{DoxyReturn}
 
 
-Definición en la línea 114 del archivo date.\+cpp.
+Definición en la línea 128 del archivo date.\+cpp.
 
 \index{date.\+h@{date.\+h}!Uint2\+String@{Uint2\+String}}
 \index{Uint2\+String@{Uint2\+String}!date.\+h@{date.\+h}}
@@ -108,5 +150,5 @@ tipo int convertido a string
 \end{DoxyReturn}
 
 
-Definición en la línea 268 del archivo event.\+cpp.
+Definición en la línea 275 del archivo event.\+cpp.
 

@@ -167,7 +167,14 @@ int Event::operator==(const Event& event)
 
 int operator<(const Event& event1, const Event& event2)
 {
-  if(event1.getDateBegEv().cmpDate(event2.getDateBegEv())<0)
+  if(event1.getDateBegEv() < event2.getDateBegEv())
+    return(1);
+  return(0);
+}
+
+int operator>(const Event& event1, const Event& event2)
+{
+  if(event1.getDateBegEv() > event2.getDateBegEv())
     return(1);
   return(0);
 }

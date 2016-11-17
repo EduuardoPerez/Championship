@@ -173,6 +173,12 @@ public:
 int operator<(const Participant&, const Participant&);
 
 /**
+ * @brief operator >
+ * @return 1 si this es menor a event, 0 si no lo es.
+ */
+int operator>(const Participant&, const Participant&);
+
+/**
  * @brief operator <<
  * @return ostream& participant
  */

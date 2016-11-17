@@ -93,7 +93,7 @@ public:
    * @return entero negativo si this es menor que date, 0 si this es igual a
    * date, entero positivo si this es mayor que date.
    */
-  int cmpDate(const Date&);
+  int cmpDate(const Date&) const;
 
   /**
    * @brief Método assign
@@ -112,6 +112,18 @@ public:
    */
   int operator ==(const Date&);
 };
+
+/**
+ * @brief operator <
+ * @return 1 si this es menor a date, 0 si no lo es.
+ */
+int operator<(const Date&, const Date&);
+
+/**
+ * @brief operator >
+ * @return 1 si this es mayor a date, 0 si no lo es.
+ */
+int operator>(const Date&, const Date&);
 
 /**
  * @brief operator <<

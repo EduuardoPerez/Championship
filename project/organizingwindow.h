@@ -11,6 +11,7 @@
 #include <QDialog>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QMessageBox>
 #include "event.h"
 #include "regeventwindow.h"
 #include "modeventwindow.h"
@@ -38,6 +39,8 @@ private slots:
   void on_pbRegistrar_clicked();
 
   void on_pbModificar_clicked();
+
+  void on_pbEliminar_clicked();
 
 private:
   Ui::OrganizingWindow *ui;

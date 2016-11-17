@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -31,11 +32,13 @@ public:
     QPushButton *pbModificar;
     QPushButton *pbEliminar;
     QPushButton *pbRegistrar;
+    QDateEdit *deCurrDate;
 
     void setupUi(QDialog *OrganizingWindow)
     {
         if (OrganizingWindow->objectName().isEmpty())
             OrganizingWindow->setObjectName(QStringLiteral("OrganizingWindow"));
+        OrganizingWindow->setEnabled(true);
         OrganizingWindow->resize(800, 500);
         QIcon icon;
         icon.addFile(QStringLiteral(":/logo/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -60,6 +63,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         qtEventList->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         qtEventList->setObjectName(QStringLiteral("qtEventList"));
+        qtEventList->setEnabled(true);
         qtEventList->setGeometry(QRect(100, 130, 600, 241));
         qtEventList->setAutoFillBackground(false);
         qtEventList->setDragEnabled(false);
@@ -75,6 +79,10 @@ public:
         pbRegistrar = new QPushButton(OrganizingWindow);
         pbRegistrar->setObjectName(QStringLiteral("pbRegistrar"));
         pbRegistrar->setGeometry(QRect(250, 410, 300, 20));
+        deCurrDate = new QDateEdit(OrganizingWindow);
+        deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
+        deCurrDate->setEnabled(false);
+        deCurrDate->setGeometry(QRect(690, 0, 110, 22));
 
         retranslateUi(OrganizingWindow);
         QObject::connect(pbRegresar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
@@ -98,6 +106,7 @@ public:
         pbModificar->setText(QApplication::translate("OrganizingWindow", "Modificar Evento", 0));
         pbEliminar->setText(QApplication::translate("OrganizingWindow", "Eliminar Evento", 0));
         pbRegistrar->setText(QApplication::translate("OrganizingWindow", "Registrar Evento", 0));
+        deCurrDate->setDisplayFormat(QApplication::translate("OrganizingWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };

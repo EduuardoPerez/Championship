@@ -115,7 +115,14 @@ int Participant::operator==(const Participant& participant)
 
 int operator<(const Participant& p1, const Participant& p2)
 {
-  if(p1.getId()<p2.getId())
+  if(p1.getBornDate() < p2.getBornDate())
+    return(1);
+  return(0);
+}
+
+int operator>(const Participant& p1, const Participant& p2)
+{
+  if(p1.getBornDate() > p2.getBornDate())
     return(1);
   return(0);
 }

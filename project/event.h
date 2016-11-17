@@ -247,10 +247,16 @@ public:
 int operator<(const Event&, const Event&);
 
 /**
+ * @brief operator >
+ * @return 1 si this es mayor a event, 0 si no lo es.
+ */
+int operator>(const Event&, const Event&);
+
+/**
  * @brief operator <<
  * @return ostream& event
  */
-ostream& operator<<(ostream&,const Event&);
+ostream& operator<<(ostream&, const Event&);
 
 /**
  * @brief operator >>

@@ -18,6 +18,8 @@ Dependencia gráfica adjunta para participant.\+cpp\+:\nopagebreak
 \item 
 int \hyperlink{participant_8cpp_a4deb5935b4c161b878a63e795b4d8427}{operator$<$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
+int \hyperlink{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}{operator$>$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
+\begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{participant_8cpp_a4b5d7073823a6d7f530b2449f5318b86}{operator$<$$<$} (ostream \&participant, const \hyperlink{class_participant}{Participant} \&p)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
 istream \& \hyperlink{participant_8cpp_a9defb1b815d27cfb3e6322dbcb4a44ff}{operator$>$$>$} (istream \&participant, \hyperlink{class_participant}{Participant} \&aux)
@@ -62,7 +64,7 @@ Años comprendidos entre dos fechas, 0 si se ingresan fechas erróneas.
 \end{DoxyReturn}
 
 
-Definición en la línea 184 del archivo participant.\+cpp.
+Definición en la línea 191 del archivo participant.\+cpp.
 
 \index{participant.\+cpp@{participant.\+cpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!participant.\+cpp@{participant.\+cpp}}
@@ -100,6 +102,25 @@ ostream\& participant
 \end{DoxyReturn}
 
 
+Definición en la línea 130 del archivo participant.\+cpp.
+
+\index{participant.\+cpp@{participant.\+cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!participant.\+cpp@{participant.\+cpp}}
+\subsubsection[{\texorpdfstring{operator$>$(const Participant \&p1, const Participant \&p2)}{operator>(const Participant &p1, const Participant &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Participant} \&}]{, }
+\item[{const {\bf Participant} \&}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}{}\label{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}
+
+
+operator $>$ 
+
+\begin{DoxyReturn}{Devuelve}
+1 si this es menor a event, 0 si no lo es. 
+\end{DoxyReturn}
+
+
 Definición en la línea 123 del archivo participant.\+cpp.
 
 \index{participant.\+cpp@{participant.\+cpp}!operator$>$$>$@{operator$>$$>$}}
@@ -119,5 +140,5 @@ istream\& participant
 \end{DoxyReturn}
 
 
-Definición en la línea 136 del archivo participant.\+cpp.
+Definición en la línea 143 del archivo participant.\+cpp.
 

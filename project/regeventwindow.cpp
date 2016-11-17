@@ -49,6 +49,8 @@ void RegEventWindow::on_pbRegistrar_clicked()
   string matePlace = ui->leMatePlace->text().toStdString();
   string description = ui->leDescription->text().toStdString();
   string picture = ui->lePicture->text().toStdString();
+  QTime hbMate = ui->teHourBegMate->time();
+  QTime hfMate = ui->teHourFinMate->time();
   Date dateBegEv, dateFinEv, dateBegMate, dateFinMate;
 
   dateBegEv.fromString((ui->deDateBegEv->text()).toStdString());
@@ -58,21 +60,29 @@ void RegEventWindow::on_pbRegistrar_clicked()
 
   if(name=="\0" || eventHour=="\0" || eventPlace=="\0" || hourBegMate=="\0" ||
      hourFinMate=="\0" || matePlace=="\0" || description=="\0")
-    msj.setText("\tERROR\nFaltan campos por completar\n");
+    msj.setText("\n               ERROR\nFaltan campos por completar\n");
 
   else if(inscripValue==0)
     msj.setText("\tERROR\nIngreso un dato erróneo, debe darle un precio a la "
                   "inscripción\n");
 
-  else if(dateBegEv.cmpDate(dateFinEv)>0)
-    msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha fin del evento"
+  else if(dateBegEv > dateFinEv)
+    msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha final del evento"
                   " es mas reciente que la fecha de inicio del evento\n");
 
-
-  else if(dateBegMate.cmpDate(dateFinMate)>0)
+  else if(dateBegMate > dateFinMate)
     msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha fin de la "
                   "entrega de material es mas reciente que la fecha de inicio"
                   " de la entrega del material\n");
+
+  else if(dateBegMate > dateBegEv)
+    msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha de entrega del "
+                "material es mas reciente que la fecha de inicio del evento\n");
+
+  else if(hbMate > hfMate)
+    msj.setText("\t\tERROR\nLa hora que seleccionó como hora de inicio de la "
+                "entrega del material es mas tardía que la hora de finalización"
+                " de la entrega del material\n");
 
   else{
     Event event;
@@ -139,4 +149,17 @@ void RegEventWindow::on_pbRegistrar_clicked()
     }
   }
   msj.exec();
+}
+
+void RegEventWindow::on_pbExaminar_clicked()
+{
+  QString picture = QFileDialog::getOpenFileName(this,tr("Abrir Archivo"),
+                                                tr("/home"),tr("Imagenes(*.png "
+                                                               "*.gif *.jpg "
+                                                               "*.xpm)"));
+  ui->lPicture->setText(picture);
+  ui->lPicture->setPixmap(picture);
+  //probar este qDebug en el pbRegistrar a ver si con un solo qlabel se puede
+  //tener la imagen y la direccion de esta
+  qDebug()<<ui->lePicture->text();
 }
