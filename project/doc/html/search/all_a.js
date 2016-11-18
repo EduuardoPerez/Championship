@@ -23,7 +23,7 @@ var searchData=
   ['setname',['setName',['../class_participant.html#a57c6abad16681cf90ad7e6afaaa197ca',1,'Participant']]],
   ['setpicture',['setPicture',['../class_event.html#a6ebd602ac071857bc3603713f372af16',1,'Event::setPicture()'],['../class_participant.html#a8ed3db539a1ab6c04b110968347f45fb',1,'Participant::setPicture()']]],
   ['setyear',['setYear',['../class_date.html#abf7cafce8365f4ad601c270bb3f0f02d',1,'Date']]],
-  ['sportywindow',['SportyWindow',['../class_sporty_window.html',1,'SportyWindow'],['../class_sporty_window.html#a9f7df59d49800c0b226b19a4ee083f34',1,'SportyWindow::SportyWindow()']]],
+  ['sportywindow',['SportyWindow',['../class_sporty_window.html',1,'SportyWindow'],['../class_sporty_window.html#aa6648488a2edf18678b39156fbf43d63',1,'SportyWindow::SportyWindow()']]],
   ['sportywindow_2ecpp',['sportywindow.cpp',['../sportywindow_8cpp.html',1,'']]],
   ['sportywindow_2eh',['sportywindow.h',['../sportywindow_8h.html',1,'']]]
 ];

@@ -31,6 +31,7 @@ public:
      * @param parent padre de componentes
      */
     explicit MainWindow(QWidget *parent = 0);
+    DynSetTree<Event, Avl_Tree> eventTree;
     ~MainWindow();
 
 private slots:
@@ -43,5 +44,7 @@ private:
     SportyWindow *sporty_i;
     OrganizingWindow *organizing_i;
 };
+
+bool file_isempty(ifstream&);
 
 #endif // MAINWINDOW_H

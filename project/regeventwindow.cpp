@@ -88,7 +88,7 @@ void RegEventWindow::on_pbRegistrar_clicked()
     Event event;
     event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
                  eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
-                   matePlace, description, picture);
+                 matePlace, description, picture);
 
     ifstream fileIn;
     ofstream fileOut;
@@ -107,7 +107,7 @@ void RegEventWindow::on_pbRegistrar_clicked()
       while(!fileIn.eof() && fileIn>>aux)
       {
         eventTree.insert(aux);
-        nameTree.insert(aux.getEventName());
+        nameTree.insert_dup(aux.getEventName());
       }
       fileIn.close();
 
@@ -120,17 +120,9 @@ void RegEventWindow::on_pbRegistrar_clicked()
 
       else
       {
-        Event *ret;
-
-        qDebug() << QString::fromStdString(event.getEventName());
-
-        if(eventTree.search(event) != nullptr)
-          ret = eventTree.search(event);
-
-        qDebug() << QString::fromStdString((*ret).getEventName());
-
-
+        eventTree.insert_dup(event);
         nameTree.empty();
+
         fileOut.open("../BD/eventos.txt");
 
         if(!fileOut.good())
@@ -157,9 +149,6 @@ void RegEventWindow::on_pbExaminar_clicked()
                                                 tr("/home"),tr("Imagenes(*.png "
                                                                "*.gif *.jpg "
                                                                "*.xpm)"));
-  ui->lPicture->setText(picture);
+  ui->lePicture->setText(picture);
   ui->lPicture->setPixmap(picture);
-  //probar este qDebug en el pbRegistrar a ver si con un solo qlabel se puede
-  //tener la imagen y la direccion de esta
-  qDebug()<<ui->lePicture->text();
 }

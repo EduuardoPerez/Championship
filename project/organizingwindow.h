@@ -32,7 +32,7 @@ public:
    * @brief OrganizingWindow
    * @param parent padre de componentes
    */
-  explicit OrganizingWindow(QWidget *parent = 0);
+  explicit OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent = 0);
   ~OrganizingWindow();
 
 private slots:

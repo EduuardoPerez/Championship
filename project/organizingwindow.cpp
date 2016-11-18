@@ -9,7 +9,7 @@
 #include "ui_organizingwindow.h"
 #include <QDebug>
 
-OrganizingWindow::OrganizingWindow(QWidget *parent) :
+OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent) :
   QDialog(parent),
   ui(new Ui::OrganizingWindow)
 {

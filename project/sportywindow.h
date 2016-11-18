@@ -11,6 +11,9 @@
 #include <QDialog>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <ahSort.H>
+#include <tpl_dynSetTree.H>
+#include "event.h"
 
 namespace Ui {
   class SportyWindow;
@@ -28,7 +31,7 @@ public:
    * @brief SportyWindow
    * @param parent padre de componentes
    */
-  explicit SportyWindow(QWidget *parent = 0);
+  explicit SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent = 0);
   ~SportyWindow();
 
 private slots:

@@ -13,7 +13,6 @@
 #include <QDesktopWidget>
 #include <QMessageBox>
 #include <QFileDialog>
-
 #include <ahSort.H>
 #include <tpl_dynSetTree.H>
 

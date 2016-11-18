@@ -14,7 +14,7 @@
    <string>Championship</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="img/logo.qrc">
     <normaloff>:/logo/logo.png</normaloff>:/logo/logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -49,7 +49,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>:/fondo1/fondo1.jpg</pixmap>
+     <pixmap resource="img/fondo1.qrc">:/fondo1/fondo1.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -94,10 +94,29 @@
      <string>Deportista</string>
     </property>
    </widget>
+   <widget class="QDateEdit" name="deCurrDate">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>0</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="displayFormat">
+     <string>d/M/yyyy</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="img/fondo1.qrc"/>
+  <include location="img/logo.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>pbSalir</sender>

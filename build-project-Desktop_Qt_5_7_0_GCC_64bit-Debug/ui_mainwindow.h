@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -30,6 +31,7 @@ public:
     QPushButton *pbSalir;
     QPushButton *pbOrganizador;
     QPushButton *pbDeportista;
+    QDateEdit *deCurrDate;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -61,6 +63,10 @@ public:
         pbDeportista = new QPushButton(centralWidget);
         pbDeportista->setObjectName(QStringLiteral("pbDeportista"));
         pbDeportista->setGeometry(QRect(590, 250, 80, 20));
+        deCurrDate = new QDateEdit(centralWidget);
+        deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
+        deCurrDate->setEnabled(false);
+        deCurrDate->setGeometry(QRect(690, 0, 110, 22));
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -77,6 +83,7 @@ public:
         pbSalir->setText(QApplication::translate("MainWindow", "Salir", 0));
         pbOrganizador->setText(QApplication::translate("MainWindow", "Organizador", 0));
         pbDeportista->setText(QApplication::translate("MainWindow", "Deportista", 0));
+        deCurrDate->setDisplayFormat(QApplication::translate("MainWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };
