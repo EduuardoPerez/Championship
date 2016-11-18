@@ -11,6 +11,8 @@
 #include <QMainWindow>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QTimer>
+#include <QThread>
 #include "sportywindow.h"
 #include "organizingwindow.h"
 
@@ -32,8 +34,13 @@ public:
      */
     explicit MainWindow(QWidget *parent = 0);
     DynSetTree<Event, Avl_Tree> eventTree;
+    DynSetTree<string, Avl_Tree> nameTree;
     ~MainWindow();
 
+/*
+Q_SIGNALS:
+   void backup(const string&, const DynSetTree<Event, Avl_Tree>& eventTree);
+*/
 private slots:
   void on_pbDeportista_clicked();
 
@@ -45,6 +52,7 @@ private:
     OrganizingWindow *organizing_i;
 };
 
-bool file_isempty(ifstream&);
+bool is_emptyFile(ifstream&);
+//void backup(const string&, const DynSetTree<Event, Avl_Tree>& eventTree);
 
 #endif // MAINWINDOW_H

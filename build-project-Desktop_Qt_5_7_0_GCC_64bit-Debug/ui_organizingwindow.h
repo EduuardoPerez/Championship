@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -32,7 +31,6 @@ public:
     QPushButton *pbModificar;
     QPushButton *pbEliminar;
     QPushButton *pbRegistrar;
-    QDateEdit *deCurrDate;
 
     void setupUi(QDialog *OrganizingWindow)
     {
@@ -79,10 +77,6 @@ public:
         pbRegistrar = new QPushButton(OrganizingWindow);
         pbRegistrar->setObjectName(QStringLiteral("pbRegistrar"));
         pbRegistrar->setGeometry(QRect(250, 410, 300, 20));
-        deCurrDate = new QDateEdit(OrganizingWindow);
-        deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
-        deCurrDate->setEnabled(false);
-        deCurrDate->setGeometry(QRect(690, 0, 110, 22));
 
         retranslateUi(OrganizingWindow);
         QObject::connect(pbRegresar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
@@ -106,7 +100,6 @@ public:
         pbModificar->setText(QApplication::translate("OrganizingWindow", "Modificar Evento", 0));
         pbEliminar->setText(QApplication::translate("OrganizingWindow", "Eliminar Evento", 0));
         pbRegistrar->setText(QApplication::translate("OrganizingWindow", "Registrar Evento", 0));
-        deCurrDate->setDisplayFormat(QApplication::translate("OrganizingWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };

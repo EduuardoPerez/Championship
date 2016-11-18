@@ -9,11 +9,22 @@
 #include "ui_regeventwindow.h"
 #include <QDebug>
 
-RegEventWindow::RegEventWindow(QWidget *parent) :
+RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                               DynSetTree<string, Avl_Tree> *nameTree,
+                               QWidget *parent) :
   QDialog(parent),
   ui(new Ui::RegEventWindow)
 {
   ui->setupUi(this);
+  this->eventTree = eventTree;
+  this->nameTree = nameTree;
+  ui->deCurrDate->hide();
+  ui->deCurrDate->setDate(QDate::currentDate());
+  ui->deDateBegEv->setDate(QDate::currentDate());
+  ui->deDateFinEv->setDate(QDate::currentDate());
+  ui->deDateBegMate->setDate(QDate::currentDate());
+  ui->deDateFinMate->setDate(QDate::currentDate());
+
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -23,6 +34,10 @@ RegEventWindow::RegEventWindow(QWidget *parent) :
           qApp->desktop()->availableGeometry()
       )
   );
+/*
+  for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
+    qDebug()<<QString::fromStdString(it.get_curr().getEventName());
+*/
 }
 
 RegEventWindow::~RegEventWindow()
@@ -32,7 +47,8 @@ RegEventWindow::~RegEventWindow()
 
 void RegEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(this);
+  OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
+                                                  *this->nameTree, this);
   window->setModal(false);
   window->show();
 }
@@ -51,8 +67,9 @@ void RegEventWindow::on_pbRegistrar_clicked()
   string picture = ui->lePicture->text().toStdString();
   QTime hbMate = ui->teHourBegMate->time();
   QTime hfMate = ui->teHourFinMate->time();
-  Date dateBegEv, dateFinEv, dateBegMate, dateFinMate;
+  Date dateBegEv, dateFinEv, dateBegMate, dateFinMate, currDate;
 
+  currDate.fromString((ui->deCurrDate->text()).toStdString());
   dateBegEv.fromString((ui->deDateBegEv->text()).toStdString());
   dateFinEv.fromString((ui->deDateFinEv->text()).toStdString());
   dateBegMate.fromString((ui->deDateBegMate->text()).toStdString());
@@ -65,6 +82,10 @@ void RegEventWindow::on_pbRegistrar_clicked()
   else if(inscripValue==0)
     msj.setText("\tERROR\nIngreso un dato erróneo, debe darle un precio a la "
                   "inscripción\n");
+
+  else if(dateBegEv < currDate)
+    msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha de inicio del "
+                "evento ya ha pasado\n");
 
   else if(dateBegEv > dateFinEv)
     msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha final del evento"
@@ -90,54 +111,14 @@ void RegEventWindow::on_pbRegistrar_clicked()
                  eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
                  matePlace, description, picture);
 
-    ifstream fileIn;
-    ofstream fileOut;
-    fileIn.open("../BD/eventos.txt");
-
-    if(!fileIn.good())
-      msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido registrar"
-                  " el evento\n");
-
+    if(this->nameTree->exist(event.getEventName()))
+      msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
+                  " usted ha ingresado, utilice un nombre diferente\n");
     else
     {
-      Event aux;
-      DynSetTree<Event, Avl_Tree> eventTree;
-      DynSetTree<string, Avl_Tree> nameTree;
-
-      while(!fileIn.eof() && fileIn>>aux)
-      {
-        eventTree.insert(aux);
-        nameTree.insert_dup(aux.getEventName());
-      }
-      fileIn.close();
-
-      if(nameTree.exist(event.getEventName()))
-      {
-        nameTree.empty();
-        msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
-                    " usted ha ingresado, utilice un nombre diferente\n");
-      }
-
-      else
-      {
-        eventTree.insert_dup(event);
-        nameTree.empty();
-
-        fileOut.open("../BD/eventos.txt");
-
-        if(!fileOut.good())
-          msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido "
-                      "registrar el evento\n");
-        else
-        {
-          for(auto it=eventTree.begin(); it.has_curr(); it.next())
-          {
-            fileOut << it.get_curr();
-          }
-          fileOut.close();
-          msj.setText("\nEl evento fue registrado exitosamente\n");
-        }
-      }
+      this->nameTree->insert(event.getEventName());
+      this->eventTree->insert_dup(event);
+      msj.setText("\nEl evento fue registrado exitosamente\n");
     }
   }
   msj.exec();

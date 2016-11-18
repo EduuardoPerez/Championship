@@ -34,7 +34,11 @@ public:
    * @brief RegEventWindow
    * @param parent padre de componentes
    */
-  explicit RegEventWindow(QWidget *parent = 0);
+  explicit RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                          DynSetTree<string, Avl_Tree> *nameTree,
+                          QWidget *parent = 0);
+  DynSetTree<Event, Avl_Tree> *eventTree;
+  DynSetTree<string, Avl_Tree> *nameTree;
   ~RegEventWindow();
 
 private slots:

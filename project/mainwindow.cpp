@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
   ui->setupUi(this);
   ui->deCurrDate->hide();
+  ui->deCurrDate->setDate(QDate::currentDate());
 
   //centrar la ventana
   this->setGeometry(
@@ -30,10 +31,11 @@ MainWindow::MainWindow(QWidget *parent) :
   ifstream fileIn;
   Event event;
   Date currDate;
+  string evFileName = "../BD/eventos.txt";
 
   currDate.fromString((ui->deCurrDate->text()).toStdString());
 
-  fileIn.open("../BD/eventos.txt");
+  fileIn.open(evFileName);
 
   if(!fileIn.good())
   {
@@ -42,7 +44,7 @@ MainWindow::MainWindow(QWidget *parent) :
   }
   else
   {
-    if(file_isempty(fileIn))
+    if(is_emptyFile(fileIn))
     {
       msj.setText("\n\tAviso\nNo existen eventos registrados\n");
       msj.exec();
@@ -51,10 +53,30 @@ MainWindow::MainWindow(QWidget *parent) :
     {
       while(!fileIn.eof() && fileIn>>event)
         if(event.getDateBegEv() > currDate)
-          eventTree.insert_dup(event);
+        {
+          this->eventTree.insert_dup(event);
+          this->nameTree.insert(event.getEventName());
+        }
       fileIn.close();
     }
   }
+
+
+/*
+  activeTimer = new QTimer(this);
+  activeTimer->setInterval(2*60*1000);
+  activeTimer->setSingleShot(true);
+  connect(activeTimer, SIGNAL(timeout()), this, SLOT(activateAutoClick()));
+  activeTimer->start();
+*/
+/*
+  QThread* thread = new QThread(this);
+  QTimer* timer = new QTimer(0);
+  timer->setInterval(1);
+  timer->moveToThread(thread);
+  connect(timer, SIGNAL(backup(evFileName, this->eventTree), this, SLOT(Qt::DirectConnection));
+  thread->start();
+*/
 }
 
 MainWindow::~MainWindow()
@@ -64,21 +86,41 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbDeportista_clicked()
 {
-  sporty_i = new SportyWindow(eventTree, this);
+  sporty_i = new SportyWindow(this->eventTree, this);
   sporty_i->setModal(false);
   sporty_i->show();
 }
 
 void MainWindow::on_pbOrganizador_clicked()
 {
-  organizing_i = new OrganizingWindow(eventTree, this);
+  organizing_i = new OrganizingWindow(this->eventTree, this->nameTree, this);
   organizing_i->setModal(false);
   organizing_i->show();
 }
 
-bool file_isempty(ifstream& file)
+bool is_emptyFile(ifstream& file)
 {
   return(file.peek() == std::ifstream::traits_type::eof());
+}
+
+void backup(const string& nameFile,const DynSetTree<Event, Avl_Tree>& eventTree)
+{
+  //qDebug<<"haciendo backup desde el thread";
+  QMessageBox msj;
+  ofstream fileOut;
+
+  fileOut.open(nameFile);
+  if(!fileOut.good())
+  {
+    msj.setText("\tERROR(2)\nEl programa no funcionará correctamente\n");
+    msj.exec();
+  }
+  else
+  {
+    for(auto it=eventTree.begin(); it.has_curr(); it.next())
+      fileOut << it.get_curr();
+    fileOut.close();
+  }
 }
 
 /*TENER EN CUENTA PARA CUANDO VAYA A HACER EL AUTO-BACKUP
@@ -122,5 +164,58 @@ bool file_isempty(ifstream& file)
       fileOut.close();
     }
 
+    //////////////////////////////////////////////////////////////////////////
+
+    ifstream fileIn;
+    ofstream fileOut;
+    fileIn.open("../BD/eventos.txt");
+
+    if(!fileIn.good())
+      msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido registrar"
+                  " el evento\n");
+
+    else
+    {
+      Event aux;
+      DynSetTree<Event, Avl_Tree> eventTree;
+      DynSetTree<string, Avl_Tree> nameTree;
+
+      while(!fileIn.eof() && fileIn>>aux)
+      {
+        eventTree.insert(aux);
+        nameTree.insert_dup(aux.getEventName());
+      }
+      fileIn.close();
+
+      if(nameTree.exist(event.getEventName()))
+      {
+        nameTree.empty();
+        msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
+                    " usted ha ingresado, utilice un nombre diferente\n");
+      }
+
+      else
+      {
+        eventTree.insert_dup(event);
+        nameTree.empty();
+
+        fileOut.open("../BD/eventos.txt");
+
+        if(!fileOut.good())
+          msj.setText("\tERROR\nOcurrió un error interno\nNo se ha podido "
+                      "registrar el evento\n");
+        else
+        {
+          for(auto it=eventTree.begin(); it.has_curr(); it.next())
+          {
+            fileOut << it.get_curr();
+          }
+          fileOut.close();
+          msj.setText("\nEl evento fue registrado exitosamente\n");
+        }
+      }
+    }
+  }
+  msj.exec();
 
 */

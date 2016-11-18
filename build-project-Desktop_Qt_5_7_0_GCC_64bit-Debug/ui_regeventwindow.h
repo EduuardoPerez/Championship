@@ -149,6 +149,7 @@ public:
     QSpacerItem *horizontalSpacer_52;
     QLabel *label_8;
     QSpacerItem *verticalSpacer_17;
+    QDateEdit *deCurrDate;
 
     void setupUi(QDialog *RegEventWindow)
     {
@@ -704,6 +705,10 @@ public:
 
         gridLayout_4->addItem(verticalSpacer_17, 1, 1, 1, 1);
 
+        deCurrDate = new QDateEdit(RegEventWindow);
+        deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
+        deCurrDate->setEnabled(false);
+        deCurrDate->setGeometry(QRect(0, 480, 110, 22));
 
         retranslateUi(RegEventWindow);
         QObject::connect(pbRegresar, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
@@ -742,6 +747,7 @@ public:
         descripciontl_2->setText(QApplication::translate("RegEventWindow", "Descripcion del evento:", 0));
         pbRegistrar->setText(QApplication::translate("RegEventWindow", "Registrar", 0));
         label_8->setText(QApplication::translate("RegEventWindow", "Registrar Evento", 0));
+        deCurrDate->setDisplayFormat(QApplication::translate("RegEventWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };

@@ -9,15 +9,15 @@
 #include "ui_organizingwindow.h"
 #include <QDebug>
 
-OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent) :
+OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree,
+                                   DynSetTree<string, Avl_Tree>& nameTree,
+                                   QWidget *parent) :
   QDialog(parent),
   ui(new Ui::OrganizingWindow)
 {
   ui->setupUi(this);
-
-  QDate auxDate = QDate::currentDate();
-  ui->deCurrDate->setDate(auxDate);
-  ui->deCurrDate->hide();
+  this->eventTree = &eventTree;
+  this->nameTree = &nameTree;
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -31,74 +31,34 @@ OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidg
   QHeaderView *header = ui->qtEventList->horizontalHeader();
   header->setSectionResizeMode(QHeaderView::Stretch);
 
-  QMessageBox msj;
-  ifstream fileIn;
-  ofstream fileOut;
+  ui->qtEventList->setColumnCount(2);
+  ui->qtEventList->setRowCount(this->eventTree->size());
 
-  fileIn.open("../BD/eventos.txt");
-  if(!fileIn.good())
+  int row=0;
+  for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
   {
-    msj.setText("\tERROR(1)\nOcurrió un error interno\nNo se han podido cargar"
-                " los eventos disponibles\n");
-    msj.exec();
-  }
+    QTableWidgetItem *cell1 = ui->qtEventList->item(row, 0);
+    QTableWidgetItem *cell2 = ui->qtEventList->item(row, 1);
 
-  else
-  {
-    DynSetTree<Event, Avl_Tree> eventTree;
-    Event event;
-    Date currDate;
-    int row=0;
-
-    currDate.fromString((ui->deCurrDate->text()).toStdString());
-
-    while(!fileIn.eof() && fileIn>>event)
-      if(event.getDateBegEv() > currDate)
-        eventTree.insert(event);
-    fileIn.close();
-
-    fileOut.open("../BD/eventos.txt");
-    if(!fileOut.good())
+    if(!cell1)
     {
-      msj.setText("\tERROR(2)\nOcurrió un error interno");
-      msj.exec();
+      cell1 = new QTableWidgetItem;
+      cell1->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+      ui->qtEventList->setItem(row, 0, cell1);
     }
-    else
+    if(!cell2)
     {
-      for(auto it=eventTree.begin(); it.has_curr(); it.next())
-        fileOut << it.get_curr();
-      fileOut.close();
+      cell2 = new QTableWidgetItem;
+      cell2->setFlags(Qt::ItemIsEnabled);
+      ui->qtEventList->setItem(row, 1, cell2);
     }
 
-    ui->qtEventList->setColumnCount(2);
-    ui->qtEventList->setRowCount(eventTree.size());
+    auto aux1=QString::fromStdString(it.get_curr().getEventName());
+    auto aux2=QString::fromStdString(it.get_curr().getDateBegEv().toString());
+    cell1->setText(aux1);
+    cell2->setText(aux2);
 
-    for(auto it=eventTree.begin(); it.has_curr(); it.next())
-    {
-      QTableWidgetItem *cell1 = ui->qtEventList->item(row, 0);
-      QTableWidgetItem *cell2 = ui->qtEventList->item(row, 1);
-
-      if(!cell1)
-      {
-        cell1 = new QTableWidgetItem;
-        cell1->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
-        ui->qtEventList->setItem(row, 0, cell1);
-      }
-      if(!cell2)
-      {
-        cell2 = new QTableWidgetItem;
-        cell2->setFlags(Qt::ItemIsEnabled);
-        ui->qtEventList->setItem(row, 1, cell2);
-      }
-
-      auto aux1=QString::fromStdString(it.get_curr().getEventName());
-      auto aux2=QString::fromStdString(it.get_curr().getDateBegEv().toString());
-      cell1->setText(aux1);
-      cell2->setText(aux2);
-
-      ++row;
-    }
-    eventTree.empty();
+    ++row;
   }
 }
 
@@ -110,7 +70,7 @@ OrganizingWindow::~OrganizingWindow()
 void OrganizingWindow::on_pbRegistrar_clicked()
 {
   RegEventWindow *regEvent_i;
-  regEvent_i = new RegEventWindow(this);
+  regEvent_i = new RegEventWindow(this->eventTree, this->nameTree, this);
   regEvent_i->setModal(false);
   regEvent_i->show();
 }

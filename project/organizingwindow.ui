@@ -141,22 +141,6 @@
     <string>Registrar Evento</string>
    </property>
   </widget>
-  <widget class="QDateEdit" name="deCurrDate">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>690</x>
-     <y>0</y>
-     <width>110</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="displayFormat">
-    <string>d/M/yyyy</string>
-   </property>
-  </widget>
  </widget>
  <resources>
   <include location="img/logo.qrc"/>

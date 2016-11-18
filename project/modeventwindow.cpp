@@ -31,7 +31,7 @@ ModEventWindow::~ModEventWindow()
 
 void ModEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(this);
+  /*OrganizingWindow *window = new OrganizingWindow(this);
   window->setModal(false);
-  window->show();
+  window->show();*/
 }

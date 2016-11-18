@@ -9,11 +9,13 @@
 #include "ui_sportywindow.h"
 #include <QDebug>
 
-SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent) :
+SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree,
+                           QWidget *parent) :
   QDialog(parent),
   ui(new Ui::SportyWindow)
 {
   ui->setupUi(this);
+  this->eventTree = &eventTree;
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -28,13 +30,11 @@ SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *pare
   QHeaderView *header = ui->qtEventList->horizontalHeader();
   header->setSectionResizeMode(QHeaderView::Stretch);
 
-  Event event;
-  int row=0;
-
   ui->qtEventList->setColumnCount(2);
-  ui->qtEventList->setRowCount(eventTree.size());
+  ui->qtEventList->setRowCount(this->eventTree->size());
 
-  for(auto it=eventTree.begin(); it.has_curr(); it.next())
+  int row=0;
+  for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
   {
     QTableWidgetItem *cell1 = ui->qtEventList->item(row, 0);
     QTableWidgetItem *cell2 = ui->qtEventList->item(row, 1);

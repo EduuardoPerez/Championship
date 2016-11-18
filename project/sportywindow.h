@@ -31,7 +31,9 @@ public:
    * @brief SportyWindow
    * @param parent padre de componentes
    */
-  explicit SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree, QWidget *parent = 0);
+  explicit SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree,
+                        QWidget *parent = 0);
+  DynSetTree<Event, Avl_Tree>* eventTree;
   ~SportyWindow();
 
 private slots:
