@@ -372,6 +372,9 @@
           </item>
           <item>
            <widget class="QTimeEdit" name="teEventHour">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
             <property name="calendarPopup">
              <bool>false</bool>
             </property>
@@ -407,12 +410,13 @@
           <item>
            <widget class="QLabel" name="lugareventotl_2">
             <property name="text">
-             <string>Lugar donde se realizara el evento: </string>
+             <string>Lugar donde se
+realizará el evento: </string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="leEventPlace"/>
+           <widget class="QTextEdit" name="txeEventPlace"/>
           </item>
          </layout>
         </item>
@@ -587,7 +591,11 @@
            </spacer>
           </item>
           <item>
-           <widget class="QTimeEdit" name="teHourBegMate"/>
+           <widget class="QTimeEdit" name="teHourBegMate">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -627,7 +635,11 @@
            </spacer>
           </item>
           <item>
-           <widget class="QTimeEdit" name="teHourFinMate"/>
+           <widget class="QTimeEdit" name="teHourFinMate">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -653,12 +665,13 @@
           <item>
            <widget class="QLabel" name="lugarmaterialtl_2">
             <property name="text">
-             <string>Lugar donde se realizará la entrega del material: </string>
+             <string>Lugar donde se realizará
+la entrega del material: </string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="leMatePlace"/>
+           <widget class="QTextEdit" name="txeMatePlace"/>
           </item>
          </layout>
         </item>
@@ -680,7 +693,8 @@
           <item>
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Incluir una imagen referente al evento:</string>
+             <string>Incluir una imagen
+referente al evento:</string>
             </property>
            </widget>
           </item>
@@ -793,7 +807,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLineEdit" name="leDescription"/>
+         <widget class="QTextEdit" name="txeDescription"/>
         </item>
        </layout>
       </item>
@@ -1163,22 +1177,6 @@
     <hint type="destinationlabel">
      <x>655</x>
      <y>465</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pbExaminar</sender>
-   <signal>clicked()</signal>
-   <receiver>lePicture</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>736</x>
-     <y>329</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>795</x>
-     <y>311</y>
     </hint>
    </hints>
   </connection>

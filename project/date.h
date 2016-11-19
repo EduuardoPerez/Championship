@@ -126,6 +126,18 @@ int operator<(const Date&, const Date&);
 int operator>(const Date&, const Date&);
 
 /**
+ * @brief operator <=
+ * @return 1 si this es menor o igual a date, 0 si no lo es.
+ */
+int operator<=(const Date&, const Date&);
+
+/**
+ * @brief operator >=
+ * @return 1 si this es mayor o igual a date, 0 si no lo es.
+ */
+int operator>=(const Date&, const Date&);
+
+/**
  * @brief operator <<
  * @return ostream& date
  */

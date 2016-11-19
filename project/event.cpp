@@ -17,7 +17,7 @@ Event::Event()
   this->eventPlace = "";
   this->dateBegMate.assign(0, 0, 0);
   this->dateFinMate.assign(0, 0, 0);
-  this->hourIniMate = "0:0:0";
+  this->hourBegMate = "0:0:0";
   this->hourFinMate = "0:0:0";
   this->matePlace = "";
   this->description = "";
@@ -34,7 +34,7 @@ Event::Event(const Event& Event)
   this->eventPlace = Event.eventPlace;
   this->dateBegMate = Event.dateBegMate;
   this->dateFinMate = Event.dateFinMate;
-  this->hourIniMate = Event.hourIniMate;
+  this->hourBegMate = Event.hourBegMate;
   this->hourFinMate = Event.hourFinMate;
   this->matePlace = Event.matePlace;
   this->description = Event.description;
@@ -89,9 +89,9 @@ void Event::setDateFinMate(Date dateFinMate)
   return;
 }
 
-void Event::setHourIniMate(string hourIniMate)
+void Event::setHourBegMate(string hourBegMate)
 {
-  this->hourIniMate = hourIniMate;
+  this->hourBegMate = hourBegMate;
   return;
 }
 
@@ -121,7 +121,7 @@ void Event::setPicture(string picture)
 
 void Event::assign(string eventName, Date dateBegEv, Date dateFinEv,
                    float inscripValue, string eventHour, string eventPlace,
-                   Date dateBegMate, Date dateFinMate, string hourIniMate,
+                   Date dateBegMate, Date dateFinMate, string hourBegMate,
                    string hourFinMate, string matePlace, string description,
                    string picture)
 {
@@ -133,7 +133,7 @@ void Event::assign(string eventName, Date dateBegEv, Date dateFinEv,
   this->eventPlace = eventPlace;
   this->dateBegMate = dateBegMate;
   this->dateFinMate = dateFinMate;
-  this->hourIniMate = hourIniMate;
+  this->hourBegMate = hourBegMate;
   this->hourFinMate = hourFinMate;
   this->matePlace = matePlace;
   this->description = description;
@@ -150,7 +150,7 @@ Event Event::operator=(const Event& event)
   this->eventPlace = event.eventPlace;
   this->dateBegMate = event.dateBegMate;
   this->dateFinMate = event.dateFinMate;
-  this->hourIniMate = event.hourIniMate;
+  this->hourBegMate = event.hourBegMate;
   this->hourFinMate = event.hourFinMate;
   this->matePlace = event.matePlace;
   this->description = event.description;
@@ -169,12 +169,16 @@ int operator<(const Event& event1, const Event& event2)
 {
   if(event1.getDateBegEv() < event2.getDateBegEv())
     return(1);
+  else if(event1.getEventName() < event2.getEventName())
+    return(1);
   return(0);
 }
 
 int operator>(const Event& event1, const Event& event2)
 {
   if(event1.getDateBegEv() > event2.getDateBegEv())
+    return(1);
+  else if(event1.getEventName() > event2.getEventName())
     return(1);
   return(0);
 }
@@ -189,7 +193,7 @@ ostream& operator<<(ostream& event, const Event& e)
   event << e.getEventPlace() << "|";
   event << e.getDateBegMate() << "|";
   event << e.getDateFinMate() << "|";
-  event << e.getHourIniMate() << "|";
+  event << e.getHourBegMate() << "|";
   event << e.getHourFinMate() << "|";
   event << e.getMatePlace() << "|";
   event << e.getDescription() << "|";
@@ -208,7 +212,7 @@ istream& operator>>(istream& event, Event &aux){
   string eventPlace;
   Date dateBegMate;
   Date dateFinMate;
-  string hourIniMate;
+  string hourBegMate;
   string hourFinMate;
   string matePlace;
   string description;
@@ -248,7 +252,7 @@ istream& operator>>(istream& event, Event &aux){
 
   getline(event, cadenaAuxiliar, '|');
   if(!event.fail())
-    hourIniMate = cadenaAuxiliar;
+    hourBegMate = cadenaAuxiliar;
 
   getline(event, cadenaAuxiliar, '|');
   if(!event.fail())
@@ -267,7 +271,7 @@ istream& operator>>(istream& event, Event &aux){
     picture = cadenaAuxiliar;
 
   aux.assign(eventName, dateBegEv, dateFinEv, inscripValue, eventHour,
-             eventPlace, dateBegMate, dateFinMate, hourIniMate, hourFinMate,
+             eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
              matePlace, description, picture);
   return(event);
 }

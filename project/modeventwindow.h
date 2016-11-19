@@ -29,11 +29,19 @@ public:
    * @brief ModEventWindow
    * @param parent padre de componentes
    */
-  explicit ModEventWindow(QWidget *parent = 0);
+  explicit ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                          DynSetTree<string, Avl_Tree> *nameTree,
+                          const Event& event,
+                          QWidget *parent = 0);
+  DynSetTree<Event, Avl_Tree> *eventTree;
+  DynSetTree<string, Avl_Tree> *nameTree;
+  Event event;
   ~ModEventWindow();
 
 private slots:
   void on_pbRegresar_clicked();
+  void on_pbGuardar_clicked();
+  void on_pbExaminar_clicked();
 
 private:
   Ui::ModEventWindow *ui;

@@ -31,11 +31,10 @@ MainWindow::MainWindow(QWidget *parent) :
   ifstream fileIn;
   Event event;
   Date currDate;
-  string evFileName = "../BD/eventos.txt";
 
   currDate.fromString((ui->deCurrDate->text()).toStdString());
 
-  fileIn.open(evFileName);
+  fileIn.open("../BD/eventos.txt");
 
   if(!fileIn.good())
   {
@@ -52,9 +51,9 @@ MainWindow::MainWindow(QWidget *parent) :
     else
     {
       while(!fileIn.eof() && fileIn>>event)
-        if(event.getDateBegEv() > currDate)
+        if(event.getDateBegEv() >= currDate)
         {
-          this->eventTree.insert_dup(event);
+          this->eventTree.insert(event);
           this->nameTree.insert(event.getEventName());
         }
       fileIn.close();
@@ -62,21 +61,21 @@ MainWindow::MainWindow(QWidget *parent) :
   }
 
 
-/*
-  activeTimer = new QTimer(this);
-  activeTimer->setInterval(2*60*1000);
-  activeTimer->setSingleShot(true);
-  connect(activeTimer, SIGNAL(timeout()), this, SLOT(activateAutoClick()));
-  activeTimer->start();
-*/
-/*
-  QThread* thread = new QThread(this);
-  QTimer* timer = new QTimer(0);
-  timer->setInterval(1);
-  timer->moveToThread(thread);
-  connect(timer, SIGNAL(backup(evFileName, this->eventTree), this, SLOT(Qt::DirectConnection));
-  thread->start();
-*/
+  /*
+    activeTimer = new QTimer(this);
+    activeTimer->setInterval(2*60*1000);
+    activeTimer->setSingleShot(true);
+    connect(activeTimer, SIGNAL(timeout()), this, SLOT(activateAutoClick()));
+    activeTimer->start();
+  */
+  /*
+    this->thread = new QThread(this);
+    QTimer* timer = new QTimer(0);
+    timer->setInterval(1);
+    timer->moveToThread(this->thread);
+    connect(timer, SIGNAL(timeout()), this, SLOT(backup()));
+    this->thread->start();
+  */
 }
 
 MainWindow::~MainWindow()
@@ -98,29 +97,50 @@ void MainWindow::on_pbOrganizador_clicked()
   organizing_i->show();
 }
 
-bool is_emptyFile(ifstream& file)
+void MainWindow::on_pbSalir_clicked()
 {
-  return(file.peek() == std::ifstream::traits_type::eof());
-}
-
-void backup(const string& nameFile,const DynSetTree<Event, Avl_Tree>& eventTree)
-{
-  //qDebug<<"haciendo backup desde el thread";
   QMessageBox msj;
   ofstream fileOut;
 
-  fileOut.open(nameFile);
+  fileOut.open("../BD/eventos.txt");
   if(!fileOut.good())
   {
-    msj.setText("\tERROR(2)\nEl programa no funcionará correctamente\n");
+    msj.setText("\tERROR(2)\nLos cambios que realizó no se guardaron\n");
     msj.exec();
   }
   else
   {
-    for(auto it=eventTree.begin(); it.has_curr(); it.next())
+    for(auto it=this->eventTree.begin(); it.has_curr(); it.next())
       fileOut << it.get_curr();
     fileOut.close();
   }
+}
+
+/*
+void MainWindow::backup()
+{
+    qDebug()<<"haciendo backup desde el thread";
+    QMessageBox msj;
+    ofstream fileOut;
+
+    fileOut.open("../BD/eventos.txt");
+    if(!fileOut.good())
+    {
+      msj.setText("\tERROR(2)\nEl programa no funcionará correctamente\n");
+      msj.exec();
+    }
+    else
+    {
+      for(auto it=this->eventTree.begin(); it.has_curr(); it.next())
+        fileOut << it.get_curr();
+      fileOut.close();
+    }
+}
+*/
+
+bool is_emptyFile(ifstream& file)
+{
+  return(file.peek() == std::ifstream::traits_type::eof());
 }
 
 /*TENER EN CUENTA PARA CUANDO VAYA A HACER EL AUTO-BACKUP

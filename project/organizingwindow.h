@@ -35,15 +35,13 @@ public:
   explicit OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree,
                             DynSetTree<string, Avl_Tree>& nameTree,
                             QWidget *parent = 0);
-  DynSetTree<string, Avl_Tree>* nameTree;
-  DynSetTree<Event, Avl_Tree>* eventTree;
+  DynSetTree<string, Avl_Tree> *nameTree;
+  DynSetTree<Event, Avl_Tree> *eventTree;
   ~OrganizingWindow();
 
 private slots:
   void on_pbRegistrar_clicked();
-
   void on_pbModificar_clicked();
-
   void on_pbEliminar_clicked();
 
 private:

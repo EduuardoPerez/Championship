@@ -18,6 +18,9 @@ RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
   ui->setupUi(this);
   this->eventTree = eventTree;
   this->nameTree = nameTree;
+  ui->lePicture->hide();
+  ui->lPicture->setFixedWidth(80);
+  ui->lPicture->setFixedHeight(80);
   ui->deCurrDate->hide();
   ui->deCurrDate->setDate(QDate::currentDate());
   ui->deDateBegEv->setDate(QDate::currentDate());
@@ -59,11 +62,11 @@ void RegEventWindow::on_pbRegistrar_clicked()
   string name = ui->leEventName->text().toStdString();
   float inscripValue = ui->leInscripValue->text().toFloat();
   string eventHour = ui->teEventHour->text().toStdString();
-  string eventPlace = ui->leEventPlace->text().toStdString();
+  string eventPlace = ui->txeEventPlace->toPlainText().toStdString();
   string hourBegMate = ui->teHourBegMate->text().toStdString();
   string hourFinMate = ui->teHourFinMate->text().toStdString();
-  string matePlace = ui->leMatePlace->text().toStdString();
-  string description = ui->leDescription->text().toStdString();
+  string matePlace = ui->txeMatePlace->toPlainText().toStdString();
+  string description = ui->txeDescription->toPlainText().toStdString();
   string picture = ui->lePicture->text().toStdString();
   QTime hbMate = ui->teHourBegMate->time();
   QTime hfMate = ui->teHourFinMate->time();
@@ -82,6 +85,10 @@ void RegEventWindow::on_pbRegistrar_clicked()
   else if(inscripValue==0)
     msj.setText("\tERROR\nIngreso un dato erróneo, debe darle un precio a la "
                   "inscripción\n");
+
+  else if(dateBegEv == currDate)
+    msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha de inicio del "
+                "evento no puede ser el día actual\n");
 
   else if(dateBegEv < currDate)
     msj.setText("\t\tERROR\nLa fecha que seleccionó como fecha de inicio del "
@@ -111,14 +118,29 @@ void RegEventWindow::on_pbRegistrar_clicked()
                  eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
                  matePlace, description, picture);
 
-    if(this->nameTree->exist(event.getEventName()))
+    if(this->nameTree->insert(event.getEventName()) == nullptr)
       msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
                   " usted ha ingresado, utilice un nombre diferente\n");
     else
     {
-      this->nameTree->insert(event.getEventName());
-      this->eventTree->insert_dup(event);
-      msj.setText("\nEl evento fue registrado exitosamente\n");
+      ofstream fileOut;
+
+      fileOut.open("../BD/eventos.txt");
+      if(!fileOut.good())
+      {
+        this->nameTree->remove(event.getEventName());
+        msj.setText("\tERROR\nEl evento no se pudo registrar\n");
+      }
+      else
+      {
+        this->eventTree->insert_dup(event);
+
+        for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
+          fileOut << it.get_curr();
+        fileOut.close();
+
+        msj.setText("\nEl evento fue registrado exitosamente\n");
+      }
     }
   }
   msj.exec();
@@ -127,9 +149,9 @@ void RegEventWindow::on_pbRegistrar_clicked()
 void RegEventWindow::on_pbExaminar_clicked()
 {
   QString picture = QFileDialog::getOpenFileName(this,tr("Abrir Archivo"),
-                                                tr("/home"),tr("Imagenes(*.png "
-                                                               "*.gif *.jpg "
-                                                               "*.xpm)"));
+                                                tr("/home/eduuardoperez"),
+                                                 tr("Imagenes(*.png *.gif *.jpg"
+                                                    " *.xpm)"));
   ui->lePicture->setText(picture);
   ui->lPicture->setPixmap(picture);
 }

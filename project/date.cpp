@@ -117,6 +117,20 @@ int operator>(const Date& date1, const Date& date2)
   return(0);
 }
 
+int operator<=(const Date& date1, const Date& date2)
+{
+  if(date1.cmpDate(date2)<0 || date1.cmpDate(date2)==0)
+    return(1);
+  return(0);
+}
+
+int operator>=(const Date& date1, const Date& date2)
+{
+  if(date1.cmpDate(date2)>0 || date1.cmpDate(date2)==0)
+    return(1);
+  return(0);
+}
+
 ostream& operator<<(ostream& date, const Date& p)
 {
   date << p.getDay() << "/";

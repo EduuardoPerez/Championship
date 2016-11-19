@@ -79,10 +79,9 @@ public:
         pbRegistrar->setGeometry(QRect(250, 410, 300, 20));
 
         retranslateUi(OrganizingWindow);
-        QObject::connect(pbRegresar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
         QObject::connect(pbSalir, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
         QObject::connect(pbRegistrar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
-        QObject::connect(pbModificar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
+        QObject::connect(pbRegresar, SIGNAL(clicked()), OrganizingWindow, SLOT(close()));
 
         QMetaObject::connectSlotsByName(OrganizingWindow);
     } // setupUi

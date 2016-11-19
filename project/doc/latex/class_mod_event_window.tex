@@ -24,14 +24,26 @@ Diagrama de colaboración para Mod\+Event\+Window\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=176pt]{class_mod_event_window__coll__graph}
+\includegraphics[width=192pt]{class_mod_event_window__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_mod_event_window_af82d1d1a727a13d06d33500f897bd2b2}{Mod\+Event\+Window} (Q\+Widget $\ast$parent=0)
+\hyperlink{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}{Mod\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$name\+Tree, const \hyperlink{class_event}{Event} \&event, Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_mod_event_window}{Mod\+Event\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ {\bfseries event\+Tree}\hypertarget{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}{}\label{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}
+
+\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ {\bfseries name\+Tree}\hypertarget{class_mod_event_window_a0e3b2af740cdb1b206b0ff92a17247f2}{}\label{class_mod_event_window_a0e3b2af740cdb1b206b0ff92a17247f2}
+
+\item 
+\hyperlink{class_event}{Event} {\bfseries event}\hypertarget{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}{}\label{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
@@ -44,11 +56,14 @@ Definición en la línea 23 del archivo modeventwindow.\+h.
 \subsection{Documentación del constructor y destructor}
 \index{Mod\+Event\+Window@{Mod\+Event\+Window}!Mod\+Event\+Window@{Mod\+Event\+Window}}
 \index{Mod\+Event\+Window@{Mod\+Event\+Window}!Mod\+Event\+Window@{Mod\+Event\+Window}}
-\subsubsection[{\texorpdfstring{Mod\+Event\+Window(\+Q\+Widget $\ast$parent=0)}{ModEventWindow(QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Mod\+Event\+Window\+::\+Mod\+Event\+Window (
+\subsubsection[{\texorpdfstring{Mod\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$name\+Tree, const Event \&event, Q\+Widget $\ast$parent=0)}{ModEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nameTree, const Event &event, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Mod\+Event\+Window\+::\+Mod\+Event\+Window (
 \begin{DoxyParamCaption}
+\item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{name\+Tree, }
+\item[{const {\bf Event} \&}]{event, }
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_mod_event_window_af82d1d1a727a13d06d33500f897bd2b2}{}\label{class_mod_event_window_af82d1d1a727a13d06d33500f897bd2b2}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}{}\label{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}
 
 
 \hyperlink{class_mod_event_window}{Mod\+Event\+Window}. 
@@ -60,7 +75,7 @@ Definición en la línea 23 del archivo modeventwindow.\+h.
 \end{DoxyParams}
 
 
-Definición en la línea 11 del archivo modeventwindow.\+cpp.
+Definición en la línea 12 del archivo modeventwindow.\+cpp.
 
 
 

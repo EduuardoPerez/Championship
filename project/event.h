@@ -24,7 +24,7 @@ class Event
   string eventPlace;
   Date dateBegMate;
   Date dateFinMate;
-  string hourIniMate;
+  string hourBegMate;
   string hourFinMate;
   string matePlace;
   string description;
@@ -114,9 +114,9 @@ public:
    * @brief Observador getHourIniMate
    * @return hora inicio entrega del material para this
    */
-  inline string getHourIniMate() const
+  inline string getHourBegMate() const
   {
-    return(this->hourIniMate);
+    return(this->hourBegMate);
   }
 
   /**
@@ -198,7 +198,7 @@ public:
   /**
    * @brief Modificador setHourIniMate
    */
-  void setHourIniMate(string);
+  void setHourBegMate(string);
 
   /**
    * @brief Modificador setHourFinMate

@@ -37,7 +37,6 @@ public:
   ~SportyWindow();
 
 private slots:
-
   void on_pbVerEvento_clicked();
 
 private:

@@ -22,6 +22,8 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -51,80 +53,104 @@ public:
     QGridLayout *gridLayout_5;
     QHBoxLayout *horizontalLayout_27;
     QLabel *nombreEventotl_2;
-    QLineEdit *nombreventole_2;
+    QLineEdit *leEventName;
     QSpacerItem *horizontalSpacer_35;
     QVBoxLayout *verticalLayout_9;
     QHBoxLayout *horizontalLayout_28;
+    QSpacerItem *horizontalSpacer_4;
     QLabel *label_5;
+    QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_29;
     QSpacerItem *horizontalSpacer_36;
     QLabel *label_13;
-    QDateEdit *fechIniciode_2;
+    QDateEdit *deDateBegEv;
     QSpacerItem *horizontalSpacer_37;
     QLabel *label_14;
-    QDateEdit *fechFinde_2;
+    QDateEdit *deDateFinEv;
     QSpacerItem *horizontalSpacer_38;
     QHBoxLayout *horizontalLayout_30;
     QLabel *valorinscripciontl_2;
-    QLineEdit *valorinscripciontle_2;
+    QLineEdit *leInscripValue;
     QSpacerItem *horizontalSpacer_39;
     QSpacerItem *verticalSpacer_12;
     QHBoxLayout *horizontalLayout_31;
     QHBoxLayout *horizontalLayout_32;
     QLabel *horaeventotl_2;
-    QLineEdit *horaeventole_2;
+    QTimeEdit *teEventHour;
     QSpacerItem *horizontalSpacer_40;
     QHBoxLayout *horizontalLayout_33;
     QLabel *lugareventotl_2;
-    QLineEdit *lugareventole_2;
+    QTextEdit *txeEventPlace;
     QSpacerItem *verticalSpacer_13;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_10;
     QHBoxLayout *horizontalLayout_34;
+    QSpacerItem *horizontalSpacer_5;
     QLabel *label_6;
+    QSpacerItem *horizontalSpacer_6;
     QHBoxLayout *horizontalLayout_35;
     QSpacerItem *horizontalSpacer_41;
     QLabel *label_15;
-    QDateEdit *fechIniciomaterialde_2;
+    QDateEdit *deDateBegMate;
     QSpacerItem *horizontalSpacer_42;
     QLabel *label_16;
-    QDateEdit *fechFinmaterialde_2;
+    QDateEdit *deDateFinMate;
     QSpacerItem *horizontalSpacer_43;
     QSpacerItem *horizontalSpacer_44;
     QHBoxLayout *horizontalLayout_36;
     QLabel *horainimaterialtl_2;
-    QLineEdit *horainimaterialle_2;
+    QSpacerItem *horizontalSpacer_2;
+    QTimeEdit *teHourBegMate;
     QSpacerItem *horizontalSpacer_45;
     QHBoxLayout *horizontalLayout_37;
     QLabel *horafinmaterialtl_2;
-    QLineEdit *horafinmaterialle_2;
+    QSpacerItem *horizontalSpacer;
+    QTimeEdit *teHourFinMate;
     QSpacerItem *verticalSpacer_14;
     QHBoxLayout *horizontalLayout_38;
     QHBoxLayout *horizontalLayout_39;
     QLabel *lugarmaterialtl_2;
-    QLineEdit *lugarmaterialle_2;
+    QTextEdit *txeMatePlace;
     QSpacerItem *horizontalSpacer_46;
     QHBoxLayout *horizontalLayout_40;
     QLabel *label_7;
     QSpacerItem *horizontalSpacer_47;
-    QPushButton *examinarpb_2;
+    QGridLayout *gridLayout;
+    QLabel *lPicture;
+    QPushButton *pbExaminar;
     QSpacerItem *horizontalSpacer_48;
-    QLabel *dirImgtl_2;
+    QLabel *lePicture;
     QSpacerItem *verticalSpacer_15;
     QHBoxLayout *horizontalLayout_41;
     QLabel *descripciontl_2;
     QSpacerItem *horizontalSpacer_49;
-    QLineEdit *descripcionle_2;
+    QTextEdit *txeDescription;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_42;
+    QSpacerItem *horizontalSpacer_7;
     QSpacerItem *horizontalSpacer_53;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *horizontalSpacer_14;
+    QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_12;
+    QSpacerItem *horizontalSpacer_16;
+    QSpacerItem *horizontalSpacer_19;
+    QSpacerItem *horizontalSpacer_21;
+    QSpacerItem *horizontalSpacer_20;
+    QSpacerItem *horizontalSpacer_18;
+    QSpacerItem *horizontalSpacer_17;
+    QSpacerItem *horizontalSpacer_15;
     QPushButton *pbGuardar;
+    QSpacerItem *horizontalSpacer_9;
     QSpacerItem *verticalSpacer_16;
     QSpacerItem *horizontalSpacer_50;
     QSpacerItem *horizontalSpacer_51;
     QSpacerItem *horizontalSpacer_52;
     QLabel *label_8;
     QSpacerItem *verticalSpacer_17;
+    QDateEdit *deCurrDate;
 
     void setupUi(QDialog *ModEventWindow)
     {
@@ -133,7 +159,7 @@ public:
         ModEventWindow->resize(800, 500);
         layoutWidget = new QWidget(ModEventWindow);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(0, 0, 791, 491));
+        layoutWidget->setGeometry(QRect(10, 0, 791, 491));
         gridLayout_4 = new QGridLayout(layoutWidget);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         gridLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -216,10 +242,10 @@ public:
 
         horizontalLayout_27->addWidget(nombreEventotl_2);
 
-        nombreventole_2 = new QLineEdit(layoutWidget);
-        nombreventole_2->setObjectName(QStringLiteral("nombreventole_2"));
+        leEventName = new QLineEdit(layoutWidget);
+        leEventName->setObjectName(QStringLiteral("leEventName"));
 
-        horizontalLayout_27->addWidget(nombreventole_2);
+        horizontalLayout_27->addWidget(leEventName);
 
 
         gridLayout_5->addLayout(horizontalLayout_27, 0, 0, 1, 1);
@@ -232,10 +258,18 @@ public:
         verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
         horizontalLayout_28 = new QHBoxLayout();
         horizontalLayout_28->setObjectName(QStringLiteral("horizontalLayout_28"));
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_28->addItem(horizontalSpacer_4);
+
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_28->addWidget(label_5);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_28->addItem(horizontalSpacer_3);
 
 
         verticalLayout_9->addLayout(horizontalLayout_28);
@@ -251,11 +285,11 @@ public:
 
         horizontalLayout_29->addWidget(label_13);
 
-        fechIniciode_2 = new QDateEdit(layoutWidget);
-        fechIniciode_2->setObjectName(QStringLiteral("fechIniciode_2"));
-        fechIniciode_2->setCalendarPopup(true);
+        deDateBegEv = new QDateEdit(layoutWidget);
+        deDateBegEv->setObjectName(QStringLiteral("deDateBegEv"));
+        deDateBegEv->setCalendarPopup(true);
 
-        horizontalLayout_29->addWidget(fechIniciode_2);
+        horizontalLayout_29->addWidget(deDateBegEv);
 
         horizontalSpacer_37 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -266,11 +300,11 @@ public:
 
         horizontalLayout_29->addWidget(label_14);
 
-        fechFinde_2 = new QDateEdit(layoutWidget);
-        fechFinde_2->setObjectName(QStringLiteral("fechFinde_2"));
-        fechFinde_2->setCalendarPopup(true);
+        deDateFinEv = new QDateEdit(layoutWidget);
+        deDateFinEv->setObjectName(QStringLiteral("deDateFinEv"));
+        deDateFinEv->setCalendarPopup(true);
 
-        horizontalLayout_29->addWidget(fechFinde_2);
+        horizontalLayout_29->addWidget(deDateFinEv);
 
         horizontalSpacer_38 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -289,10 +323,10 @@ public:
 
         horizontalLayout_30->addWidget(valorinscripciontl_2);
 
-        valorinscripciontle_2 = new QLineEdit(layoutWidget);
-        valorinscripciontle_2->setObjectName(QStringLiteral("valorinscripciontle_2"));
+        leInscripValue = new QLineEdit(layoutWidget);
+        leInscripValue->setObjectName(QStringLiteral("leInscripValue"));
 
-        horizontalLayout_30->addWidget(valorinscripciontle_2);
+        horizontalLayout_30->addWidget(leInscripValue);
 
 
         gridLayout_5->addLayout(horizontalLayout_30, 1, 0, 1, 1);
@@ -317,10 +351,12 @@ public:
 
         horizontalLayout_32->addWidget(horaeventotl_2);
 
-        horaeventole_2 = new QLineEdit(layoutWidget);
-        horaeventole_2->setObjectName(QStringLiteral("horaeventole_2"));
+        teEventHour = new QTimeEdit(layoutWidget);
+        teEventHour->setObjectName(QStringLiteral("teEventHour"));
+        teEventHour->setCalendarPopup(false);
+        teEventHour->setTime(QTime(0, 0, 0));
 
-        horizontalLayout_32->addWidget(horaeventole_2);
+        horizontalLayout_32->addWidget(teEventHour);
 
 
         horizontalLayout_31->addLayout(horizontalLayout_32);
@@ -336,10 +372,10 @@ public:
 
         horizontalLayout_33->addWidget(lugareventotl_2);
 
-        lugareventole_2 = new QLineEdit(layoutWidget);
-        lugareventole_2->setObjectName(QStringLiteral("lugareventole_2"));
+        txeEventPlace = new QTextEdit(layoutWidget);
+        txeEventPlace->setObjectName(QStringLiteral("txeEventPlace"));
 
-        horizontalLayout_33->addWidget(lugareventole_2);
+        horizontalLayout_33->addWidget(txeEventPlace);
 
 
         horizontalLayout_31->addLayout(horizontalLayout_33);
@@ -357,10 +393,18 @@ public:
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         horizontalLayout_34 = new QHBoxLayout();
         horizontalLayout_34->setObjectName(QStringLiteral("horizontalLayout_34"));
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_34->addItem(horizontalSpacer_5);
+
         label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         horizontalLayout_34->addWidget(label_6);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_34->addItem(horizontalSpacer_6);
 
 
         verticalLayout_10->addLayout(horizontalLayout_34);
@@ -376,11 +420,11 @@ public:
 
         horizontalLayout_35->addWidget(label_15);
 
-        fechIniciomaterialde_2 = new QDateEdit(layoutWidget);
-        fechIniciomaterialde_2->setObjectName(QStringLiteral("fechIniciomaterialde_2"));
-        fechIniciomaterialde_2->setCalendarPopup(true);
+        deDateBegMate = new QDateEdit(layoutWidget);
+        deDateBegMate->setObjectName(QStringLiteral("deDateBegMate"));
+        deDateBegMate->setCalendarPopup(true);
 
-        horizontalLayout_35->addWidget(fechIniciomaterialde_2);
+        horizontalLayout_35->addWidget(deDateBegMate);
 
         horizontalSpacer_42 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -391,11 +435,11 @@ public:
 
         horizontalLayout_35->addWidget(label_16);
 
-        fechFinmaterialde_2 = new QDateEdit(layoutWidget);
-        fechFinmaterialde_2->setObjectName(QStringLiteral("fechFinmaterialde_2"));
-        fechFinmaterialde_2->setCalendarPopup(true);
+        deDateFinMate = new QDateEdit(layoutWidget);
+        deDateFinMate->setObjectName(QStringLiteral("deDateFinMate"));
+        deDateFinMate->setCalendarPopup(true);
 
-        horizontalLayout_35->addWidget(fechFinmaterialde_2);
+        horizontalLayout_35->addWidget(deDateFinMate);
 
         horizontalSpacer_43 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -418,10 +462,14 @@ public:
 
         horizontalLayout_36->addWidget(horainimaterialtl_2);
 
-        horainimaterialle_2 = new QLineEdit(layoutWidget);
-        horainimaterialle_2->setObjectName(QStringLiteral("horainimaterialle_2"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_36->addWidget(horainimaterialle_2);
+        horizontalLayout_36->addItem(horizontalSpacer_2);
+
+        teHourBegMate = new QTimeEdit(layoutWidget);
+        teHourBegMate->setObjectName(QStringLiteral("teHourBegMate"));
+
+        horizontalLayout_36->addWidget(teHourBegMate);
 
 
         gridLayout_6->addLayout(horizontalLayout_36, 0, 2, 1, 1);
@@ -437,10 +485,14 @@ public:
 
         horizontalLayout_37->addWidget(horafinmaterialtl_2);
 
-        horafinmaterialle_2 = new QLineEdit(layoutWidget);
-        horafinmaterialle_2->setObjectName(QStringLiteral("horafinmaterialle_2"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_37->addWidget(horafinmaterialle_2);
+        horizontalLayout_37->addItem(horizontalSpacer);
+
+        teHourFinMate = new QTimeEdit(layoutWidget);
+        teHourFinMate->setObjectName(QStringLiteral("teHourFinMate"));
+
+        horizontalLayout_37->addWidget(teHourFinMate);
 
 
         gridLayout_6->addLayout(horizontalLayout_37, 1, 2, 1, 1);
@@ -448,7 +500,7 @@ public:
 
         verticalLayout_8->addLayout(gridLayout_6);
 
-        verticalSpacer_14 = new QSpacerItem(17, 17, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_14 = new QSpacerItem(17, 5, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_8->addItem(verticalSpacer_14);
 
@@ -461,10 +513,10 @@ public:
 
         horizontalLayout_39->addWidget(lugarmaterialtl_2);
 
-        lugarmaterialle_2 = new QLineEdit(layoutWidget);
-        lugarmaterialle_2->setObjectName(QStringLiteral("lugarmaterialle_2"));
+        txeMatePlace = new QTextEdit(layoutWidget);
+        txeMatePlace->setObjectName(QStringLiteral("txeMatePlace"));
 
-        horizontalLayout_39->addWidget(lugarmaterialle_2);
+        horizontalLayout_39->addWidget(txeMatePlace);
 
 
         horizontalLayout_38->addLayout(horizontalLayout_39);
@@ -484,19 +536,34 @@ public:
 
         horizontalLayout_40->addItem(horizontalSpacer_47);
 
-        examinarpb_2 = new QPushButton(layoutWidget);
-        examinarpb_2->setObjectName(QStringLiteral("examinarpb_2"));
+        gridLayout = new QGridLayout();
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        lPicture = new QLabel(layoutWidget);
+        lPicture->setObjectName(QStringLiteral("lPicture"));
+        lPicture->setEnabled(true);
+        lPicture->setMouseTracking(false);
+        lPicture->setFrameShape(QFrame::WinPanel);
+        lPicture->setFrameShadow(QFrame::Plain);
+        lPicture->setScaledContents(true);
 
-        horizontalLayout_40->addWidget(examinarpb_2);
+        gridLayout->addWidget(lPicture, 1, 0, 1, 1);
+
+        pbExaminar = new QPushButton(layoutWidget);
+        pbExaminar->setObjectName(QStringLiteral("pbExaminar"));
+
+        gridLayout->addWidget(pbExaminar, 2, 0, 1, 1);
+
+
+        horizontalLayout_40->addLayout(gridLayout);
 
         horizontalSpacer_48 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_40->addItem(horizontalSpacer_48);
 
-        dirImgtl_2 = new QLabel(layoutWidget);
-        dirImgtl_2->setObjectName(QStringLiteral("dirImgtl_2"));
+        lePicture = new QLabel(layoutWidget);
+        lePicture->setObjectName(QStringLiteral("lePicture"));
 
-        horizontalLayout_40->addWidget(dirImgtl_2);
+        horizontalLayout_40->addWidget(lePicture);
 
 
         horizontalLayout_38->addLayout(horizontalLayout_40);
@@ -504,7 +571,7 @@ public:
 
         verticalLayout_8->addLayout(horizontalLayout_38);
 
-        verticalSpacer_15 = new QSpacerItem(20, 18, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_15 = new QSpacerItem(20, 5, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_8->addItem(verticalSpacer_15);
 
@@ -519,33 +586,93 @@ public:
 
         horizontalLayout_41->addItem(horizontalSpacer_49);
 
-        descripcionle_2 = new QLineEdit(layoutWidget);
-        descripcionle_2->setObjectName(QStringLiteral("descripcionle_2"));
+        txeDescription = new QTextEdit(layoutWidget);
+        txeDescription->setObjectName(QStringLiteral("txeDescription"));
 
-        horizontalLayout_41->addWidget(descripcionle_2);
+        horizontalLayout_41->addWidget(txeDescription);
 
 
         verticalLayout_8->addLayout(horizontalLayout_41);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_8->addItem(verticalSpacer);
 
         horizontalLayout_42 = new QHBoxLayout();
         horizontalLayout_42->setObjectName(QStringLiteral("horizontalLayout_42"));
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_7);
+
         horizontalSpacer_53 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_42->addItem(horizontalSpacer_53);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_8);
+
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_11);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_14);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_13);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_10);
+
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_12);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_16);
+
+        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_19);
+
+        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_21);
+
+        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_20);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_18);
+
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_17);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_15);
 
         pbGuardar = new QPushButton(layoutWidget);
         pbGuardar->setObjectName(QStringLiteral("pbGuardar"));
 
         horizontalLayout_42->addWidget(pbGuardar);
 
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_42->addItem(horizontalSpacer_9);
+
 
         verticalLayout_8->addLayout(horizontalLayout_42);
 
-        verticalSpacer_16 = new QSpacerItem(20, 18, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_16 = new QSpacerItem(10, 10, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_8->addItem(verticalSpacer_16);
 
@@ -576,6 +703,10 @@ public:
 
         gridLayout_4->addItem(verticalSpacer_17, 1, 1, 1, 1);
 
+        deCurrDate = new QDateEdit(ModEventWindow);
+        deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
+        deCurrDate->setEnabled(false);
+        deCurrDate->setGeometry(QRect(0, 480, 110, 22));
 
         retranslateUi(ModEventWindow);
         QObject::connect(pbRegresar, SIGNAL(clicked()), ModEventWindow, SLOT(close()));
@@ -590,30 +721,36 @@ public:
         pbRegresar->setText(QApplication::translate("ModEventWindow", "Regresar", 0));
         pbSalir->setText(QApplication::translate("ModEventWindow", "Salir", 0));
         nombreEventotl_2->setText(QApplication::translate("ModEventWindow", "Nombre del Evento: ", 0));
-        label_5->setText(QApplication::translate("ModEventWindow", "                                           Fechas en las que se realizar\303\241 el evento\n"
-"(si el evento se realizar\303\241 en un solo d\303\255a seleccione 01/01/0000 como fecha fin)", 0));
+        label_5->setText(QApplication::translate("ModEventWindow", "Fechas en las que se realizar\303\241 el evento", 0));
         label_13->setText(QApplication::translate("ModEventWindow", "Inicio: ", 0));
-        fechIniciode_2->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
+        deDateBegEv->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
         label_14->setText(QApplication::translate("ModEventWindow", "Fin: ", 0));
-        fechFinde_2->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
+        deDateFinEv->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
         valorinscripciontl_2->setText(QApplication::translate("ModEventWindow", "Valor de la inscripci\303\263n (Bs.)", 0));
         horaeventotl_2->setText(QApplication::translate("ModEventWindow", "Hora de inicio del evento: ", 0));
-        lugareventotl_2->setText(QApplication::translate("ModEventWindow", "Lugar donde se realizara el evento: ", 0));
-        label_6->setText(QApplication::translate("ModEventWindow", "             Fechas en las que se entregar\303\241 el material necesario para el evento\n"
-"(si el evento se realizar\303\241 en un solo d\303\255a seleccione 01/01/0000 como fecha fin)", 0));
+        teEventHour->setDisplayFormat(QApplication::translate("ModEventWindow", "hh:mm", 0));
+        lugareventotl_2->setText(QApplication::translate("ModEventWindow", "Lugar donde se\n"
+"realizar\303\241 el evento: ", 0));
+        label_6->setText(QApplication::translate("ModEventWindow", "Fechas en las que se entregar\303\241 el material necesario para el evento", 0));
         label_15->setText(QApplication::translate("ModEventWindow", "Inicio: ", 0));
-        fechIniciomaterialde_2->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
+        deDateBegMate->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
         label_16->setText(QApplication::translate("ModEventWindow", "Fin: ", 0));
-        fechFinmaterialde_2->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
+        deDateFinMate->setDisplayFormat(QApplication::translate("ModEventWindow", "dd/MM/yyyy", 0));
         horainimaterialtl_2->setText(QApplication::translate("ModEventWindow", "Hora de inicio de la entrega del material: ", 0));
+        teHourBegMate->setDisplayFormat(QApplication::translate("ModEventWindow", "hh:mm", 0));
         horafinmaterialtl_2->setText(QApplication::translate("ModEventWindow", "Hora de fin de la entrega del material: ", 0));
-        lugarmaterialtl_2->setText(QApplication::translate("ModEventWindow", "Lugar donde se realizar\303\241 la entrega del material: ", 0));
-        label_7->setText(QApplication::translate("ModEventWindow", "Incluir una imagen referente al evento:", 0));
-        examinarpb_2->setText(QApplication::translate("ModEventWindow", "Examinar", 0));
-        dirImgtl_2->setText(QString());
+        teHourFinMate->setDisplayFormat(QApplication::translate("ModEventWindow", "hh:mm", 0));
+        lugarmaterialtl_2->setText(QApplication::translate("ModEventWindow", "Lugar donde se realizar\303\241\n"
+"la entrega del material: ", 0));
+        label_7->setText(QApplication::translate("ModEventWindow", "Incluir una imagen\n"
+"referente al evento:", 0));
+        lPicture->setText(QString());
+        pbExaminar->setText(QApplication::translate("ModEventWindow", "Examinar", 0));
+        lePicture->setText(QString());
         descripciontl_2->setText(QApplication::translate("ModEventWindow", "Descripcion del evento:", 0));
         pbGuardar->setText(QApplication::translate("ModEventWindow", "Guardar Cambios", 0));
-        label_8->setText(QApplication::translate("ModEventWindow", "Modificar Informaci\303\263n del Evento", 0));
+        label_8->setText(QApplication::translate("ModEventWindow", "Modificar Datos del Evento", 0));
+        deCurrDate->setDisplayFormat(QApplication::translate("ModEventWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };

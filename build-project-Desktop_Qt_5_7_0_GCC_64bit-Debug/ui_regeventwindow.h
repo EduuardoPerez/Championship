@@ -22,6 +22,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -79,7 +80,7 @@ public:
     QSpacerItem *horizontalSpacer_40;
     QHBoxLayout *horizontalLayout_33;
     QLabel *lugareventotl_2;
-    QLineEdit *leEventPlace;
+    QTextEdit *txeEventPlace;
     QSpacerItem *verticalSpacer_13;
     QGridLayout *gridLayout_6;
     QVBoxLayout *verticalLayout_10;
@@ -109,7 +110,7 @@ public:
     QHBoxLayout *horizontalLayout_38;
     QHBoxLayout *horizontalLayout_39;
     QLabel *lugarmaterialtl_2;
-    QLineEdit *leMatePlace;
+    QTextEdit *txeMatePlace;
     QSpacerItem *horizontalSpacer_46;
     QHBoxLayout *horizontalLayout_40;
     QLabel *label_7;
@@ -123,7 +124,7 @@ public:
     QHBoxLayout *horizontalLayout_41;
     QLabel *descripciontl_2;
     QSpacerItem *horizontalSpacer_49;
-    QLineEdit *leDescription;
+    QTextEdit *txeDescription;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_42;
     QSpacerItem *horizontalSpacer_7;
@@ -374,10 +375,10 @@ public:
 
         horizontalLayout_33->addWidget(lugareventotl_2);
 
-        leEventPlace = new QLineEdit(layoutWidget);
-        leEventPlace->setObjectName(QStringLiteral("leEventPlace"));
+        txeEventPlace = new QTextEdit(layoutWidget);
+        txeEventPlace->setObjectName(QStringLiteral("txeEventPlace"));
 
-        horizontalLayout_33->addWidget(leEventPlace);
+        horizontalLayout_33->addWidget(txeEventPlace);
 
 
         horizontalLayout_31->addLayout(horizontalLayout_33);
@@ -515,10 +516,10 @@ public:
 
         horizontalLayout_39->addWidget(lugarmaterialtl_2);
 
-        leMatePlace = new QLineEdit(layoutWidget);
-        leMatePlace->setObjectName(QStringLiteral("leMatePlace"));
+        txeMatePlace = new QTextEdit(layoutWidget);
+        txeMatePlace->setObjectName(QStringLiteral("txeMatePlace"));
 
-        horizontalLayout_39->addWidget(leMatePlace);
+        horizontalLayout_39->addWidget(txeMatePlace);
 
 
         horizontalLayout_38->addLayout(horizontalLayout_39);
@@ -588,10 +589,10 @@ public:
 
         horizontalLayout_41->addItem(horizontalSpacer_49);
 
-        leDescription = new QLineEdit(layoutWidget);
-        leDescription->setObjectName(QStringLiteral("leDescription"));
+        txeDescription = new QTextEdit(layoutWidget);
+        txeDescription->setObjectName(QStringLiteral("txeDescription"));
 
-        horizontalLayout_41->addWidget(leDescription);
+        horizontalLayout_41->addWidget(txeDescription);
 
 
         verticalLayout_8->addLayout(horizontalLayout_41);
@@ -713,7 +714,6 @@ public:
         retranslateUi(RegEventWindow);
         QObject::connect(pbRegresar, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
         QObject::connect(pbSalir, SIGNAL(clicked()), RegEventWindow, SLOT(close()));
-        QObject::connect(pbExaminar, SIGNAL(clicked()), lePicture, SLOT(hide()));
 
         QMetaObject::connectSlotsByName(RegEventWindow);
     } // setupUi
@@ -731,16 +731,22 @@ public:
         deDateFinEv->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         valorinscripciontl_2->setText(QApplication::translate("RegEventWindow", "Valor de la inscripci\303\263n (Bs.)", 0));
         horaeventotl_2->setText(QApplication::translate("RegEventWindow", "Hora de inicio del evento: ", 0));
-        lugareventotl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se realizara el evento: ", 0));
+        teEventHour->setDisplayFormat(QApplication::translate("RegEventWindow", "hh:mm", 0));
+        lugareventotl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se\n"
+"realizar\303\241 el evento: ", 0));
         label_6->setText(QApplication::translate("RegEventWindow", "Fechas en las que se entregar\303\241 el material necesario para el evento", 0));
         label_15->setText(QApplication::translate("RegEventWindow", "Inicio: ", 0));
         deDateBegMate->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         label_16->setText(QApplication::translate("RegEventWindow", "Fin: ", 0));
         deDateFinMate->setDisplayFormat(QApplication::translate("RegEventWindow", "dd/MM/yyyy", 0));
         horainimaterialtl_2->setText(QApplication::translate("RegEventWindow", "Hora de inicio de la entrega del material: ", 0));
+        teHourBegMate->setDisplayFormat(QApplication::translate("RegEventWindow", "hh:mm", 0));
         horafinmaterialtl_2->setText(QApplication::translate("RegEventWindow", "Hora de fin de la entrega del material: ", 0));
-        lugarmaterialtl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se realizar\303\241 la entrega del material: ", 0));
-        label_7->setText(QApplication::translate("RegEventWindow", "Incluir una imagen referente al evento:", 0));
+        teHourFinMate->setDisplayFormat(QApplication::translate("RegEventWindow", "hh:mm", 0));
+        lugarmaterialtl_2->setText(QApplication::translate("RegEventWindow", "Lugar donde se realizar\303\241\n"
+"la entrega del material: ", 0));
+        label_7->setText(QApplication::translate("RegEventWindow", "Incluir una imagen\n"
+"referente al evento:", 0));
         lPicture->setText(QString());
         pbExaminar->setText(QApplication::translate("RegEventWindow", "Examinar", 0));
         lePicture->setText(QString());

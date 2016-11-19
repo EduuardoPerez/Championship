@@ -77,86 +77,111 @@ void OrganizingWindow::on_pbRegistrar_clicked()
 
 void OrganizingWindow::on_pbModificar_clicked()
 {
-  ModEventWindow *modEvent_i;
-  modEvent_i = new ModEventWindow(this);
-  modEvent_i->setModal(false);
-  modEvent_i->show();
+  QMessageBox msj;
+  Event event;
+
+  if(not(this->eventTree->is_empty()))
+  {
+    QItemSelectionModel *selected = ui->qtEventList->selectionModel();
+    QModelIndexList selectedCells = selected->selectedIndexes();
+
+    if(selectedCells.size()==0)
+    {
+      msj.setText("\nDebe seleccionar el evento que desea modificar\t\n");
+      msj.exec();
+    }
+    else if(selectedCells.size()>1)
+    {
+      msj.setText("\nSolo puede modificar 1 evento a la vez\t\n");
+      msj.exec();
+    }
+    else
+    {
+      this->close();
+      QModelIndex currIndex = ui->qtEventList->currentIndex();
+      string eventName, aux;
+      Date dateBegEv;
+
+      eventName=ui->qtEventList->item(currIndex.row(),0)->text().toStdString();
+      aux=ui->qtEventList->item(currIndex.row(),1)->text().toStdString();
+      dateBegEv.fromString(aux);
+
+      for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
+        if(it.get_curr().getEventName() == eventName &&
+           it.get_curr().getDateBegEv() == dateBegEv)
+        {
+          event = it.get_curr();
+          it.reset_last();
+        }
+
+      ModEventWindow *modEvent_i;
+      modEvent_i=new ModEventWindow(this->eventTree,this->nameTree,event,this);
+      modEvent_i->setModal(false);
+      modEvent_i->show();
+    }
+  }
 }
 
 void OrganizingWindow::on_pbEliminar_clicked()
 {
   QMessageBox msj;
-  ifstream fileIn;
-  ofstream fileOut;
-  int row=0;
 
-  fileIn.open("../BD/eventos.txt");
-
-  if(!fileIn.good())
+  if(not(this->eventTree->is_empty()))
   {
-    msj.setText("\tERROR(1)\nOcurrió un error interno\nNo se han podido cargar"
-                " los datos de los eventos disponibles\n");
-    msj.exec();
-  }
-  else
-  {
-    string aux;
-    getline(fileIn, aux);
+    QItemSelectionModel *selected = ui->qtEventList->selectionModel();
+    QModelIndexList selectedCells = selected->selectedIndexes();
 
-    if(aux=="")
+    if(selectedCells.size()==0)
     {
-      msj.setText("\tERROR(2)\nNo hay eventos disponibles\n");
+      msj.setText("\nDebe seleccionar el evento que desea eliminar\t\n");
+      msj.exec();
+    }
+    else if(selectedCells.size()>1)
+    {
+      msj.setText("\nSolo puede eliminar 1 evento a la vez\t\n");
       msj.exec();
     }
     else
     {
-      QItemSelectionModel *selected = ui->qtEventList->selectionModel();
-      QModelIndexList selectedCells = selected->selectedIndexes();
+      ofstream fileOut;
 
-      if(selectedCells.size()==0)
+      fileOut.open("../BD/eventos.txt");
+      if(!fileOut.good())
       {
-        msj.setText("\nDebe seleccionar el evento que desea eliminar\t\n");
-        msj.exec();
-      }
-      else if(selectedCells.size()>1)
-      {
-        msj.setText("\nSolo puede eliminar 1 evento a la vez\t\n");
+        msj.setText("\tERROR\nha ocurrido un error interno, no podrá eliminar "
+                    "el evento\n");
         msj.exec();
       }
       else
       {
-        QModelIndex currIndex = ui->qtEventList->currentIndex();
-        DynSetTree<Event, Avl_Tree> eventTree;
-        Event event;
-        string evName;
-        evName=ui->qtEventList->item(currIndex.row(),0)->text().toStdString();
+        QModelIndex currIndx = ui->qtEventList->currentIndex();
+        string eventName, aux;
+        Date dateBegEv;
 
-        while(!fileIn.eof() && fileIn>>event)
-          if(event.getEventName() != evName)
-            eventTree.insert(event);
-        fileIn.close();
+        eventName=ui->qtEventList->item(currIndx.row(),0)->text().toStdString();
+        aux=ui->qtEventList->item(currIndx.row(),1)->text().toStdString();
+        dateBegEv.fromString(aux);
 
-        fileOut.open("../BD/eventos.txt");
-        if(!fileOut.good())
-        {
-          msj.setText("\tERROR(3)\nOcurrió un error interno");
-          msj.exec();
-        }
-        else
-        {
-          for(auto it=eventTree.begin(); it.has_curr(); it.next())
-            fileOut << it.get_curr();
-          fileOut.close();
+        for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
+          if(it.get_curr().getEventName() == eventName &&
+             it.get_curr().getDateBegEv() == dateBegEv)
+          {
+            this->eventTree->remove(it.get_curr());
+            this->nameTree->remove(eventName);
+            it.reset_last();
+          }
 
-          msj.setText("\nEl evento se ha eliminado con exito\t\n");
-          msj.exec();
-        }
+        msj.setText("\nEl evento se ha eliminado con exito\t\n");
+        msj.exec();
 
         ui->qtEventList->setColumnCount(2);
-        ui->qtEventList->setRowCount(eventTree.size());
+        ui->qtEventList->setRowCount(this->eventTree->size());
 
-        for(auto it=eventTree.begin(); it.has_curr(); it.next())
+        int row=0;
+        for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
         {
+          fileOut << it.get_curr();
+
           QTableWidgetItem *cell1 = ui->qtEventList->item(row, 0);
           QTableWidgetItem *cell2 = ui->qtEventList->item(row, 1);
 
@@ -174,14 +199,13 @@ void OrganizingWindow::on_pbEliminar_clicked()
           }
 
           auto aux1=QString::fromStdString(it.get_curr().getEventName());
-          auto aux2=QString::fromStdString(
-                it.get_curr().getDateBegEv().toString());
+          auto aux2=QString::fromStdString(it.get_curr().getDateBegEv().
+                                           toString());
           cell1->setText(aux1);
           cell2->setText(aux2);
-
           ++row;
         }
-        eventTree.empty();
+        fileOut.close();
       }
     }
   }

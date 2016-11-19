@@ -16,7 +16,7 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
      <width>791</width>
      <height>491</height>
@@ -178,7 +178,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="nombreventole_2"/>
+           <widget class="QLineEdit" name="leEventName"/>
           </item>
          </layout>
         </item>
@@ -200,12 +200,37 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_28">
             <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>                                           Fechas en las que se realizará el evento
-(si el evento se realizará en un solo día seleccione 01/01/0000 como fecha fin)</string>
+               <string>Fechas en las que se realizará el evento</string>
               </property>
              </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
            </layout>
           </item>
@@ -232,7 +257,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechIniciode_2">
+             <widget class="QDateEdit" name="deDateBegEv">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -262,7 +287,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechFinde_2">
+             <widget class="QDateEdit" name="deDateFinEv">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -298,7 +323,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="valorinscripciontle_2"/>
+           <widget class="QLineEdit" name="leInscripValue"/>
           </item>
          </layout>
         </item>
@@ -342,7 +367,21 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horaeventole_2"/>
+           <widget class="QTimeEdit" name="teEventHour">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>false</bool>
+            </property>
+            <property name="time">
+             <time>
+              <hour>0</hour>
+              <minute>0</minute>
+              <second>0</second>
+             </time>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -367,12 +406,13 @@
           <item>
            <widget class="QLabel" name="lugareventotl_2">
             <property name="text">
-             <string>Lugar donde se realizara el evento: </string>
+             <string>Lugar donde se
+realizará el evento: </string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lugareventole_2"/>
+           <widget class="QTextEdit" name="txeEventPlace"/>
           </item>
          </layout>
         </item>
@@ -398,12 +438,37 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_34">
             <item>
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QLabel" name="label_6">
               <property name="text">
-               <string>             Fechas en las que se entregará el material necesario para el evento
-(si el evento se realizará en un solo día seleccione 01/01/0000 como fecha fin)</string>
+               <string>Fechas en las que se entregará el material necesario para el evento</string>
               </property>
              </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
            </layout>
           </item>
@@ -430,7 +495,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechIniciomaterialde_2">
+             <widget class="QDateEdit" name="deDateBegMate">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -460,7 +525,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="fechFinmaterialde_2">
+             <widget class="QDateEdit" name="deDateFinMate">
               <property name="displayFormat">
                <string>dd/MM/yyyy</string>
               </property>
@@ -509,7 +574,24 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horainimaterialle_2"/>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="teHourBegMate">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -536,7 +618,24 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="horafinmaterialle_2"/>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="teHourFinMate">
+            <property name="displayFormat">
+             <string>hh:mm</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -550,7 +649,7 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>17</width>
-          <height>17</height>
+          <height>5</height>
          </size>
         </property>
        </spacer>
@@ -562,12 +661,13 @@
           <item>
            <widget class="QLabel" name="lugarmaterialtl_2">
             <property name="text">
-             <string>Lugar donde se realizará la entrega del material: </string>
+             <string>Lugar donde se realizará
+la entrega del material: </string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lugarmaterialle_2"/>
+           <widget class="QTextEdit" name="txeMatePlace"/>
           </item>
          </layout>
         </item>
@@ -589,7 +689,8 @@
           <item>
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Incluir una imagen referente al evento:</string>
+             <string>Incluir una imagen
+referente al evento:</string>
             </property>
            </widget>
           </item>
@@ -607,11 +708,37 @@
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="examinarpb_2">
-            <property name="text">
-             <string>Examinar</string>
-            </property>
-           </widget>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="1" column="0">
+             <widget class="QLabel" name="lPicture">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="mouseTracking">
+               <bool>false</bool>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::WinPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="scaledContents">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QPushButton" name="pbExaminar">
+              <property name="text">
+               <string>Examinar</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <spacer name="horizontalSpacer_48">
@@ -627,7 +754,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="dirImgtl_2">
+           <widget class="QLabel" name="lePicture">
             <property name="text">
              <string/>
             </property>
@@ -645,7 +772,7 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>18</height>
+          <height>5</height>
          </size>
         </property>
        </spacer>
@@ -676,7 +803,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QLineEdit" name="descripcionle_2"/>
+         <widget class="QTextEdit" name="txeDescription"/>
         </item>
        </layout>
       </item>
@@ -688,7 +815,7 @@
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>40</height>
+          <height>10</height>
          </size>
         </property>
        </spacer>
@@ -696,7 +823,189 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_42">
         <item>
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
          <spacer name="horizontalSpacer_53">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_11">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_14">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_10">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_16">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_19">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_21">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_20">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_18">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_17">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_15">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -715,6 +1024,19 @@
           </property>
          </widget>
         </item>
+        <item>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </item>
       <item>
@@ -724,8 +1046,8 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>20</width>
-          <height>18</height>
+          <width>10</width>
+          <height>10</height>
          </size>
         </property>
        </spacer>
@@ -779,7 +1101,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Modificar Información del Evento</string>
+       <string>Modificar Datos del Evento</string>
       </property>
      </widget>
     </item>
@@ -801,6 +1123,22 @@
     </item>
    </layout>
   </widget>
+  <widget class="QDateEdit" name="deCurrDate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>480</y>
+     <width>110</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="displayFormat">
+    <string>d/M/yyyy</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -811,12 +1149,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>113</x>
-     <y>477</y>
+     <x>126</x>
+     <y>469</y>
     </hint>
     <hint type="destinationlabel">
-     <x>146</x>
-     <y>455</y>
+     <x>161</x>
+     <y>449</y>
     </hint>
    </hints>
   </connection>
@@ -827,12 +1165,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>690</x>
-     <y>475</y>
+     <x>686</x>
+     <y>469</y>
     </hint>
     <hint type="destinationlabel">
-     <x>640</x>
-     <y>461</y>
+     <x>661</x>
+     <y>452</y>
     </hint>
    </hints>
   </connection>

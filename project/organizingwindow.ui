@@ -147,22 +147,6 @@
  </resources>
  <connections>
   <connection>
-   <sender>pbRegresar</sender>
-   <signal>clicked()</signal>
-   <receiver>OrganizingWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>121</x>
-     <y>462</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>176</x>
-     <y>453</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pbSalir</sender>
    <signal>clicked()</signal>
    <receiver>OrganizingWindow</receiver>
@@ -195,18 +179,18 @@
    </hints>
   </connection>
   <connection>
-   <sender>pbModificar</sender>
+   <sender>pbRegresar</sender>
    <signal>clicked()</signal>
    <receiver>OrganizingWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>107</x>
-     <y>381</y>
+     <x>121</x>
+     <y>462</y>
     </hint>
     <hint type="destinationlabel">
-     <x>69</x>
-     <y>378</y>
+     <x>176</x>
+     <y>453</y>
     </hint>
    </hints>
   </connection>

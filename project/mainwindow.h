@@ -35,16 +35,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     DynSetTree<Event, Avl_Tree> eventTree;
     DynSetTree<string, Avl_Tree> nameTree;
+    //QThread *thread;
     ~MainWindow();
 
-/*
-Q_SIGNALS:
-   void backup(const string&, const DynSetTree<Event, Avl_Tree>& eventTree);
-*/
 private slots:
   void on_pbDeportista_clicked();
-
   void on_pbOrganizador_clicked();
+  void on_pbSalir_clicked();
+  //void backup();
 
 private:
     Ui::MainWindow *ui;
