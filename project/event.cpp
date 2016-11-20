@@ -41,79 +41,79 @@ Event::Event(const Event& Event)
   this->picture = Event.picture;
 }
 
-void Event::setEventName(string eventName)
+void Event::setEventName(const string &eventName)
 {
   this->eventName = eventName;
   return;
 }
 
-void Event::setDateBegEv(Date dateBegEv)
+void Event::setDateBegEv(const Date &dateBegEv)
 {
   this->dateBegEv = dateBegEv;
   return;
 }
 
-void Event::setDateFinEv(Date dateFinEv)
+void Event::setDateFinEv(const Date &dateFinEv)
 {
   this->dateFinEv = dateFinEv;
   return;
 }
 
-void Event::setInscripValue(float inscripValue)
+void Event::setInscripValue(const float &inscripValue)
 {
   this->inscripValue = inscripValue;
   return;
 }
 
-void Event::setEventHour(string eventHour)
+void Event::setEventHour(const string &eventHour)
 {
   this->eventHour = eventHour;
   return;
 }
 
-void Event::setEventPlace(string eventPlace)
+void Event::setEventPlace(const string &eventPlace)
 {
   this->eventPlace = eventPlace;
   return;
 }
 
-void Event::setDateBegMate(Date dateBegMate)
+void Event::setDateBegMate(const Date &dateBegMate)
 {
   this->dateBegMate = dateBegMate;
   return;
 }
 
-void Event::setDateFinMate(Date dateFinMate)
+void Event::setDateFinMate(const Date &dateFinMate)
 {
   this->dateFinMate = dateFinMate;
   return;
 }
 
-void Event::setHourBegMate(string hourBegMate)
+void Event::setHourBegMate(const string &hourBegMate)
 {
   this->hourBegMate = hourBegMate;
   return;
 }
 
-void Event::setHourFinMate(string hourFinMate)
+void Event::setHourFinMate(const string &hourFinMate)
 {
   this->hourFinMate = hourFinMate;
   return;
 }
 
-void Event::setMatePlace(string matePlace)
+void Event::setMatePlace(const string &matePlace)
 {
   this->matePlace = matePlace;
   return;
 }
 
-void Event::setDescription(string description)
+void Event::setDescription(const string &description)
 {
   this->description = description;
   return;
 }
 
-void Event::setPicture(string picture)
+void Event::setPicture(const string &picture)
 {
   this->picture = picture;
   return;
@@ -158,29 +158,31 @@ Event Event::operator=(const Event& event)
   return(event);
 }
 
-int Event::operator==(const Event& event)
+bool Event::operator==(const Event& event)
 {
   if(this->eventName==event.eventName)
-      return(1);
-  return(0);
+      return(true);
+  return(false);
 }
 
-int operator<(const Event& event1, const Event& event2)
+bool operator<(const Event& event1, const Event& event2)
 {
   if(event1.getDateBegEv() < event2.getDateBegEv())
-    return(1);
-  else if(event1.getEventName() < event2.getEventName())
-    return(1);
-  return(0);
+    return(true);
+  else if(event1.getDateBegEv() == event2.getDateBegEv() &&
+          event1.getEventName() < event2.getEventName())
+    return(true);
+  return(false);
 }
 
-int operator>(const Event& event1, const Event& event2)
+bool operator>(const Event& event1, const Event& event2)
 {
   if(event1.getDateBegEv() > event2.getDateBegEv())
-    return(1);
-  else if(event1.getEventName() > event2.getEventName())
-    return(1);
-  return(0);
+    return(true);
+  else if(event1.getDateBegEv() == event2.getDateBegEv() &&
+          event1.getEventName() > event2.getEventName())
+    return(true);
+  return(false);
 }
 
 ostream& operator<<(ostream& event, const Event& e)

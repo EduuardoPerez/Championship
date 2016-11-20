@@ -30,20 +30,17 @@ Diagrama de colaboración para Mod\+Event\+Window\+:\nopagebreak
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}{Mod\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$name\+Tree, const \hyperlink{class_event}{Event} \&event, Q\+Widget $\ast$parent=0)
+\hyperlink{class_mod_event_window_af4786249a6a84874d00927b9fc956f9c}{Mod\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}{event\+Tree}, const \hyperlink{class_event}{Event} \&\hyperlink{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}{event}, Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_mod_event_window}{Mod\+Event\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Campos de datos}
 \begin{DoxyCompactItemize}
 \item 
-Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ {\bfseries event\+Tree}\hypertarget{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}{}\label{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}
+Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}{event\+Tree}\hypertarget{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}{}\label{class_mod_event_window_afe17e39631e29b25a5442bfa41575dce}
 
-\item 
-Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ {\bfseries name\+Tree}\hypertarget{class_mod_event_window_a0e3b2af740cdb1b206b0ff92a17247f2}{}\label{class_mod_event_window_a0e3b2af740cdb1b206b0ff92a17247f2}
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+\hyperlink{class_event}{Event} \hyperlink{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}{event}\hypertarget{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}{}\label{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}
 
-\item 
-\hyperlink{class_event}{Event} {\bfseries event}\hypertarget{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}{}\label{class_mod_event_window_aa6931186e1f39dafc51befc85bed2470}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em event event del cual se cargarán los datos en la ventana \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
@@ -56,20 +53,23 @@ Definición en la línea 23 del archivo modeventwindow.\+h.
 \subsection{Documentación del constructor y destructor}
 \index{Mod\+Event\+Window@{Mod\+Event\+Window}!Mod\+Event\+Window@{Mod\+Event\+Window}}
 \index{Mod\+Event\+Window@{Mod\+Event\+Window}!Mod\+Event\+Window@{Mod\+Event\+Window}}
-\subsubsection[{\texorpdfstring{Mod\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$name\+Tree, const Event \&event, Q\+Widget $\ast$parent=0)}{ModEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nameTree, const Event &event, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Mod\+Event\+Window\+::\+Mod\+Event\+Window (
+\subsubsection[{\texorpdfstring{Mod\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, const Event \&event, Q\+Widget $\ast$parent=0)}{ModEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, const Event &event, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Mod\+Event\+Window\+::\+Mod\+Event\+Window (
 \begin{DoxyParamCaption}
 \item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
-\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{name\+Tree, }
 \item[{const {\bf Event} \&}]{event, }
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}{}\label{class_mod_event_window_abc294bd872d219a6d6f7993b124b94ef}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_mod_event_window_af4786249a6a84874d00927b9fc956f9c}{}\label{class_mod_event_window_af4786249a6a84874d00927b9fc956f9c}
 
 
 \hyperlink{class_mod_event_window}{Mod\+Event\+Window}. 
 
 
 \begin{DoxyParams}{Parámetros}
+{\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em event} & event del cual se cargarán los datos en la ventana \\
+\hline
 {\em parent} & padre de componentes \\
 \hline
 \end{DoxyParams}

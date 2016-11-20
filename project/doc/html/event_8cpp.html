@@ -111,12 +111,12 @@ Dependencia gráfica adjunta para event.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funciones</h2></td></tr>
-<tr class="memitem:ad6e586fa6dd5a21660de787ff7fac24c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8cpp.html#ad6e586fa6dd5a21660de787ff7fac24c">operator&lt;</a> (const <a class="el" href="class_event.html">Event</a> &amp;event1, const <a class="el" href="class_event.html">Event</a> &amp;event2)</td></tr>
-<tr class="memdesc:ad6e586fa6dd5a21660de787ff7fac24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;  <a href="#ad6e586fa6dd5a21660de787ff7fac24c">Más...</a><br /></td></tr>
-<tr class="separator:ad6e586fa6dd5a21660de787ff7fac24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4860cf48dda0b223fb9fa88aeffb9b95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8cpp.html#a4860cf48dda0b223fb9fa88aeffb9b95">operator&gt;</a> (const <a class="el" href="class_event.html">Event</a> &amp;event1, const <a class="el" href="class_event.html">Event</a> &amp;event2)</td></tr>
-<tr class="memdesc:a4860cf48dda0b223fb9fa88aeffb9b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;  <a href="#a4860cf48dda0b223fb9fa88aeffb9b95">Más...</a><br /></td></tr>
-<tr class="separator:a4860cf48dda0b223fb9fa88aeffb9b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b14fbe916bf72e371a0af9970530e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8cpp.html#ae1b14fbe916bf72e371a0af9970530e0">operator&lt;</a> (const <a class="el" href="class_event.html">Event</a> &amp;event1, const <a class="el" href="class_event.html">Event</a> &amp;event2)</td></tr>
+<tr class="memdesc:ae1b14fbe916bf72e371a0af9970530e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;  <a href="#ae1b14fbe916bf72e371a0af9970530e0">Más...</a><br /></td></tr>
+<tr class="separator:ae1b14fbe916bf72e371a0af9970530e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff3729450781b90f7710cf4647a05b98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8cpp.html#aff3729450781b90f7710cf4647a05b98">operator&gt;</a> (const <a class="el" href="class_event.html">Event</a> &amp;event1, const <a class="el" href="class_event.html">Event</a> &amp;event2)</td></tr>
+<tr class="memdesc:aff3729450781b90f7710cf4647a05b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &gt;  <a href="#aff3729450781b90f7710cf4647a05b98">Más...</a><br /></td></tr>
+<tr class="separator:aff3729450781b90f7710cf4647a05b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91de7df4316bfc12fce6283858843121"><td class="memItemLeft" align="right" valign="top">ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="event_8cpp.html#a91de7df4316bfc12fce6283858843121">operator&lt;&lt;</a> (ostream &amp;event, const <a class="el" href="class_event.html">Event</a> &amp;e)</td></tr>
 <tr class="memdesc:a91de7df4316bfc12fce6283858843121"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator &lt;&lt;  <a href="#a91de7df4316bfc12fce6283858843121">Más...</a><br /></td></tr>
 <tr class="separator:a91de7df4316bfc12fce6283858843121"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,12 +135,12 @@ Funciones</h2></td></tr>
 
 <p>Definición en el archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 </div><h2 class="groupheader">Documentación de las funciones</h2>
-<a class="anchor" id="ad6e586fa6dd5a21660de787ff7fac24c"></a>
+<a class="anchor" id="ae1b14fbe916bf72e371a0af9970530e0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int operator&lt; </td>
+          <td class="memname">bool operator&lt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_event.html">Event</a> &amp;&#160;</td>
           <td class="paramname">, </td>
@@ -160,7 +160,7 @@ Funciones</h2></td></tr>
 </div><div class="memdoc">
 
 <p>operator &lt; </p>
-<dl class="section return"><dt>Devuelve</dt><dd>1 si this es menor a event, 0 si no lo es. </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si this es menor a event, false de lo contrario. </dd></dl>
 
 <p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00168">168</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
@@ -193,16 +193,16 @@ Funciones</h2></td></tr>
 <p>operator &lt;&lt; </p>
 <dl class="section return"><dt>Devuelve</dt><dd>ostream&amp; event </dd></dl>
 
-<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00186">186</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00188">188</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4860cf48dda0b223fb9fa88aeffb9b95"></a>
+<a class="anchor" id="aff3729450781b90f7710cf4647a05b98"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int operator&gt; </td>
+          <td class="memname">bool operator&gt; </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_event.html">Event</a> &amp;&#160;</td>
           <td class="paramname">, </td>
@@ -222,9 +222,9 @@ Funciones</h2></td></tr>
 </div><div class="memdoc">
 
 <p>operator &gt; </p>
-<dl class="section return"><dt>Devuelve</dt><dd>1 si this es mayor a event, 0 si no lo es. </dd></dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true si this es mayor a event, false de lo contrario. </dd></dl>
 
-<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00177">177</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00178">178</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +255,7 @@ Funciones</h2></td></tr>
 <p>operator &gt;&gt; </p>
 <dl class="section return"><dt>Devuelve</dt><dd>istream&amp; event </dd></dl>
 
-<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00204">204</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00206">206</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +276,7 @@ Funciones</h2></td></tr>
 <p>Método Uint2String. </p>
 <dl class="section return"><dt>Devuelve</dt><dd>tipo int convertido a string </dd></dl>
 
-<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00279">279</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="event_8cpp_source.html#l00281">281</a> del archivo <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>

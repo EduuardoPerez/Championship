@@ -16,15 +16,15 @@ Dependencia gráfica adjunta para participant.\+cpp\+:\nopagebreak
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{participant_8cpp_a4deb5935b4c161b878a63e795b4d8427}{operator$<$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
+bool \hyperlink{participant_8cpp_a072b3e797da9050b47b877a4ea168539}{operator$<$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
-int \hyperlink{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}{operator$>$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
+bool \hyperlink{participant_8cpp_afc9e798f4f49369e3fbdb6c1c3aef00e}{operator$>$} (const \hyperlink{class_participant}{Participant} \&p1, const \hyperlink{class_participant}{Participant} \&p2)
 \begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{participant_8cpp_a4b5d7073823a6d7f530b2449f5318b86}{operator$<$$<$} (ostream \&participant, const \hyperlink{class_participant}{Participant} \&p)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
 istream \& \hyperlink{participant_8cpp_a9defb1b815d27cfb3e6322dbcb4a44ff}{operator$>$$>$} (istream \&participant, \hyperlink{class_participant}{Participant} \&aux)
 \begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\item 
-unsigned int \hyperlink{participant_8cpp_a588b505c3456212aefeb7b854b50c0a8}{calculate\+Age} (unsigned int born\+Day, unsigned int born\+Month, unsigned int born\+Year, unsigned int curr\+Day, unsigned int curr\+Month, unsigned int curr\+Year)
+unsigned int \hyperlink{participant_8cpp_ae4a6a08638e9aff6758810116ac1e094}{calculate\+Age} (\hyperlink{class_date}{Date} born\+Date, \hyperlink{class_date}{Date} curr\+Date)
 \begin{DoxyCompactList}\small\item\em calculate\+Age \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,41 +45,39 @@ Noviembre, 2016
 \subsection{Documentación de las funciones}
 \index{participant.\+cpp@{participant.\+cpp}!calculate\+Age@{calculate\+Age}}
 \index{calculate\+Age@{calculate\+Age}!participant.\+cpp@{participant.\+cpp}}
-\subsubsection[{\texorpdfstring{calculate\+Age(unsigned int born\+Day, unsigned int born\+Month, unsigned int born\+Year, unsigned int curr\+Day, unsigned int curr\+Month, unsigned int curr\+Year)}{calculateAge(unsigned int bornDay, unsigned int bornMonth, unsigned int bornYear, unsigned int currDay, unsigned int currMonth, unsigned int currYear)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int calculate\+Age (
+\subsubsection[{\texorpdfstring{calculate\+Age(\+Date born\+Date, Date curr\+Date)}{calculateAge(Date bornDate, Date currDate)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int calculate\+Age (
 \begin{DoxyParamCaption}
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int}
+\item[{{\bf Date}}]{, }
+\item[{{\bf Date}}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8cpp_a588b505c3456212aefeb7b854b50c0a8}{}\label{participant_8cpp_a588b505c3456212aefeb7b854b50c0a8}
+)}\hypertarget{participant_8cpp_ae4a6a08638e9aff6758810116ac1e094}{}\label{participant_8cpp_ae4a6a08638e9aff6758810116ac1e094}
 
 
 calculate\+Age 
 
 \begin{DoxyReturn}{Devuelve}
-Años comprendidos entre dos fechas, 0 si se ingresan fechas erróneas. 
+Años comprendidos entre dos fechas, 0 si se ingresan fechas erróneas. calculate\+Age 
+
+Años entre born\+Date y curr\+Date, 0 si las fechas son erróneas. 
 \end{DoxyReturn}
 
 
-Definición en la línea 191 del archivo participant.\+cpp.
+Definición en la línea 195 del archivo participant.\+cpp.
 
 \index{participant.\+cpp@{participant.\+cpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!participant.\+cpp@{participant.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$<$(const Participant \&p1, const Participant \&p2)}{operator<(const Participant &p1, const Participant &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\subsubsection[{\texorpdfstring{operator$<$(const Participant \&p1, const Participant \&p2)}{operator<(const Participant &p1, const Participant &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Participant} \&}]{, }
 \item[{const {\bf Participant} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8cpp_a4deb5935b4c161b878a63e795b4d8427}{}\label{participant_8cpp_a4deb5935b4c161b878a63e795b4d8427}
+)}\hypertarget{participant_8cpp_a072b3e797da9050b47b877a4ea168539}{}\label{participant_8cpp_a072b3e797da9050b47b877a4ea168539}
 
 
 operator $<$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, fasle de lo contrario. 
 \end{DoxyReturn}
 
 
@@ -102,26 +100,26 @@ ostream\& participant
 \end{DoxyReturn}
 
 
-Definición en la línea 130 del archivo participant.\+cpp.
+Definición en la línea 134 del archivo participant.\+cpp.
 
 \index{participant.\+cpp@{participant.\+cpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!participant.\+cpp@{participant.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$>$(const Participant \&p1, const Participant \&p2)}{operator>(const Participant &p1, const Participant &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Participant \&p1, const Participant \&p2)}{operator>(const Participant &p1, const Participant &p2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Participant} \&}]{, }
 \item[{const {\bf Participant} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}{}\label{participant_8cpp_a2fd62bcceeeb40ac3f5ab14a0942a675}
+)}\hypertarget{participant_8cpp_afc9e798f4f49369e3fbdb6c1c3aef00e}{}\label{participant_8cpp_afc9e798f4f49369e3fbdb6c1c3aef00e}
 
 
 operator $>$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, fasle de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 123 del archivo participant.\+cpp.
+Definición en la línea 125 del archivo participant.\+cpp.
 
 \index{participant.\+cpp@{participant.\+cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!participant.\+cpp@{participant.\+cpp}}
@@ -140,5 +138,5 @@ istream\& participant
 \end{DoxyReturn}
 
 
-Definición en la línea 143 del archivo participant.\+cpp.
+Definición en la línea 147 del archivo participant.\+cpp.
 

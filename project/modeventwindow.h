@@ -27,15 +27,23 @@ class ModEventWindow : public QDialog
 public:
   /**
    * @brief ModEventWindow
+   * @param eventTree árbol para administrar los eventos
+   * @param event event del cual se cargarán los datos en la ventana
    * @param parent padre de componentes
    */
   explicit ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
-                          DynSetTree<string, Avl_Tree> *nameTree,
-                          const Event& event,
-                          QWidget *parent = 0);
+                          const Event& event, QWidget *parent = 0);
+
+  /**
+   * @brief eventTree árbol para administrar los eventos
+   */
   DynSetTree<Event, Avl_Tree> *eventTree;
-  DynSetTree<string, Avl_Tree> *nameTree;
+
+  /**
+   * @brief event event del cual se cargarán los datos en la ventana
+   */
   Event event;
+
   ~ModEventWindow();
 
 private slots:

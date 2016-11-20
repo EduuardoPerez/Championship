@@ -31,49 +31,49 @@ Participant::Participant(const Participant& participant)
   this->picture = participant.picture;
 }
 
-void Participant::setId(unsigned int id)
+void Participant::setId(const unsigned int &id)
 {
   this->id = id;
   return;
 }
 
-void Participant::setName(string name)
+void Participant::setName(const string &name)
 {
     this->name = name;
     return;
 }
 
-void Participant::setLastName(string lastName)
+void Participant::setLastName(const string &lastName)
 {
   this->lastName = lastName;
   return;
 }
 
-void Participant::setBornDate(Date bornDate)
+void Participant::setBornDate(const Date &bornDate)
 {
   this->bornDate = bornDate;
   return;
 }
 
-void Participant::setAge(unsigned int age)
+void Participant::setAge(const unsigned int &age)
 {
   this->age = age;
   return;
 }
 
-void Participant::setCategory(string category)
+void Participant::setCategory(const string &category)
 {
   this->category = category;
   return;
 }
 
-void Participant::setInscriptionDate(Date inscriptionDate)
+void Participant::setInscriptionDate(const Date &inscriptionDate)
 {
   this->inscriptionDate = inscriptionDate;
   return;
 }
 
-void Participant::setPicture(string picture)
+void Participant::setPicture(const string &picture)
 {
   this->picture = picture;
   return;
@@ -106,25 +106,29 @@ Participant Participant::operator=(const Participant& participant)
   return(participant);
 }
 
-int Participant::operator==(const Participant& participant)
+bool Participant::operator==(const Participant& participant)
 {
   if(this->id==participant.id)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
-int operator<(const Participant& p1, const Participant& p2)
+bool operator<(const Participant& p1, const Participant& p2)
 {
   if(p1.getBornDate() < p2.getBornDate())
-    return(1);
-  return(0);
+    return(true);
+  else if(p1.getBornDate() == p2.getBornDate() && p1.getId() < p2.getId())
+    return(true);
+  return(false);
 }
 
-int operator>(const Participant& p1, const Participant& p2)
+bool operator>(const Participant& p1, const Participant& p2)
 {
   if(p1.getBornDate() > p2.getBornDate())
-    return(1);
-  return(0);
+    return(true);
+  else if(p1.getBornDate() == p2.getBornDate() && p1.getId() > p2.getId())
+    return(true);
+  return(false);
 }
 
 ostream& operator<<(ostream& participant, const Participant& p)
@@ -188,10 +192,15 @@ istream& operator>>(istream& participant, Participant &aux)
   return(participant);
 }
 
-unsigned int calculateAge(unsigned int bornDay,unsigned int bornMonth,
-                          unsigned int bornYear,unsigned int currDay,
-                          unsigned int currMonth,unsigned int currYear)
+unsigned int calculateAge(Date bornDate, Date currDate)
 {
+  unsigned int bornDay = bornDate.getDay();
+  unsigned int bornMonth = bornDate.getMonth();
+  unsigned int bornYear = bornDate.getYear();
+  unsigned int currDay = currDate.getDay();
+  unsigned int currMonth = currDate.getMonth();
+  unsigned int currYear = currDate.getYear();
+
   if(currDay>=1 && bornDay>=1 && currDay<=31 && bornDay<=31 && currMonth>=1
      && bornMonth>=1 && currMonth<=12 && bornMonth<=12 && currYear>bornYear)
   {

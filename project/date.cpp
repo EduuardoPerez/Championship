@@ -21,19 +21,19 @@ Date::Date(const Date& date)
   this->year = date.year;
 }
 
-void Date::setDay(unsigned int day)
+void Date::setDay(const unsigned int &day)
 {
   this->day = day;
   return;
 }
 
-void Date::setMonth(unsigned int month)
+void Date::setMonth(const unsigned int &month)
 {
   this->month = month;
   return;
 }
 
-void Date::setYear(unsigned int year)
+void Date::setYear(const unsigned int &year)
 {
   this->year = year;
   return;
@@ -97,38 +97,39 @@ Date Date::operator=(const Date& date)
  return(date);
 }
 
-int Date::operator==(const Date& date){
+bool Date::operator ==(const Date& date)
+{
   if (this->day==date.day && this->month==date.month && this->year==date.year)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
-int operator<(const Date& date1, const Date& date2)
+bool operator<(const Date& date1, const Date& date2)
 {
   if(date1.cmpDate(date2)<0)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
-int operator>(const Date& date1, const Date& date2)
+bool operator>(const Date& date1, const Date& date2)
 {
   if(date1.cmpDate(date2)>0)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
-int operator<=(const Date& date1, const Date& date2)
+bool operator<=(const Date& date1, const Date& date2)
 {
   if(date1.cmpDate(date2)<0 || date1.cmpDate(date2)==0)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
-int operator>=(const Date& date1, const Date& date2)
+bool operator>=(const Date& date1, const Date& date2)
 {
   if(date1.cmpDate(date2)>0 || date1.cmpDate(date2)==0)
-    return(1);
-  return(0);
+    return(true);
+  return(false);
 }
 
 ostream& operator<<(ostream& date, const Date& p)

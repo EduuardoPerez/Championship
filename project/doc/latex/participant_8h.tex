@@ -29,15 +29,15 @@ class \hyperlink{class_participant}{Participant}
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{participant_8h_a74adb7b35f5f23ec5878193450d4bb1e}{operator$<$} (const \hyperlink{class_participant}{Participant} \&, const \hyperlink{class_participant}{Participant} \&)
+bool \hyperlink{participant_8h_ac2702b3d8dfa312f758118da92224087}{operator$<$} (const \hyperlink{class_participant}{Participant} \&, const \hyperlink{class_participant}{Participant} \&)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
-int \hyperlink{participant_8h_a18cb30cfc9639bd2aa3997c99a0aeb6a}{operator$>$} (const \hyperlink{class_participant}{Participant} \&, const \hyperlink{class_participant}{Participant} \&)
+bool \hyperlink{participant_8h_ad0856a98fa42fdfe8c1ebbc1db2c614b}{operator$>$} (const \hyperlink{class_participant}{Participant} \&, const \hyperlink{class_participant}{Participant} \&)
 \begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{participant_8h_a86fd92e1ceba47506b7fd0c592914b83}{operator$<$$<$} (ostream \&, const \hyperlink{class_participant}{Participant} \&)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
 istream \& \hyperlink{participant_8h_a0813953838331687cfb04ff106f4a584}{operator$>$$>$} (istream \&, \hyperlink{class_participant}{Participant} \&)
 \begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\item 
-unsigned int \hyperlink{participant_8h_a2b4a46eeb8c6b0f2c2f4d332c944c113}{calculate\+Age} (unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)
+unsigned int \hyperlink{participant_8h_a0d33f6cebdd17ceccbb319b77d465a8f}{calculate\+Age} (\hyperlink{class_date}{Date}, \hyperlink{class_date}{Date})
 \begin{DoxyCompactList}\small\item\em calculate\+Age \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -58,41 +58,39 @@ Noviembre, 2016
 \subsection{Documentación de las funciones}
 \index{participant.\+h@{participant.\+h}!calculate\+Age@{calculate\+Age}}
 \index{calculate\+Age@{calculate\+Age}!participant.\+h@{participant.\+h}}
-\subsubsection[{\texorpdfstring{calculate\+Age(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)}{calculateAge(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int calculate\+Age (
+\subsubsection[{\texorpdfstring{calculate\+Age(\+Date, Date)}{calculateAge(Date, Date)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int calculate\+Age (
 \begin{DoxyParamCaption}
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int, }
-\item[{unsigned}]{int}
+\item[{{\bf Date}}]{, }
+\item[{{\bf Date}}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8h_a2b4a46eeb8c6b0f2c2f4d332c944c113}{}\label{participant_8h_a2b4a46eeb8c6b0f2c2f4d332c944c113}
+)}\hypertarget{participant_8h_a0d33f6cebdd17ceccbb319b77d465a8f}{}\label{participant_8h_a0d33f6cebdd17ceccbb319b77d465a8f}
 
 
 calculate\+Age 
 
 \begin{DoxyReturn}{Devuelve}
-Años comprendidos entre dos fechas, 0 si se ingresan fechas erróneas. 
+Años comprendidos entre dos fechas, 0 si se ingresan fechas erróneas. calculate\+Age 
+
+Años entre born\+Date y curr\+Date, 0 si las fechas son erróneas. 
 \end{DoxyReturn}
 
 
-Definición en la línea 191 del archivo participant.\+cpp.
+Definición en la línea 195 del archivo participant.\+cpp.
 
 \index{participant.\+h@{participant.\+h}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!participant.\+h@{participant.\+h}}
-\subsubsection[{\texorpdfstring{operator$<$(const Participant \&, const Participant \&)}{operator<(const Participant &, const Participant &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\subsubsection[{\texorpdfstring{operator$<$(const Participant \&, const Participant \&)}{operator<(const Participant &, const Participant &)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Participant} \&}]{, }
 \item[{const {\bf Participant} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8h_a74adb7b35f5f23ec5878193450d4bb1e}{}\label{participant_8h_a74adb7b35f5f23ec5878193450d4bb1e}
+)}\hypertarget{participant_8h_ac2702b3d8dfa312f758118da92224087}{}\label{participant_8h_ac2702b3d8dfa312f758118da92224087}
 
 
 operator $<$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, fasle de lo contrario. 
 \end{DoxyReturn}
 
 
@@ -115,26 +113,26 @@ ostream\& participant
 \end{DoxyReturn}
 
 
-Definición en la línea 130 del archivo participant.\+cpp.
+Definición en la línea 134 del archivo participant.\+cpp.
 
 \index{participant.\+h@{participant.\+h}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!participant.\+h@{participant.\+h}}
-\subsubsection[{\texorpdfstring{operator$>$(const Participant \&, const Participant \&)}{operator>(const Participant &, const Participant &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Participant \&, const Participant \&)}{operator>(const Participant &, const Participant &)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Participant} \&}]{, }
 \item[{const {\bf Participant} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{participant_8h_a18cb30cfc9639bd2aa3997c99a0aeb6a}{}\label{participant_8h_a18cb30cfc9639bd2aa3997c99a0aeb6a}
+)}\hypertarget{participant_8h_ad0856a98fa42fdfe8c1ebbc1db2c614b}{}\label{participant_8h_ad0856a98fa42fdfe8c1ebbc1db2c614b}
 
 
 operator $>$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, fasle de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 123 del archivo participant.\+cpp.
+Definición en la línea 125 del archivo participant.\+cpp.
 
 \index{participant.\+h@{participant.\+h}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!participant.\+h@{participant.\+h}}
@@ -153,5 +151,5 @@ istream\& participant
 \end{DoxyReturn}
 
 
-Definición en la línea 143 del archivo participant.\+cpp.
+Definición en la línea 147 del archivo participant.\+cpp.
 

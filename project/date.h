@@ -65,17 +65,17 @@ public:
   /**
    * @brief Modificador setDay
    */
-  void setDay(unsigned int);
+  void setDay(const unsigned int&);
 
   /**
    * @brief Modificador setMonth
    */
-  void setMonth(unsigned int);
+  void setMonth(const unsigned int&);
 
   /**
    * @brief Modificador setYear
    */
-  void setYear(unsigned int);
+  void setYear(const unsigned int&);
 
   /**
    * @brief Método fromString
@@ -108,46 +108,46 @@ public:
 
   /**
    * @brief operator ==
-   * @return 1 si this es igual a date, 0 si no lo es.
+   * @return true si this es igual a date, false de lo contrario.
    */
-  int operator ==(const Date&);
+  bool operator==(const Date&);
 };
 
 /**
  * @brief operator <
- * @return 1 si this es menor a date, 0 si no lo es.
+ * @return true si this es menor a date, false de lo contrario.
  */
-int operator<(const Date&, const Date&);
+bool operator<(const Date&, const Date&);
 
 /**
  * @brief operator >
- * @return 1 si this es mayor a date, 0 si no lo es.
+ * @return true si this es mayor a date, false de lo contrario.
  */
-int operator>(const Date&, const Date&);
+bool operator>(const Date&, const Date&);
 
 /**
  * @brief operator <=
- * @return 1 si this es menor o igual a date, 0 si no lo es.
+ * @return true si this es menor o igual a date, false de lo contrario.
  */
-int operator<=(const Date&, const Date&);
+bool operator<=(const Date&, const Date&);
 
 /**
  * @brief operator >=
- * @return 1 si this es mayor o igual a date, 0 si no lo es.
+ * @return true si this es mayor o igual a date, false de lo contrario.
  */
-int operator>=(const Date&, const Date&);
+bool operator>=(const Date&, const Date&);
 
 /**
  * @brief operator <<
  * @return ostream& date
  */
-ostream& operator <<(ostream&,const Date&);
+ostream& operator<<(ostream&,const Date&);
 
 /**
  * @brief operator >>
  * @return istream& date
  */
-istream& operator >>(istream&, Date&);
+istream& operator>>(istream&, Date&);
 
 /**
  * @brief Método Uint2String

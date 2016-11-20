@@ -29,9 +29,9 @@ class \hyperlink{class_event}{Event}
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{event_8h_a8ff5b36e542debf507e34e9bc1a7674b}{operator$<$} (const \hyperlink{class_event}{Event} \&, const \hyperlink{class_event}{Event} \&)
+bool \hyperlink{event_8h_a83ed973c897fce04b33595c56342bc1c}{operator$<$} (const \hyperlink{class_event}{Event} \&, const \hyperlink{class_event}{Event} \&)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
-int \hyperlink{event_8h_ade1d07077e3eddc1aa68048c8a770ffb}{operator$>$} (const \hyperlink{class_event}{Event} \&, const \hyperlink{class_event}{Event} \&)
+bool \hyperlink{event_8h_a6be60f4389af6836f677f3ec902a5da7}{operator$>$} (const \hyperlink{class_event}{Event} \&, const \hyperlink{class_event}{Event} \&)
 \begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{event_8h_ae89bc187e03d6768c657ffff9c3c040c}{operator$<$$<$} (ostream \&, const \hyperlink{class_event}{Event} \&)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
@@ -56,18 +56,18 @@ Noviembre, 2016
 \subsection{Documentación de las funciones}
 \index{event.\+h@{event.\+h}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!event.\+h@{event.\+h}}
-\subsubsection[{\texorpdfstring{operator$<$(const Event \&, const Event \&)}{operator<(const Event &, const Event &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\subsubsection[{\texorpdfstring{operator$<$(const Event \&, const Event \&)}{operator<(const Event &, const Event &)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Event} \&}]{, }
 \item[{const {\bf Event} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{event_8h_a8ff5b36e542debf507e34e9bc1a7674b}{}\label{event_8h_a8ff5b36e542debf507e34e9bc1a7674b}
+)}\hypertarget{event_8h_a83ed973c897fce04b33595c56342bc1c}{}\label{event_8h_a83ed973c897fce04b33595c56342bc1c}
 
 
 operator $<$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, false de lo contrario. 
 \end{DoxyReturn}
 
 
@@ -90,26 +90,26 @@ ostream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 186 del archivo event.\+cpp.
+Definición en la línea 188 del archivo event.\+cpp.
 
 \index{event.\+h@{event.\+h}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!event.\+h@{event.\+h}}
-\subsubsection[{\texorpdfstring{operator$>$(const Event \&, const Event \&)}{operator>(const Event &, const Event &)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Event \&, const Event \&)}{operator>(const Event &, const Event &)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Event} \&}]{, }
 \item[{const {\bf Event} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{event_8h_ade1d07077e3eddc1aa68048c8a770ffb}{}\label{event_8h_ade1d07077e3eddc1aa68048c8a770ffb}
+)}\hypertarget{event_8h_a6be60f4389af6836f677f3ec902a5da7}{}\label{event_8h_a6be60f4389af6836f677f3ec902a5da7}
 
 
 operator $>$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es mayor a event, 0 si no lo es. 
+true si this es mayor a event, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 177 del archivo event.\+cpp.
+Definición en la línea 178 del archivo event.\+cpp.
 
 \index{event.\+h@{event.\+h}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!event.\+h@{event.\+h}}
@@ -128,5 +128,5 @@ istream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 204 del archivo event.\+cpp.
+Definición en la línea 206 del archivo event.\+cpp.
 

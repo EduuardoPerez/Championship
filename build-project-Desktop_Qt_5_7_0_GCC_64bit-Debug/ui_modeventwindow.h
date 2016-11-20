@@ -157,6 +157,9 @@ public:
         if (ModEventWindow->objectName().isEmpty())
             ModEventWindow->setObjectName(QStringLiteral("ModEventWindow"));
         ModEventWindow->resize(800, 500);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/logo/logo.png"), QSize(), QIcon::Normal, QIcon::Off);
+        ModEventWindow->setWindowIcon(icon);
         layoutWidget = new QWidget(ModEventWindow);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 0, 791, 491));

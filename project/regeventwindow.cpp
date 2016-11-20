@@ -10,14 +10,12 @@
 #include <QDebug>
 
 RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
-                               DynSetTree<string, Avl_Tree> *nameTree,
                                QWidget *parent) :
   QDialog(parent),
   ui(new Ui::RegEventWindow)
 {
   ui->setupUi(this);
   this->eventTree = eventTree;
-  this->nameTree = nameTree;
   ui->lePicture->hide();
   ui->lPicture->setFixedWidth(80);
   ui->lPicture->setFixedHeight(80);
@@ -50,8 +48,7 @@ RegEventWindow::~RegEventWindow()
 
 void RegEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
-                                                  *this->nameTree, this);
+  OrganizingWindow *window = new OrganizingWindow(*this->eventTree, this);
   window->setModal(false);
   window->show();
 }
@@ -118,7 +115,7 @@ void RegEventWindow::on_pbRegistrar_clicked()
                  eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
                  matePlace, description, picture);
 
-    if(this->nameTree->insert(event.getEventName()) == nullptr)
+    if(this->eventTree->insert(event) == nullptr)
       msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
                   " usted ha ingresado, utilice un nombre diferente\n");
     else
@@ -127,14 +124,9 @@ void RegEventWindow::on_pbRegistrar_clicked()
 
       fileOut.open("../BD/eventos.txt");
       if(!fileOut.good())
-      {
-        this->nameTree->remove(event.getEventName());
         msj.setText("\tERROR\nEl evento no se pudo registrar\n");
-      }
       else
       {
-        this->eventTree->insert_dup(event);
-
         for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
           fileOut << it.get_curr();
         fileOut.close();

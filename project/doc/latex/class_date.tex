@@ -21,13 +21,13 @@ unsigned int \hyperlink{class_date_ac471b901531b7a1e73809918bac8c1ec}{get\+Month
 \begin{DoxyCompactList}\small\item\em Observador get\+Month. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_date_a6561cf495bd6b7e6c747420d7ae9cc12}{get\+Year} () const 
 \begin{DoxyCompactList}\small\item\em Observador get\+Year. \end{DoxyCompactList}\item 
-void \hyperlink{class_date_aafe200d5fe2aa294a91d20a6b97afe75}{set\+Day} (unsigned int)\hypertarget{class_date_aafe200d5fe2aa294a91d20a6b97afe75}{}\label{class_date_aafe200d5fe2aa294a91d20a6b97afe75}
+void \hyperlink{class_date_a62b5e19b97adb02367605e3ecf27fc2d}{set\+Day} (const unsigned int \&)\hypertarget{class_date_a62b5e19b97adb02367605e3ecf27fc2d}{}\label{class_date_a62b5e19b97adb02367605e3ecf27fc2d}
 
 \begin{DoxyCompactList}\small\item\em Modificador set\+Day. \end{DoxyCompactList}\item 
-void \hyperlink{class_date_aae2c1d1158d2760ba4d5a23c528fd24d}{set\+Month} (unsigned int)\hypertarget{class_date_aae2c1d1158d2760ba4d5a23c528fd24d}{}\label{class_date_aae2c1d1158d2760ba4d5a23c528fd24d}
+void \hyperlink{class_date_aae207cd9f5441ca419502bb5ae030a4d}{set\+Month} (const unsigned int \&)\hypertarget{class_date_aae207cd9f5441ca419502bb5ae030a4d}{}\label{class_date_aae207cd9f5441ca419502bb5ae030a4d}
 
 \begin{DoxyCompactList}\small\item\em Modificador set\+Month. \end{DoxyCompactList}\item 
-void \hyperlink{class_date_abf7cafce8365f4ad601c270bb3f0f02d}{set\+Year} (unsigned int)\hypertarget{class_date_abf7cafce8365f4ad601c270bb3f0f02d}{}\label{class_date_abf7cafce8365f4ad601c270bb3f0f02d}
+void \hyperlink{class_date_a2cf1e3a04b1ca6a0fa94430be5f8c5eb}{set\+Year} (const unsigned int \&)\hypertarget{class_date_a2cf1e3a04b1ca6a0fa94430be5f8c5eb}{}\label{class_date_a2cf1e3a04b1ca6a0fa94430be5f8c5eb}
 
 \begin{DoxyCompactList}\small\item\em Modificador set\+Year. \end{DoxyCompactList}\item 
 void \hyperlink{class_date_a4ca1e1caba11928c842f6c62a2c851ab}{from\+String} (string)\hypertarget{class_date_a4ca1e1caba11928c842f6c62a2c851ab}{}\label{class_date_a4ca1e1caba11928c842f6c62a2c851ab}
@@ -42,7 +42,7 @@ void \hyperlink{class_date_a2ad9e0b62b3abea9c9d471373ce5fdef}{assign} (unsigned 
 \begin{DoxyCompactList}\small\item\em Método assign. \end{DoxyCompactList}\item 
 \hyperlink{class_date}{Date} \hyperlink{class_date_a449df9445b4f4fac127e171ac981adb3}{operator=} (const \hyperlink{class_date}{Date} \&)
 \begin{DoxyCompactList}\small\item\em operator = \end{DoxyCompactList}\item 
-int \hyperlink{class_date_aea7500eb1bee5e573c01c32458bbe83e}{operator==} (const \hyperlink{class_date}{Date} \&)
+bool \hyperlink{class_date_a708f08422ab811b735f26855ddf7d9b1}{operator==} (const \hyperlink{class_date}{Date} \&)
 \begin{DoxyCompactList}\small\item\em operator == \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -146,17 +146,17 @@ Definición en la línea 92 del archivo date.\+cpp.
 
 \index{Date@{Date}!operator==@{operator==}}
 \index{operator==@{operator==}!Date@{Date}}
-\subsubsection[{\texorpdfstring{operator==(const Date \&)}{operator==(const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}int Date\+::operator== (
+\subsubsection[{\texorpdfstring{operator==(const Date \&)}{operator==(const Date &)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Date\+::operator== (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{date}
 \end{DoxyParamCaption}
-)}\hypertarget{class_date_aea7500eb1bee5e573c01c32458bbe83e}{}\label{class_date_aea7500eb1bee5e573c01c32458bbe83e}
+)}\hypertarget{class_date_a708f08422ab811b735f26855ddf7d9b1}{}\label{class_date_a708f08422ab811b735f26855ddf7d9b1}
 
 
 operator == 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es igual a date, 0 si no lo es. 
+true si this es igual a date, false de lo contrario. 
 \end{DoxyReturn}
 
 

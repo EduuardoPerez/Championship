@@ -11,9 +11,11 @@
 #include <QDialog>
 #include <QStyle>
 #include <QDesktopWidget>
+#include <QMessageBox>
 #include <ahSort.H>
 #include <tpl_dynSetTree.H>
 #include "event.h"
+#include "viewevent.h"
 
 namespace Ui {
   class SportyWindow;
@@ -29,11 +31,17 @@ class SportyWindow : public QDialog
 public:
   /**
    * @brief SportyWindow
+   * @param eventTree árbol para administrar los eventos
    * @param parent padre de componentes
    */
   explicit SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree,
                         QWidget *parent = 0);
+
+  /**
+   * @brief eventTree árbol para administrar los eventos
+   */
   DynSetTree<Event, Avl_Tree>* eventTree;
+
   ~SportyWindow();
 
 private slots:

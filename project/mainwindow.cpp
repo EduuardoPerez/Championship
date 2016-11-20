@@ -29,13 +29,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
   QMessageBox msj;
   ifstream fileIn;
+  ofstream fileOut;
   Event event;
   Date currDate;
 
   currDate.fromString((ui->deCurrDate->text()).toStdString());
 
   fileIn.open("../BD/eventos.txt");
-
   if(!fileIn.good())
   {
     msj.setText("\tERROR(1)\nEl programa no funcionará correctamente\n");
@@ -52,14 +52,23 @@ MainWindow::MainWindow(QWidget *parent) :
     {
       while(!fileIn.eof() && fileIn>>event)
         if(event.getDateBegEv() >= currDate)
-        {
           this->eventTree.insert(event);
-          this->nameTree.insert(event.getEventName());
-        }
       fileIn.close();
     }
   }
 
+  fileOut.open("../BD/eventos.txt");
+  if(!fileOut.good())
+  {
+    msj.setText("\tERROR(2)\nHa ocurrido un error interno\n");
+    msj.exec();
+  }
+  else
+  {
+    for(auto it=this->eventTree.begin(); it.has_curr(); it.next())
+      fileOut << it.get_curr();
+    fileOut.close();
+  }
 
   /*
     activeTimer = new QTimer(this);
@@ -92,7 +101,7 @@ void MainWindow::on_pbDeportista_clicked()
 
 void MainWindow::on_pbOrganizador_clicked()
 {
-  organizing_i = new OrganizingWindow(this->eventTree, this->nameTree, this);
+  organizing_i = new OrganizingWindow(this->eventTree, this);
   organizing_i->setModal(false);
   organizing_i->show();
 }

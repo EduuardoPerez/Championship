@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['regeventwindow',['RegEventWindow',['../class_reg_event_window.html',1,'RegEventWindow'],['../class_reg_event_window.html#a746fa6180a87823eb6403d1f26b7a270',1,'RegEventWindow::RegEventWindow()']]],
-  ['regeventwindow_2ecpp',['regeventwindow.cpp',['../regeventwindow_8cpp.html',1,'']]],
-  ['regeventwindow_2eh',['regeventwindow.h',['../regeventwindow_8h.html',1,'']]]
+  ['participant',['Participant',['../class_participant.html',1,'Participant'],['../class_participant.html#a09e54ccec8ebca53dfb49c240b6d1ecd',1,'Participant::Participant()']]],
+  ['participant_2ecpp',['participant.cpp',['../participant_8cpp.html',1,'']]],
+  ['participant_2eh',['participant.h',['../participant_8h.html',1,'']]]
 ];

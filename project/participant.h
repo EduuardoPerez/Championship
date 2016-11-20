@@ -111,42 +111,42 @@ public:
   /**
    * @brief Modificador setId
    */
-  void setId(unsigned int);
+  void setId(const unsigned int&);
 
   /**
    * @brief Modificador setName
    */
-  void setName(string);
+  void setName(const string&);
 
   /**
    * @brief Modificador setLastName
    */
-  void setLastName(string);
+  void setLastName(const string&);
 
   /**
    * @brief Modificador setBornDate
    */
-  void setBornDate(Date);
+  void setBornDate(const Date&);
 
   /**
    * @brief Modificador setAge
    */
-  void setAge(unsigned int);
+  void setAge(const unsigned int&);
 
   /**
    * @brief Modificador setCategory
    */
-  void setCategory(string);
+  void setCategory(const string&);
 
   /**
    * @brief Modificador setInscriptionDate
    */
-  void setInscriptionDate(Date);
+  void setInscriptionDate(const Date&);
 
   /**
    * @brief Modificador setPicture
    */
-  void setPicture(string);
+  void setPicture(const string&);
 
   /**
    * @brief Método assign
@@ -161,22 +161,22 @@ public:
 
   /**
    * @brief operator ==
-   * @return 1 si this es igual a participant, 0 si no lo es.
+   * @return true si this es igual a participant, fasle de lo contrario.
    */
-  int operator==(const Participant&);
+  bool operator==(const Participant&);
 };
 
 /**
  * @brief operator <
- * @return 1 si this es menor a event, 0 si no lo es.
+ * @return true si this es menor a event, fasle de lo contrario.
  */
-int operator<(const Participant&, const Participant&);
+bool operator<(const Participant&, const Participant&);
 
 /**
  * @brief operator >
- * @return 1 si this es menor a event, 0 si no lo es.
+ * @return true si this es menor a event, fasle de lo contrario.
  */
-int operator>(const Participant&, const Participant&);
+bool operator>(const Participant&, const Participant&);
 
 /**
  * @brief operator <<
@@ -195,7 +195,10 @@ istream& operator>>(istream&, Participant&);
  * @return Años comprendidos entre dos fechas,
  * 0 si se ingresan fechas erróneas.
  */
-unsigned int calculateAge(unsigned int, unsigned int, unsigned int,
-                          unsigned int, unsigned int, unsigned int);
+/**
+ * @brief calculateAge
+ * @return Años entre bornDate y currDate, 0 si las fechas son erróneas.
+ */
+unsigned int calculateAge(Date, Date);
 
 #endif // PARTICIPANT_H

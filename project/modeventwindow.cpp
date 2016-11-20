@@ -10,15 +10,12 @@
 #include <QDebug>
 
 ModEventWindow::ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
-                               DynSetTree<string, Avl_Tree> *nameTree,
-                               const Event& event,
-                               QWidget *parent) :
+                               const Event& event, QWidget *parent) :
   QDialog(parent),
   ui(new Ui::ModEventWindow)
 {
   ui->setupUi(this);
   this->eventTree = eventTree;
-  this->nameTree = nameTree;
   this->event = event;
   ui->lPicture->setFixedWidth(80);
   ui->lPicture->setFixedHeight(80);
@@ -26,31 +23,31 @@ ModEventWindow::ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
   ui->deCurrDate->hide();
   ui->deCurrDate->setDate(QDate::currentDate());
 
-  auto eventName = QString::fromStdString(event.getEventName());
-  auto inscripValue = QString::number(event.getInscripValue());
-  auto eventPlace = QString::fromStdString(event.getEventPlace());
-  auto matePlace = QString::fromStdString(event.getMatePlace());
-  auto picture = QString::fromStdString(event.getPicture());
-  auto description = QString::fromStdString(event.getDescription());
-  auto aux = QString::fromStdString(event.getDateBegEv().toString());
+  auto eventName = QString::fromStdString(this->event.getEventName());
+  auto inscripValue = QString::number(this->event.getInscripValue());
+  auto eventPlace = QString::fromStdString(this->event.getEventPlace());
+  auto matePlace = QString::fromStdString(this->event.getMatePlace());
+  auto picture = QString::fromStdString(this->event.getPicture());
+  auto description = QString::fromStdString(this->event.getDescription());
+  auto aux = QString::fromStdString(this->event.getDateBegEv().toString());
   auto dateBegEv = QDate::fromString(aux, "d/M/yyyy");
   aux.clear();
-  aux = QString::fromStdString(event.getDateFinEv().toString());
+  aux = QString::fromStdString(this->event.getDateFinEv().toString());
   auto dateFinEv = QDate::fromString(aux, "d/M/yyyy");
   aux.clear();
-  aux = QString::fromStdString(event.getDateBegMate().toString());
+  aux = QString::fromStdString(this->event.getDateBegMate().toString());
   auto dateBegMate = QDate::fromString(aux, "d/M/yyyy");
   aux.clear();
-  aux = QString::fromStdString(event.getDateFinMate().toString());
+  aux = QString::fromStdString(this->event.getDateFinMate().toString());
   auto dateFinMate = QDate::fromString(aux, "d/M/yyyy");
   aux.clear();
-  aux = QString::fromStdString(event.getEventHour());
+  aux = QString::fromStdString(this->event.getEventHour());
   auto eventHour = QTime::fromString(aux, "hh:mm");
   aux.clear();
-  aux = QString::fromStdString(event.getHourBegMate());
+  aux = QString::fromStdString(this->event.getHourBegMate());
   auto hourBegMate = QTime::fromString(aux, "hh:mm");
   aux.clear();
-  aux = QString::fromStdString(event.getHourFinMate());
+  aux = QString::fromStdString(this->event.getHourFinMate());
   auto hourFinMate = QTime::fromString(aux, "hh:mm");
 
   ui->leEventName->setText(eventName);
@@ -85,8 +82,7 @@ ModEventWindow::~ModEventWindow()
 
 void ModEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
-                                                  *this->nameTree, this);
+  OrganizingWindow *window = new OrganizingWindow(*this->eventTree, this);
   window->setModal(false);
   window->show();
 }
@@ -147,64 +143,54 @@ void ModEventWindow::on_pbGuardar_clicked()
                 "entrega del material es mas tardía que la hora de finalización"
                 " de la entrega del material\n");
 
-  else{
-    Event event;
-    string originalNm = this->event.getEventName();
-    Date originalDt = this->event.getDateBegEv();
-
-    qDebug()<<QString::fromStdString(originalNm);
-    qDebug()<<QString::fromStdString(originalDt.toString());
-
-
-    event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
-                 eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
-                 matePlace, description, picture);
+  else
+  {
+    DynSetTree<string, Avl_Tree> nameTree;
+    ofstream fileOut;
 
     for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
-      if(it.get_curr().getEventName() == originalNm &&
-         it.get_curr().getDateBegEv() == originalDt)
-      {
-        qDebug()<<"dentro de la eliminacion";
-        //idea para eliminar: no buscar directamente el dato sino buscarlo por su posicion y ahi si borrar
-        this->eventTree->remove(it.get_curr());
-        this->nameTree->remove(originalNm);
-        it.reset_last();
-      }
+      nameTree.insert(it.get_curr().getEventName());
 
-    if(this->nameTree->insert(name) == nullptr)
-      msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
-                  " usted ha ingresado, utilice un nombre diferente\n");
-    else
+    if(this->event.getEventName() == name)
     {
-      ofstream fileOut;
-
       fileOut.open("../BD/eventos.txt");
       if(!fileOut.good())
-      {
-        this->nameTree->remove(name);
         msj.setText("\tERROR\nNo se pudieron guardar las modificaciones\n");
-        this->close();
-
-        OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
-                                                        *this->nameTree, this);
-        window->setModal(false);
-        window->show();
-      }
       else
       {
-        this->eventTree->insert_dup(event);
+        this->eventTree->remove(this->event);
+        this->event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
+                            eventPlace, dateBegMate, dateFinMate, hourBegMate,
+                            hourFinMate, matePlace, description, picture);
+        this->eventTree->insert(this->event);
 
         for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
           fileOut << it.get_curr();
         fileOut.close();
-
         msj.setText("\nLos cambios fueron relizados con exito\n");
-        this->close();
+      }
+    }
 
-        OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
-                                                        *this->nameTree, this);
-        window->setModal(false);
-        window->show();
+    else if(nameTree.exist(name))
+      msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
+                  " usted ha ingresado, utilice un nombre diferente\n");
+    else
+    {
+      fileOut.open("../BD/eventos.txt");
+      if(!fileOut.good())
+        msj.setText("\tERROR\nNo se pudieron guardar las modificaciones\n");
+      else
+      {
+        this->eventTree->remove(this->event);
+        this->event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
+                            eventPlace, dateBegMate, dateFinMate, hourBegMate,
+                            hourFinMate, matePlace, description, picture);
+        this->eventTree->insert(this->event);
+
+        for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
+          fileOut << it.get_curr();
+        fileOut.close();
+        msj.setText("\nLos cambios fueron relizados con exito\n");
       }
     }
   }

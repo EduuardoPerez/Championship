@@ -10,14 +10,14 @@
 #include <QDebug>
 
 OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree,
-                                   DynSetTree<string, Avl_Tree>& nameTree,
                                    QWidget *parent) :
   QDialog(parent),
   ui(new Ui::OrganizingWindow)
 {
   ui->setupUi(this);
+  ui->deCurrDate->hide();
+  ui->deCurrDate->setDate(QDate::currentDate());
   this->eventTree = &eventTree;
-  this->nameTree = &nameTree;
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -70,7 +70,7 @@ OrganizingWindow::~OrganizingWindow()
 void OrganizingWindow::on_pbRegistrar_clicked()
 {
   RegEventWindow *regEvent_i;
-  regEvent_i = new RegEventWindow(this->eventTree, this->nameTree, this);
+  regEvent_i = new RegEventWindow(this->eventTree, this);
   regEvent_i->setModal(false);
   regEvent_i->show();
 }
@@ -78,7 +78,9 @@ void OrganizingWindow::on_pbRegistrar_clicked()
 void OrganizingWindow::on_pbModificar_clicked()
 {
   QMessageBox msj;
-  Event event;
+  Event event, eventAux;
+  Date dateBegEv, currDate;
+  string eventName, aux;
 
   if(not(this->eventTree->is_empty()))
   {
@@ -97,27 +99,32 @@ void OrganizingWindow::on_pbModificar_clicked()
     }
     else
     {
-      this->close();
       QModelIndex currIndex = ui->qtEventList->currentIndex();
-      string eventName, aux;
-      Date dateBegEv;
 
+      currDate.fromString((ui->deCurrDate->text()).toStdString());
       eventName=ui->qtEventList->item(currIndex.row(),0)->text().toStdString();
       aux=ui->qtEventList->item(currIndex.row(),1)->text().toStdString();
       dateBegEv.fromString(aux);
 
-      for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
-        if(it.get_curr().getEventName() == eventName &&
-           it.get_curr().getDateBegEv() == dateBegEv)
-        {
-          event = it.get_curr();
-          it.reset_last();
-        }
+      if(currDate == dateBegEv)
+      {
+        msj.setText("\nNo se pueden modificar eventos que se realizarán el día "
+                    "de hoy\t\n");
+        msj.exec();
+      }
+      else
+      {
+        eventAux.setEventName(eventName);
+        eventAux.setDateBegEv(dateBegEv);
 
-      ModEventWindow *modEvent_i;
-      modEvent_i=new ModEventWindow(this->eventTree,this->nameTree,event,this);
-      modEvent_i->setModal(false);
-      modEvent_i->show();
+        event = *(this->eventTree->search(eventAux));
+        this->close();
+
+        ModEventWindow *modEvent_i;
+        modEvent_i=new ModEventWindow(this->eventTree, event, this);
+        modEvent_i->setModal(false);
+        modEvent_i->show();
+      }
     }
   }
 }
@@ -155,22 +162,17 @@ void OrganizingWindow::on_pbEliminar_clicked()
       else
       {
         QModelIndex currIndx = ui->qtEventList->currentIndex();
-        string eventName, aux;
         Date dateBegEv;
+        Event eventAux;
+        string eventName, aux;
 
         eventName=ui->qtEventList->item(currIndx.row(),0)->text().toStdString();
         aux=ui->qtEventList->item(currIndx.row(),1)->text().toStdString();
         dateBegEv.fromString(aux);
+        eventAux.setEventName(eventName);
+        eventAux.setDateBegEv(dateBegEv);
 
-        for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
-          if(it.get_curr().getEventName() == eventName &&
-             it.get_curr().getDateBegEv() == dateBegEv)
-          {
-            this->eventTree->remove(it.get_curr());
-            this->nameTree->remove(eventName);
-            it.reset_last();
-          }
-
+        this->eventTree->remove(eventAux);
         msj.setText("\nEl evento se ha eliminado con exito\t\n");
         msj.exec();
 

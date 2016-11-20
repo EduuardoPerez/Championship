@@ -158,67 +158,67 @@ public:
   /**
    * @brief Modificador setEventName
    */
-  void setEventName(string);
+  void setEventName(const string&);
 
   /**
    * @brief Modificador setDateBegEv
    */
-  void setDateBegEv(Date);
+  void setDateBegEv(const Date&);
 
   /**
    * @brief Modificador setDateFinEv
    */
-  void setDateFinEv(Date);
+  void setDateFinEv(const Date&);
 
   /**
    * @brief Modificador setInscripValue
    */
-  void setInscripValue(float);
+  void setInscripValue(const float&);
 
   /**
    * @brief Modificador setEventHour
    */
-  void setEventHour(string);
+  void setEventHour(const string&);
 
   /**
    * @brief Modificador setEventPlace
    */
-  void setEventPlace(string);
+  void setEventPlace(const string&);
 
   /**
    * @brief Modificador setDateBegMate
    */
-  void setDateBegMate(Date);
+  void setDateBegMate(const Date&);
 
   /**
    * @brief Modificador setDateFinMate
    */
-  void setDateFinMate(Date);
+  void setDateFinMate(const Date&);
 
   /**
    * @brief Modificador setHourIniMate
    */
-  void setHourBegMate(string);
+  void setHourBegMate(const string&);
 
   /**
    * @brief Modificador setHourFinMate
    */
-  void setHourFinMate(string);
+  void setHourFinMate(const string&);
 
   /**
    * @brief Modificador setMatePlace
    */
-  void setMatePlace(string);
+  void setMatePlace(const string&);
 
   /**
    * @brief Modificador setDescription
    */
-  void setDescription(string);
+  void setDescription(const string&);
 
   /**
    * @brief Modificador setPicture
    */
-  void setPicture(string);
+  void setPicture(const string &);
 
   /**
    * @brief Método assign
@@ -234,23 +234,23 @@ public:
 
   /**
    * @brief operator ==
-   * @return 1 si this es igual a event, 0 si no lo es.
+   * @return true si this es igual a event, false de lo contrario.
    */
-  int operator==(const Event &);
+  bool operator==(const Event &);
 
 };
 
 /**
  * @brief operator <
- * @return 1 si this es menor a event, 0 si no lo es.
+ * @return true si this es menor a event, false de lo contrario.
  */
-int operator<(const Event&, const Event&);
+bool operator<(const Event&, const Event&);
 
 /**
  * @brief operator >
- * @return 1 si this es mayor a event, 0 si no lo es.
+ * @return true si this es mayor a event, false de lo contrario.
  */
-int operator>(const Event&, const Event&);
+bool operator>(const Event&, const Event&);
 
 /**
  * @brief operator <<

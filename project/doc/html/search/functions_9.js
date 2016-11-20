@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['regeventwindow',['RegEventWindow',['../class_reg_event_window.html#a746fa6180a87823eb6403d1f26b7a270',1,'RegEventWindow']]]
+  ['participant',['Participant',['../class_participant.html#a09e54ccec8ebca53dfb49c240b6d1ecd',1,'Participant']]]
 ];

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Championship</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/logo/logo.png</normaloff>:/logo/logo.png</iconset>
+  </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>

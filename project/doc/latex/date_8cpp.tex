@@ -16,13 +16,13 @@ Dependencia gráfica adjunta para date.\+cpp\+:\nopagebreak
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{date_8cpp_a43bd8c4a060ecd359d7bc0760af1415c}{operator$<$} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
+bool \hyperlink{date_8cpp_aa2e695ccf211714fafbc8c73cb7e5419}{operator$<$} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
-int \hyperlink{date_8cpp_aebf25757194b230cd4b7702754893fe7}{operator$>$} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
+bool \hyperlink{date_8cpp_ad442d522a65d30aca55827a74ffd621d}{operator$>$} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
 \begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
-int \hyperlink{date_8cpp_ab492ce9bd6faf7f7d33a6022585de7bf}{operator$<$=} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
+bool \hyperlink{date_8cpp_a87454da328d25895944a03fba1e0aed1}{operator$<$=} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
 \begin{DoxyCompactList}\small\item\em operator $<$= \end{DoxyCompactList}\item 
-int \hyperlink{date_8cpp_aba090718c971ac6a82e935600de1f942}{operator$>$=} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
+bool \hyperlink{date_8cpp_a5c20018c86b496cba7e7ed0dd5aee323}{operator$>$=} (const \hyperlink{class_date}{Date} \&date1, const \hyperlink{class_date}{Date} \&date2)
 \begin{DoxyCompactList}\small\item\em operator $>$= \end{DoxyCompactList}\item 
 ostream \& \hyperlink{date_8cpp_a525b2aeba34711c545cf51535c5a1fda}{operator$<$$<$} (ostream \&date, const \hyperlink{class_date}{Date} \&p)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
@@ -47,22 +47,22 @@ Noviembre, 2016
 \subsection{Documentación de las funciones}
 \index{date.\+cpp@{date.\+cpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!date.\+cpp@{date.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$<$(const Date \&date1, const Date \&date2)}{operator<(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\subsubsection[{\texorpdfstring{operator$<$(const Date \&date1, const Date \&date2)}{operator<(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{, }
 \item[{const {\bf Date} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{date_8cpp_a43bd8c4a060ecd359d7bc0760af1415c}{}\label{date_8cpp_a43bd8c4a060ecd359d7bc0760af1415c}
+)}\hypertarget{date_8cpp_aa2e695ccf211714fafbc8c73cb7e5419}{}\label{date_8cpp_aa2e695ccf211714fafbc8c73cb7e5419}
 
 
 operator $<$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a date, 0 si no lo es. 
+true si this es menor a date, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 106 del archivo date.\+cpp.
+Definición en la línea 107 del archivo date.\+cpp.
 
 \index{date.\+cpp@{date.\+cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!date.\+cpp@{date.\+cpp}}
@@ -81,64 +81,64 @@ ostream\& date
 \end{DoxyReturn}
 
 
-Definición en la línea 134 del archivo date.\+cpp.
+Definición en la línea 135 del archivo date.\+cpp.
 
 \index{date.\+cpp@{date.\+cpp}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!date.\+cpp@{date.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$<$=(const Date \&date1, const Date \&date2)}{operator<=(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$= (
+\subsubsection[{\texorpdfstring{operator$<$=(const Date \&date1, const Date \&date2)}{operator<=(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{, }
 \item[{const {\bf Date} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{date_8cpp_ab492ce9bd6faf7f7d33a6022585de7bf}{}\label{date_8cpp_ab492ce9bd6faf7f7d33a6022585de7bf}
+)}\hypertarget{date_8cpp_a87454da328d25895944a03fba1e0aed1}{}\label{date_8cpp_a87454da328d25895944a03fba1e0aed1}
 
 
 operator $<$= 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor o igual a date, 0 si no lo es. 
+true si this es menor o igual a date, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 120 del archivo date.\+cpp.
+Definición en la línea 121 del archivo date.\+cpp.
 
 \index{date.\+cpp@{date.\+cpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!date.\+cpp@{date.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$>$(const Date \&date1, const Date \&date2)}{operator>(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Date \&date1, const Date \&date2)}{operator>(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{, }
 \item[{const {\bf Date} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{date_8cpp_aebf25757194b230cd4b7702754893fe7}{}\label{date_8cpp_aebf25757194b230cd4b7702754893fe7}
+)}\hypertarget{date_8cpp_ad442d522a65d30aca55827a74ffd621d}{}\label{date_8cpp_ad442d522a65d30aca55827a74ffd621d}
 
 
 operator $>$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es mayor a date, 0 si no lo es. 
+true si this es mayor a date, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 113 del archivo date.\+cpp.
+Definición en la línea 114 del archivo date.\+cpp.
 
 \index{date.\+cpp@{date.\+cpp}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!date.\+cpp@{date.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$>$=(const Date \&date1, const Date \&date2)}{operator>=(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$= (
+\subsubsection[{\texorpdfstring{operator$>$=(const Date \&date1, const Date \&date2)}{operator>=(const Date &date1, const Date &date2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
 \begin{DoxyParamCaption}
 \item[{const {\bf Date} \&}]{, }
 \item[{const {\bf Date} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{date_8cpp_aba090718c971ac6a82e935600de1f942}{}\label{date_8cpp_aba090718c971ac6a82e935600de1f942}
+)}\hypertarget{date_8cpp_a5c20018c86b496cba7e7ed0dd5aee323}{}\label{date_8cpp_a5c20018c86b496cba7e7ed0dd5aee323}
 
 
 operator $>$= 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es mayor o igual a date, 0 si no lo es. 
+true si this es mayor o igual a date, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 127 del archivo date.\+cpp.
+Definición en la línea 128 del archivo date.\+cpp.
 
 \index{date.\+cpp@{date.\+cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!date.\+cpp@{date.\+cpp}}
@@ -157,5 +157,5 @@ istream\& date
 \end{DoxyReturn}
 
 
-Definición en la línea 142 del archivo date.\+cpp.
+Definición en la línea 143 del archivo date.\+cpp.
 

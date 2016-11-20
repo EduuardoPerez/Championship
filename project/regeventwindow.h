@@ -15,7 +15,6 @@
 #include <QFileDialog>
 #include <ahSort.H>
 #include <tpl_dynSetTree.H>
-
 #include "organizingwindow.h"
 
 namespace Ui {
@@ -32,13 +31,17 @@ class RegEventWindow : public QDialog
 public:
   /**
    * @brief RegEventWindow
+   * @param eventTree árbol para administrar los eventos
    * @param parent padre de componentes
    */
   explicit RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
-                          DynSetTree<string, Avl_Tree> *nameTree,
                           QWidget *parent = 0);
+
+  /**
+   * @brief eventTree árbol para administrar los eventos
+   */
   DynSetTree<Event, Avl_Tree> *eventTree;
-  DynSetTree<string, Avl_Tree> *nameTree;
+
   ~RegEventWindow();
 
 private slots:

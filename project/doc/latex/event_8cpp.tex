@@ -16,9 +16,9 @@ Dependencia gráfica adjunta para event.\+cpp\+:\nopagebreak
 \subsection*{Funciones}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}{operator$<$} (const \hyperlink{class_event}{Event} \&event1, const \hyperlink{class_event}{Event} \&event2)
+bool \hyperlink{event_8cpp_ae1b14fbe916bf72e371a0af9970530e0}{operator$<$} (const \hyperlink{class_event}{Event} \&event1, const \hyperlink{class_event}{Event} \&event2)
 \begin{DoxyCompactList}\small\item\em operator $<$ \end{DoxyCompactList}\item 
-int \hyperlink{event_8cpp_a4860cf48dda0b223fb9fa88aeffb9b95}{operator$>$} (const \hyperlink{class_event}{Event} \&event1, const \hyperlink{class_event}{Event} \&event2)
+bool \hyperlink{event_8cpp_aff3729450781b90f7710cf4647a05b98}{operator$>$} (const \hyperlink{class_event}{Event} \&event1, const \hyperlink{class_event}{Event} \&event2)
 \begin{DoxyCompactList}\small\item\em operator $>$ \end{DoxyCompactList}\item 
 ostream \& \hyperlink{event_8cpp_a91de7df4316bfc12fce6283858843121}{operator$<$$<$} (ostream \&event, const \hyperlink{class_event}{Event} \&e)
 \begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\item 
@@ -45,18 +45,18 @@ Noviembre, 2016
 \subsection{Documentación de las funciones}
 \index{event.\+cpp@{event.\+cpp}!operator$<$@{operator$<$}}
 \index{operator$<$@{operator$<$}!event.\+cpp@{event.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$<$(const Event \&event1, const Event \&event2)}{operator<(const Event &event1, const Event &event2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$<$ (
+\subsubsection[{\texorpdfstring{operator$<$(const Event \&event1, const Event \&event2)}{operator<(const Event &event1, const Event &event2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Event} \&}]{, }
 \item[{const {\bf Event} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}{}\label{event_8cpp_ad6e586fa6dd5a21660de787ff7fac24c}
+)}\hypertarget{event_8cpp_ae1b14fbe916bf72e371a0af9970530e0}{}\label{event_8cpp_ae1b14fbe916bf72e371a0af9970530e0}
 
 
 operator $<$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es menor a event, 0 si no lo es. 
+true si this es menor a event, false de lo contrario. 
 \end{DoxyReturn}
 
 
@@ -79,26 +79,26 @@ ostream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 186 del archivo event.\+cpp.
+Definición en la línea 188 del archivo event.\+cpp.
 
 \index{event.\+cpp@{event.\+cpp}!operator$>$@{operator$>$}}
 \index{operator$>$@{operator$>$}!event.\+cpp@{event.\+cpp}}
-\subsubsection[{\texorpdfstring{operator$>$(const Event \&event1, const Event \&event2)}{operator>(const Event &event1, const Event &event2)}}]{\setlength{\rightskip}{0pt plus 5cm}int operator$>$ (
+\subsubsection[{\texorpdfstring{operator$>$(const Event \&event1, const Event \&event2)}{operator>(const Event &event1, const Event &event2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
 \begin{DoxyParamCaption}
 \item[{const {\bf Event} \&}]{, }
 \item[{const {\bf Event} \&}]{}
 \end{DoxyParamCaption}
-)}\hypertarget{event_8cpp_a4860cf48dda0b223fb9fa88aeffb9b95}{}\label{event_8cpp_a4860cf48dda0b223fb9fa88aeffb9b95}
+)}\hypertarget{event_8cpp_aff3729450781b90f7710cf4647a05b98}{}\label{event_8cpp_aff3729450781b90f7710cf4647a05b98}
 
 
 operator $>$ 
 
 \begin{DoxyReturn}{Devuelve}
-1 si this es mayor a event, 0 si no lo es. 
+true si this es mayor a event, false de lo contrario. 
 \end{DoxyReturn}
 
 
-Definición en la línea 177 del archivo event.\+cpp.
+Definición en la línea 178 del archivo event.\+cpp.
 
 \index{event.\+cpp@{event.\+cpp}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!event.\+cpp@{event.\+cpp}}
@@ -117,7 +117,7 @@ istream\& event
 \end{DoxyReturn}
 
 
-Definición en la línea 204 del archivo event.\+cpp.
+Definición en la línea 206 del archivo event.\+cpp.
 
 \index{event.\+cpp@{event.\+cpp}!Uint2\+String@{Uint2\+String}}
 \index{Uint2\+String@{Uint2\+String}!event.\+cpp@{event.\+cpp}}
@@ -135,5 +135,5 @@ tipo int convertido a string
 \end{DoxyReturn}
 
 
-Definición en la línea 279 del archivo event.\+cpp.
+Definición en la línea 281 del archivo event.\+cpp.
 

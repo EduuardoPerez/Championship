@@ -68,5 +68,44 @@ SportyWindow::~SportyWindow()
 
 void SportyWindow::on_pbVerEvento_clicked()
 {
+  QMessageBox msj;
+  Event event, eventAux;
+  Date dateBegEv;
+  string eventName, aux;
 
+  if(not(this->eventTree->is_empty()))
+  {
+    QItemSelectionModel *selected = ui->qtEventList->selectionModel();
+    QModelIndexList selectedCells = selected->selectedIndexes();
+
+    if(selectedCells.size()==0)
+    {
+      msj.setText("\nDebe seleccionar el evento que desea ver\t\n");
+      msj.exec();
+    }
+    else if(selectedCells.size()>1)
+    {
+      msj.setText("\nSolo puede ver 1 evento a la vez\t\n");
+      msj.exec();
+    }
+    else
+    {
+      QModelIndex currIndex = ui->qtEventList->currentIndex();
+
+      eventName=ui->qtEventList->item(currIndex.row(),0)->text().toStdString();
+      aux=ui->qtEventList->item(currIndex.row(),1)->text().toStdString();
+      dateBegEv.fromString(aux);
+
+      eventAux.setEventName(eventName);
+      eventAux.setDateBegEv(dateBegEv);
+
+      event = *(this->eventTree->search(eventAux));
+      this->close();
+
+      ViewEvent *viewEv_i;
+      viewEv_i=new ViewEvent(this->eventTree, event, this);
+      viewEv_i->setModal(false);
+      viewEv_i->show();
+    }
+  }
 }

@@ -33,9 +33,14 @@ public:
      * @param parent padre de componentes
      */
     explicit MainWindow(QWidget *parent = 0);
+
+    /**
+     * @brief eventTree árbol para administrar los eventos
+     */
     DynSetTree<Event, Avl_Tree> eventTree;
-    DynSetTree<string, Avl_Tree> nameTree;
+
     //QThread *thread;
+
     ~MainWindow();
 
 private slots:
@@ -50,6 +55,10 @@ private:
     OrganizingWindow *organizing_i;
 };
 
+/**
+ * @brief Método is_emptyFile
+ * @return true si file esta vacio, false de lo contrario
+ */
 bool is_emptyFile(ifstream&);
 //void backup(const string&, const DynSetTree<Event, Avl_Tree>& eventTree);
 
