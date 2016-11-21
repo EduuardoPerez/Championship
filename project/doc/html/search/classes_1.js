@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['event',['Event',['../class_event.html',1,'']]]
+  ['date',['Date',['../class_date.html',1,'']]]
 ];

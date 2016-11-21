@@ -32,15 +32,22 @@ public:
   /**
    * @brief RegEventWindow
    * @param eventTree árbol para administrar los eventos
+   * @param nmEvTree árbol para administrar los nombres de los eventos
    * @param parent padre de componentes
    */
   explicit RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                          DynSetTree<string, Avl_Tree> *nmEvTree,
                           QWidget *parent = 0);
 
   /**
    * @brief eventTree árbol para administrar los eventos
    */
   DynSetTree<Event, Avl_Tree> *eventTree;
+
+  /**
+   * @brief nmEvTree árbol para administrar los nombres de los eventos
+   */
+  DynSetTree<string, Avl_Tree> *nmEvTree;
 
   ~RegEventWindow();
 

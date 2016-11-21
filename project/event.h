@@ -264,4 +264,10 @@ ostream& operator<<(ostream&, const Event&);
  */
 istream& operator>>(istream&, Event&);
 
+/**
+ * @brief float2String
+ * @return tipo float convertido a string
+ */
+string float2String(float);
+
 #endif // EVENT_H

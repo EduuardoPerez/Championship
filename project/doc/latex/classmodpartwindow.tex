@@ -1,0 +1,109 @@
+\hypertarget{classmodpartwindow}{}\section{Referencia de la Clase modpartwindow}
+\label{classmodpartwindow}\index{modpartwindow@{modpartwindow}}
+
+
+Clase modpartwindow.  
+
+
+
+
+{\ttfamily \#include $<$modpartwindow.\+h$>$}
+
+
+
+Diagrama de herencias de modpartwindow\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classmodpartwindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para modpartwindow\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodpartwindow__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodpartwindow_a1f50ef5614f3dcc4a31f18db43eb42db}{modpartwindow} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{classmodpartwindow_abe591df07342ab62a7a75423c9ff2459}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{classmodpartwindow_af57197e9e234588a272d3f952c995218}{nm\+Ev\+Tree}, Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{classmodpartwindow_a9a8b7a340fdb84fa6ef04425642c90ec}{part\+Tree}, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{classmodpartwindow_a3d2ffe89336e8e883e192e6cb39997d9}{ev\+Part\+Tree}, const \hyperlink{class_event}{Event} \&\hyperlink{classmodpartwindow_aac7d760729cfe50b80229911313c0d69}{event}, const \hyperlink{class_participant}{Participant} \&\hyperlink{classmodpartwindow_a52f8b015c48419a094701e1c4ad30b0c}{participant}, Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em modpartwindow \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{classmodpartwindow_abe591df07342ab62a7a75423c9ff2459}{event\+Tree}\hypertarget{classmodpartwindow_abe591df07342ab62a7a75423c9ff2459}{}\label{classmodpartwindow_abe591df07342ab62a7a75423c9ff2459}
+
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{classmodpartwindow_af57197e9e234588a272d3f952c995218}{nm\+Ev\+Tree}\hypertarget{classmodpartwindow_af57197e9e234588a272d3f952c995218}{}\label{classmodpartwindow_af57197e9e234588a272d3f952c995218}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{classmodpartwindow_a9a8b7a340fdb84fa6ef04425642c90ec}{part\+Tree}\hypertarget{classmodpartwindow_a9a8b7a340fdb84fa6ef04425642c90ec}{}\label{classmodpartwindow_a9a8b7a340fdb84fa6ef04425642c90ec}
+
+\begin{DoxyCompactList}\small\item\em part\+Tree árbol para administrar los participantes \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{classmodpartwindow_a3d2ffe89336e8e883e192e6cb39997d9}{ev\+Part\+Tree}\hypertarget{classmodpartwindow_a3d2ffe89336e8e883e192e6cb39997d9}{}\label{classmodpartwindow_a3d2ffe89336e8e883e192e6cb39997d9}
+
+\begin{DoxyCompactList}\small\item\em ev\+Part\+Tree árbol auxiliar para administrar los participantes \end{DoxyCompactList}\item 
+\hyperlink{class_event}{Event} \hyperlink{classmodpartwindow_aac7d760729cfe50b80229911313c0d69}{event}\hypertarget{classmodpartwindow_aac7d760729cfe50b80229911313c0d69}{}\label{classmodpartwindow_aac7d760729cfe50b80229911313c0d69}
+
+\begin{DoxyCompactList}\small\item\em event event del cual se cargarán los datos en la ventana \end{DoxyCompactList}\item 
+\hyperlink{class_participant}{Participant} \hyperlink{classmodpartwindow_a52f8b015c48419a094701e1c4ad30b0c}{participant}\hypertarget{classmodpartwindow_a52f8b015c48419a094701e1c4ad30b0c}{}\label{classmodpartwindow_a52f8b015c48419a094701e1c4ad30b0c}
+
+\begin{DoxyCompactList}\small\item\em participant participant a modificar \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase modpartwindow. 
+
+Definición en la línea 17 del archivo modpartwindow.\+h.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{modpartwindow@{modpartwindow}!modpartwindow@{modpartwindow}}
+\index{modpartwindow@{modpartwindow}!modpartwindow@{modpartwindow}}
+\subsubsection[{\texorpdfstring{modpartwindow(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$nm\+Ev\+Tree, Dyn\+Set\+Tree$<$ Participant, Avl\+\_\+\+Tree $>$ $\ast$part\+Tree, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ev\+Part\+Tree, const Event \&event, const Participant \&participant, Q\+Widget $\ast$parent=0)}{modpartwindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nmEvTree, DynSetTree< Participant, Avl_Tree > *partTree, DynSetTree< Pair, Avl_Tree > *evPartTree, const Event &event, const Participant &participant, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}modpartwindow\+::modpartwindow (
+\begin{DoxyParamCaption}
+\item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{nm\+Ev\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ {\bf Participant}, Avl\+\_\+\+Tree $>$ $\ast$}]{part\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$}]{ev\+Part\+Tree, }
+\item[{const {\bf Event} \&}]{event, }
+\item[{const {\bf Participant} \&}]{participant, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{classmodpartwindow_a1f50ef5614f3dcc4a31f18db43eb42db}{}\label{classmodpartwindow_a1f50ef5614f3dcc4a31f18db43eb42db}
+
+
+modpartwindow 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
+\hline
+{\em part\+Tree} & árbol para administrar los participantes \\
+\hline
+{\em ev\+Part\+Tree} & árbol auxiliar para administrar los participantes \\
+\hline
+{\em event} & event del cual se cargarán los datos en la ventana \\
+\hline
+{\em participant} & participant a modificar \\
+\hline
+{\em parent} & padre de componentes \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 4 del archivo modpartwindow.\+cpp.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/modpartwindow.\+h\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/modpartwindow.\+cpp\end{DoxyCompactItemize}

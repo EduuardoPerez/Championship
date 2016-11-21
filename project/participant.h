@@ -23,6 +23,7 @@ class Participant
   unsigned int age;
   string category;
   Date inscriptionDate;
+  string eventName;
   string picture;
 
 public:
@@ -100,6 +101,15 @@ public:
   }
 
   /**
+   * @brief Observador getEventName
+   * @return dirección lógica de this->picture
+   */
+  inline string getEventName() const
+  {
+      return(this->eventName);
+  }
+
+  /**
    * @brief Observador getPicture
    * @return dirección lógica de this->picture
    */
@@ -144,6 +154,11 @@ public:
   void setInscriptionDate(const Date&);
 
   /**
+   * @brief Modificador setEventName
+   */
+  void setEventName(const string&);
+
+  /**
    * @brief Modificador setPicture
    */
   void setPicture(const string&);
@@ -151,7 +166,8 @@ public:
   /**
    * @brief Método assign
    */
-  void assign(unsigned int,string,string,Date,unsigned int,string,Date,string);
+  void assign(unsigned int,string,string,Date,unsigned int,string,Date,string,
+              string);
 
   /**
    * @brief operator =

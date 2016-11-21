@@ -30,14 +30,17 @@ Diagrama de colaboración para Reg\+Event\+Window\+:\nopagebreak
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_reg_event_window_a27023c584958281b56c5a9f8143afecf}{Reg\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_event_window_ab22b0d13f269a36935f27ae40244d4c4}{event\+Tree}, Q\+Widget $\ast$parent=0)
+\hyperlink{class_reg_event_window_a641d4f79cc3ade15fed731334dc8f8de}{Reg\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_event_window_ab22b0d13f269a36935f27ae40244d4c4}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_event_window_aa224e98dd2ebe0d19dd20407e2b6f433}{nm\+Ev\+Tree}, Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_reg_event_window}{Reg\+Event\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Campos de datos}
 \begin{DoxyCompactItemize}
 \item 
 Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_event_window_ab22b0d13f269a36935f27ae40244d4c4}{event\+Tree}\hypertarget{class_reg_event_window_ab22b0d13f269a36935f27ae40244d4c4}{}\label{class_reg_event_window_ab22b0d13f269a36935f27ae40244d4c4}
 
-\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_event_window_aa224e98dd2ebe0d19dd20407e2b6f433}{nm\+Ev\+Tree}\hypertarget{class_reg_event_window_aa224e98dd2ebe0d19dd20407e2b6f433}{}\label{class_reg_event_window_aa224e98dd2ebe0d19dd20407e2b6f433}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
@@ -50,12 +53,13 @@ Definición en la línea 27 del archivo regeventwindow.\+h.
 \subsection{Documentación del constructor y destructor}
 \index{Reg\+Event\+Window@{Reg\+Event\+Window}!Reg\+Event\+Window@{Reg\+Event\+Window}}
 \index{Reg\+Event\+Window@{Reg\+Event\+Window}!Reg\+Event\+Window@{Reg\+Event\+Window}}
-\subsubsection[{\texorpdfstring{Reg\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Q\+Widget $\ast$parent=0)}{RegEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Reg\+Event\+Window\+::\+Reg\+Event\+Window (
+\subsubsection[{\texorpdfstring{Reg\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$nm\+Ev\+Tree, Q\+Widget $\ast$parent=0)}{RegEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nmEvTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Reg\+Event\+Window\+::\+Reg\+Event\+Window (
 \begin{DoxyParamCaption}
 \item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{nm\+Ev\+Tree, }
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_reg_event_window_a27023c584958281b56c5a9f8143afecf}{}\label{class_reg_event_window_a27023c584958281b56c5a9f8143afecf}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_reg_event_window_a641d4f79cc3ade15fed731334dc8f8de}{}\label{class_reg_event_window_a641d4f79cc3ade15fed731334dc8f8de}
 
 
 \hyperlink{class_reg_event_window}{Reg\+Event\+Window}. 
@@ -63,6 +67,8 @@ Definición en la línea 27 del archivo regeventwindow.\+h.
 
 \begin{DoxyParams}{Parámetros}
 {\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
 \hline
 {\em parent} & padre de componentes \\
 \hline

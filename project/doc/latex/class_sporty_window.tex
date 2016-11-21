@@ -30,32 +30,44 @@ Diagrama de colaboración para Sporty\+Window\+:\nopagebreak
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_sporty_window_aa6648488a2edf18678b39156fbf43d63}{Sporty\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_sporty_window_ae5042630126b218d12b7f7b9b92c4307}{event\+Tree}, Q\+Widget $\ast$parent=0)
+\hyperlink{class_sporty_window_aefcc1a9246b5509f53ccd6f2bc5fd71d}{Sporty\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_sporty_window_ae5042630126b218d12b7f7b9b92c4307}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_sporty_window_a1d1ad05d15c5b535772652e0f72afe04}{nm\+Ev\+Tree}, Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_sporty_window_affb306650ea3c48ad8ffc219dcc8c0f7}{part\+Tree}, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_sporty_window_a042928055a5216651908f3797c1fc6e6}{ev\+Part\+Tree}, Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_sporty_window}{Sporty\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Campos de datos}
 \begin{DoxyCompactItemize}
 \item 
 Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_sporty_window_ae5042630126b218d12b7f7b9b92c4307}{event\+Tree}\hypertarget{class_sporty_window_ae5042630126b218d12b7f7b9b92c4307}{}\label{class_sporty_window_ae5042630126b218d12b7f7b9b92c4307}
 
-\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_sporty_window_a1d1ad05d15c5b535772652e0f72afe04}{nm\+Ev\+Tree}\hypertarget{class_sporty_window_a1d1ad05d15c5b535772652e0f72afe04}{}\label{class_sporty_window_a1d1ad05d15c5b535772652e0f72afe04}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_sporty_window_affb306650ea3c48ad8ffc219dcc8c0f7}{part\+Tree}\hypertarget{class_sporty_window_affb306650ea3c48ad8ffc219dcc8c0f7}{}\label{class_sporty_window_affb306650ea3c48ad8ffc219dcc8c0f7}
+
+\begin{DoxyCompactList}\small\item\em part\+Tree árbol para administrar los participantes \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_sporty_window_a042928055a5216651908f3797c1fc6e6}{ev\+Part\+Tree}\hypertarget{class_sporty_window_a042928055a5216651908f3797c1fc6e6}{}\label{class_sporty_window_a042928055a5216651908f3797c1fc6e6}
+
+\begin{DoxyCompactList}\small\item\em ev\+Part\+Tree árbol auxiliar para administrar los participantes \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
 Clase \hyperlink{class_sporty_window}{Sporty\+Window}. 
 
-Definición en la línea 27 del archivo sportywindow.\+h.
+Definición en la línea 29 del archivo sportywindow.\+h.
 
 
 
 \subsection{Documentación del constructor y destructor}
 \index{Sporty\+Window@{Sporty\+Window}!Sporty\+Window@{Sporty\+Window}}
 \index{Sporty\+Window@{Sporty\+Window}!Sporty\+Window@{Sporty\+Window}}
-\subsubsection[{\texorpdfstring{Sporty\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ \&event\+Tree, Q\+Widget $\ast$parent=0)}{SportyWindow(DynSetTree< Event, Avl_Tree > &eventTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Sporty\+Window\+::\+Sporty\+Window (
+\subsubsection[{\texorpdfstring{Sporty\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ \&event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&nm\+Ev\+Tree, Dyn\+Set\+Tree$<$ Participant, Avl\+\_\+\+Tree $>$ \&part\+Tree, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ \&ev\+Part\+Tree, Q\+Widget $\ast$parent=0)}{SportyWindow(DynSetTree< Event, Avl_Tree > &eventTree, DynSetTree< string, Avl_Tree > &nmEvTree, DynSetTree< Participant, Avl_Tree > &partTree, DynSetTree< Pair, Avl_Tree > &evPartTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Sporty\+Window\+::\+Sporty\+Window (
 \begin{DoxyParamCaption}
 \item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ \&}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&}]{nm\+Ev\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ {\bf Participant}, Avl\+\_\+\+Tree $>$ \&}]{part\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ \&}]{ev\+Part\+Tree, }
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_sporty_window_aa6648488a2edf18678b39156fbf43d63}{}\label{class_sporty_window_aa6648488a2edf18678b39156fbf43d63}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_sporty_window_aefcc1a9246b5509f53ccd6f2bc5fd71d}{}\label{class_sporty_window_aefcc1a9246b5509f53ccd6f2bc5fd71d}
 
 
 \hyperlink{class_sporty_window}{Sporty\+Window}. 
@@ -63,6 +75,12 @@ Definición en la línea 27 del archivo sportywindow.\+h.
 
 \begin{DoxyParams}{Parámetros}
 {\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
+\hline
+{\em part\+Tree} & árbol para administrar los participantes \\
+\hline
+{\em ev\+Part\+Tree} & árbol auxiliar para administrar los participantes \\
 \hline
 {\em parent} & padre de componentes \\
 \hline

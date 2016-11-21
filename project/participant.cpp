@@ -16,6 +16,7 @@ Participant::Participant()
   this->age = 0;
   this->category = "";
   this->inscriptionDate.assign(0, 0, 0);
+  this->eventName = "";
   this->picture = "";
 }
 
@@ -28,6 +29,7 @@ Participant::Participant(const Participant& participant)
   this->age = participant.age;
   this->category = participant.category;
   this->inscriptionDate = participant.inscriptionDate;
+  this->eventName = participant.eventName;
   this->picture = participant.picture;
 }
 
@@ -73,6 +75,12 @@ void Participant::setInscriptionDate(const Date &inscriptionDate)
   return;
 }
 
+void Participant::setEventName(const string &eventName)
+{
+  this->eventName = eventName;
+  return;
+}
+
 void Participant::setPicture(const string &picture)
 {
   this->picture = picture;
@@ -81,7 +89,7 @@ void Participant::setPicture(const string &picture)
 
 void Participant::assign(unsigned int id, string name, string lastName,
                          Date bornDate, unsigned int age, string category,
-                         Date inscriptionDate, string picture)
+                         Date inscriptionDate, string eventName, string picture)
 {
   this->id = id;
   this->name = name;
@@ -90,6 +98,7 @@ void Participant::assign(unsigned int id, string name, string lastName,
   this->age = age;
   this->category = category;
   this->inscriptionDate = inscriptionDate;
+  this->eventName = eventName;
   this->picture = picture;
 }
 
@@ -102,6 +111,7 @@ Participant Participant::operator=(const Participant& participant)
   this->age = participant.age;
   this->category = participant.category;
   this->inscriptionDate = participant.inscriptionDate;
+  this->eventName = participant.eventName;
   this->picture = participant.picture;
   return(participant);
 }
@@ -119,6 +129,9 @@ bool operator<(const Participant& p1, const Participant& p2)
     return(true);
   else if(p1.getBornDate() == p2.getBornDate() && p1.getId() < p2.getId())
     return(true);
+  else if(p1.getBornDate() == p2.getBornDate() && p1.getId() == p2.getId() &&
+          p1.getEventName() < p2.getEventName())
+    return(true);
   return(false);
 }
 
@@ -127,6 +140,9 @@ bool operator>(const Participant& p1, const Participant& p2)
   if(p1.getBornDate() > p2.getBornDate())
     return(true);
   else if(p1.getBornDate() == p2.getBornDate() && p1.getId() > p2.getId())
+    return(true);
+  else if(p1.getBornDate() == p2.getBornDate() && p1.getId() == p2.getId() &&
+          p1.getEventName() > p2.getEventName())
     return(true);
   return(false);
 }
@@ -140,13 +156,14 @@ ostream& operator<<(ostream& participant, const Participant& p)
   participant << p.getAge() << "|";
   participant << p.getCategory() << "|";
   participant << p.getInscriptionDate() << "|";
+  participant << p.getEventName() << "|";
   participant << p.getPicture() << '\n';
   return(participant);
 }
 
 istream& operator>>(istream& participant, Participant &aux)
 {
-  string cadenaAuxiliar;
+  string stringAux;
   unsigned int id = 0;
   string name;
   string lastName;
@@ -154,41 +171,47 @@ istream& operator>>(istream& participant, Participant &aux)
   unsigned int age = 0;
   string category;
   Date inscriptionDate;
+  string eventName;
   string picture;
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    id = (unsigned int)atoi(cadenaAuxiliar.c_str());
+    id = (unsigned int)atoi(stringAux.c_str());
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    name = cadenaAuxiliar;
+    name = stringAux;
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    lastName = cadenaAuxiliar;
+    lastName = stringAux;
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    bornDate.fromString(cadenaAuxiliar);
+    bornDate.fromString(stringAux);
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    age = (unsigned int)atoi(cadenaAuxiliar.c_str());
+    age = (unsigned int)atoi(stringAux.c_str());
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    category = cadenaAuxiliar;
+    category = stringAux;
 
-  getline(participant, cadenaAuxiliar, '|');
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    inscriptionDate.fromString(cadenaAuxiliar);
+    inscriptionDate.fromString(stringAux);
 
-  getline(participant, cadenaAuxiliar);
+  getline(participant, stringAux, '|');
   if(!participant.fail())
-    picture = cadenaAuxiliar;
+    eventName = stringAux;
 
-  aux.assign(id,name,lastName,bornDate,age,category,inscriptionDate,picture);
+  getline(participant, stringAux);
+  if(!participant.fail())
+    picture = stringAux;
+
+  aux.assign(id,name,lastName,bornDate,age,category,inscriptionDate,eventName,
+             picture);
   return(participant);
 }
 

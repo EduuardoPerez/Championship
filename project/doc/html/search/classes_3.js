@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['organizingwindow',['OrganizingWindow',['../class_organizing_window.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
+  ['modeventwindow',['ModEventWindow',['../class_mod_event_window.html',1,'']]],
+  ['modpartwindow',['ModPartWindow',['../class_mod_part_window.html',1,'']]]
 ];

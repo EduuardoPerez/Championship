@@ -62,7 +62,7 @@ void Date::fromString(string date)
   this->year = year;
 }
 
-string Date::toString()
+string Date::toString() const
 {
   string date;
   date = Uint2String(this->day)+'/'+Uint2String(this->month)+'/'+
@@ -161,4 +161,11 @@ istream& operator>>(istream& date, Date &aux)
 
   aux.assign(day, month, year);
   return(date);
+}
+
+string Uint2String(unsigned int num)
+{
+    stringstream flux;
+    flux << num;
+    return(flux.str());
 }

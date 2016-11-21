@@ -1,0 +1,103 @@
+\hypertarget{class_reg_part_window}{}\section{Referencia de la Clase Reg\+Part\+Window}
+\label{class_reg_part_window}\index{Reg\+Part\+Window@{Reg\+Part\+Window}}
+
+
+Clase \hyperlink{class_reg_part_window}{Reg\+Part\+Window}.  
+
+
+
+
+{\ttfamily \#include $<$regpartwindow.\+h$>$}
+
+
+
+Diagrama de herencias de Reg\+Part\+Window\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{class_reg_part_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para Reg\+Part\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_reg_part_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_reg_part_window_ab8d092b4fdf14ffe38b91644ca76d183}{Reg\+Part\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_part_window_a47d9b536b8ba3b49f143856fb47d3342}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_part_window_aa26133ca3263056494bb1df5356af77c}{nm\+Ev\+Tree}, Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_part_window_a841c9497e5247f79f5e565ed127c8fe5}{part\+Tree}, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_reg_part_window_a069dafb9e42cc355e21b5e5860b54dd4}{ev\+Part\+Tree}, const \hyperlink{class_event}{Event} \&\hyperlink{class_reg_part_window_a613f3532b18e98cb4b4bb81dda335b1a}{event}, Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_reg_part_window}{Reg\+Part\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_part_window_a47d9b536b8ba3b49f143856fb47d3342}{event\+Tree}\hypertarget{class_reg_part_window_a47d9b536b8ba3b49f143856fb47d3342}{}\label{class_reg_part_window_a47d9b536b8ba3b49f143856fb47d3342}
+
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_part_window_aa26133ca3263056494bb1df5356af77c}{nm\+Ev\+Tree}\hypertarget{class_reg_part_window_aa26133ca3263056494bb1df5356af77c}{}\label{class_reg_part_window_aa26133ca3263056494bb1df5356af77c}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_part_window_a841c9497e5247f79f5e565ed127c8fe5}{part\+Tree}\hypertarget{class_reg_part_window_a841c9497e5247f79f5e565ed127c8fe5}{}\label{class_reg_part_window_a841c9497e5247f79f5e565ed127c8fe5}
+
+\begin{DoxyCompactList}\small\item\em part\+Tree árbol para administrar los participantes \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_reg_part_window_a069dafb9e42cc355e21b5e5860b54dd4}{ev\+Part\+Tree}\hypertarget{class_reg_part_window_a069dafb9e42cc355e21b5e5860b54dd4}{}\label{class_reg_part_window_a069dafb9e42cc355e21b5e5860b54dd4}
+
+\begin{DoxyCompactList}\small\item\em ev\+Part\+Tree árbol auxiliar para administrar los participantes \end{DoxyCompactList}\item 
+\hyperlink{class_event}{Event} \hyperlink{class_reg_part_window_a613f3532b18e98cb4b4bb81dda335b1a}{event}\hypertarget{class_reg_part_window_a613f3532b18e98cb4b4bb81dda335b1a}{}\label{class_reg_part_window_a613f3532b18e98cb4b4bb81dda335b1a}
+
+\begin{DoxyCompactList}\small\item\em event event del cual se cargarán los datos \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase \hyperlink{class_reg_part_window}{Reg\+Part\+Window}. 
+
+Definición en la línea 16 del archivo regpartwindow.\+h.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Reg\+Part\+Window@{Reg\+Part\+Window}!Reg\+Part\+Window@{Reg\+Part\+Window}}
+\index{Reg\+Part\+Window@{Reg\+Part\+Window}!Reg\+Part\+Window@{Reg\+Part\+Window}}
+\subsubsection[{\texorpdfstring{Reg\+Part\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$nm\+Ev\+Tree, Dyn\+Set\+Tree$<$ Participant, Avl\+\_\+\+Tree $>$ $\ast$part\+Tree, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ev\+Part\+Tree, const Event \&event, Q\+Widget $\ast$parent=0)}{RegPartWindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nmEvTree, DynSetTree< Participant, Avl_Tree > *partTree, DynSetTree< Pair, Avl_Tree > *evPartTree, const Event &event, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Reg\+Part\+Window\+::\+Reg\+Part\+Window (
+\begin{DoxyParamCaption}
+\item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{nm\+Ev\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ {\bf Participant}, Avl\+\_\+\+Tree $>$ $\ast$}]{part\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$}]{ev\+Part\+Tree, }
+\item[{const {\bf Event} \&}]{event, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_reg_part_window_ab8d092b4fdf14ffe38b91644ca76d183}{}\label{class_reg_part_window_ab8d092b4fdf14ffe38b91644ca76d183}
+
+
+\hyperlink{class_reg_part_window}{Reg\+Part\+Window}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
+\hline
+{\em part\+Tree} & árbol para administrar los participantes \\
+\hline
+{\em ev\+Part\+Tree} & árbol auxiliar para administrar los participantes \\
+\hline
+{\em event} & event del cual se cargarán los datos \\
+\hline
+{\em parent} & padre de componentes \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 5 del archivo regpartwindow.\+cpp.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/regpartwindow.\+h\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/regpartwindow.\+cpp\end{DoxyCompactItemize}

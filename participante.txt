@@ -1,1 +1,1 @@
-Cedula de identidad | Nombre | Apellido | Fecha de nacimiento | Edad | Categoria | Fecha de inscripcion 
+Cedula de identidad | Nombre | Apellido | Fecha de nacimiento | Edad | Categoria | Fecha de inscripcion | Nombre del Evento | Imagen

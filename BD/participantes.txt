@@ -1,0 +1,41 @@
+2345432|simon|bolivar|24/7/1841|175|Master E|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+5690|felipe|pelaez|6/2/1948|68|Master E|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+2134234|verg|eegr|6/2/1948|68|Master E|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+10107138|Joran|Pena|5/1/1967|49|Master B|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+646131|Claudio|Silbon|3/11/1967|48|Master B|3/5/2016|Maratón|/home/eduardo/Imágenes/crossfit.jpg
+8047598|Henry|Altuve|3/11/1967|49|Master B|3/5/2016|Triatlón|/home/eduardo/Imágenes/defaultpic.jpg
+1975315|Spider|Man|14/9/1968|47|Master B|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+11954193|julybeth|perez|23/7/1974|42|Master A|26/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+11954193|Julybeth|Perez|23/7/1974|43|Master A|20/11/2016|CocaCola|
+11954193|julybeth|perez|23/7/1974|42|Master A|28/4/2016|Crossfit|/home/eduardo/Imágenes/defaultpic.jpg
+11954193|julybeth|perez|23/7/1974|41|Master A|28/4/2016|Maratón|/home/eduardo/Imágenes/defaultpic.jpg
+11954193|julybeth|perez|23/7/1974|42|Master A|28/4/2016|Triatlón|/home/eduardo/Imágenes/defaultpic.jpg
+1221245|Michelle|Lewin|13/10/1978|37|Sub Master|2/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+159753|Jorge|Sáenz|21/6/1983|33|Sub Master|5/5/2016|Crossfit|/home/eduardo/Imágenes/defaultpic.jpg
+68413154|mickey|mouse|15/2/1984|32|Sub Master|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+1234|tete|roro|29/4/1985|31|Sub Master|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+7777|HOLA|MUNDO|26/11/1985|30|Sub Master|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+987561|Maquina de |Guerra|15/8/1991|25|Libre|3/5/2016|Crossfit|/home/eduardo/Imágenes/defaultpic.jpg
+22|aljimiro|yepez|31/5/1994|22|Libre|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+23721947|Felix Alejandro|Rodriguez Quintero|8/7/1995|21|Libre|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+23499561|Eduardo Jose|Perez Pena|24/7/1995|21|Libre|26/4/2016|Bicicross|/home/eduardo/foto.jpg
+23499561|Eduardo|Perez|24/7/1995|22|Libre|21/11/2016|CocaCola|/home/eduuardoperez/Imágenes/Mr_Robot_ep1v2-wallpaper-10949476.jpg
+23499561|Eduardo José|Pérez Peña|24/7/1995|21|Libre|26/4/2016|Crossfit|/home/eduardo/foto.jpg
+23499561|Eduardo José|Pérez Peña|24/7/1995|20|Libre|26/4/2016|Maratón|/home/eduardo/foto.jpg
+23499561|Eduardo José|Pérez Peña|24/7/1995|20|Libre|26/4/2016|Triatlón|/home/eduardo/foto.jpg
+8047598|Henry|Altuve|17/6/1996|19|Juvenil|3/5/2016|Maratón|/home/eduardo/Imágenes/defaultpic.jpg
+545745|pepe|lopez|16/8/1996|20|Libre|3/5/2016|Triatlón|/home/eduardo/Imágenes/defaultpic.jpg
+23390384|Omar Enrique|Balza Rojas|16/8/1996|19|Juvenil|26/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+23390384|Omar|Balza|16/8/1996|21|Libre|20/11/2016|CocaCola|/home/eduuardoperez/Imágenes/patron.jpg
+23390384|Omar|Balza|16/8/1996|20|Libre|3/5/2016|Crossfit|/home/eduardo/Imágenes/defaultpic.jpg
+23390384|Omar|Balza|16/8/1996|19|Juvenil|3/5/2016|Maratón|/home/eduardo/Imágenes/defaultpic.jpg
+25806203|Josmar Alejandro|Munoz Perez|18/9/1997|18|Juvenil|30/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+26667627|Angie Yulexci|Peña Castillo|18/9/1997|18|Juvenil|26/4/2016|Bicicross|/home/eduardo/Imágenes/maraton2.jpg
+5432|yiyo|rere|10/8/1998|17|Juvenil|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+234|grge|asd|1/1/2000|16|Juvenil|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+234956|sfewef|qwwd|1/1/2000|16|Juvenil|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+2342345|dafv|adfafdg|1/1/2000|16|Juvenil|6/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+3264946|Julia|Filomena|1/1/2000|16|Juvenil|2/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+3466111|Ant|Man|6/10/2003|12|Infantil|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+123|lalo|cota|21/6/2006|10|Infantil|28/4/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg
+101010|Chris|Evans|16/10/2009|6|Infantil|3/5/2016|Bicicross|/home/eduardo/Imágenes/defaultpic.jpg

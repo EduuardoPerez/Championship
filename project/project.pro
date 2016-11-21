@@ -6,6 +6,8 @@
 
 QT       += core gui
 
+QT += printsupport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Championship
@@ -24,7 +26,12 @@ SOURCES += main.cpp\
     organizingwindow.cpp \
     regeventwindow.cpp \
     modeventwindow.cpp \
-    viewevent.cpp
+    regpartwindow.cpp \
+    vieweventwindow.cpp \
+    modpartwindow.cpp \
+    searchpartwindow.cpp \
+    peopleregwindow.cpp \
+    bydatewindow.cpp
 
 HEADERS  += mainwindow.h \
     participant.h \
@@ -34,14 +41,25 @@ HEADERS  += mainwindow.h \
     organizingwindow.h \
     regeventwindow.h \
     modeventwindow.h \
-    viewevent.h
+    regpartwindow.h \
+    vieweventwindow.h \
+    definition.h \
+    modpartwindow.h \
+    searchpartwindow.h \
+    peopleregwindow.h \
+    bydatewindow.h
 
 FORMS    += mainwindow.ui \
     sportywindow.ui \
     organizingwindow.ui \
     regeventwindow.ui \
     modeventwindow.ui \
-    viewevent.ui
+    regpartwindow.ui \
+    vieweventwindow.ui \
+    modpartwindow.ui \
+    searchpartwindow.ui \
+    peopleregwindow.ui \
+    bydatewindow.ui
 
 RESOURCES += \
     img/logo.qrc \

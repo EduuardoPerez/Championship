@@ -10,14 +10,17 @@
 #include <QDebug>
 
 OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree,
+                                   DynSetTree<string, Avl_Tree>& nmEvTree,
                                    QWidget *parent) :
   QDialog(parent),
   ui(new Ui::OrganizingWindow)
 {
   ui->setupUi(this);
+  this->eventTree = &eventTree;
+  this->nmEvTree = &nmEvTree;
+
   ui->deCurrDate->hide();
   ui->deCurrDate->setDate(QDate::currentDate());
-  this->eventTree = &eventTree;
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -70,7 +73,7 @@ OrganizingWindow::~OrganizingWindow()
 void OrganizingWindow::on_pbRegistrar_clicked()
 {
   RegEventWindow *regEvent_i;
-  regEvent_i = new RegEventWindow(this->eventTree, this);
+  regEvent_i = new RegEventWindow(this->eventTree, this->nmEvTree, this);
   regEvent_i->setModal(false);
   regEvent_i->show();
 }
@@ -121,7 +124,8 @@ void OrganizingWindow::on_pbModificar_clicked()
         this->close();
 
         ModEventWindow *modEvent_i;
-        modEvent_i=new ModEventWindow(this->eventTree, event, this);
+        modEvent_i=new ModEventWindow(this->eventTree, this->nmEvTree,event,
+                                      this);
         modEvent_i->setModal(false);
         modEvent_i->show();
       }
@@ -172,6 +176,7 @@ void OrganizingWindow::on_pbEliminar_clicked()
         eventAux.setEventName(eventName);
         eventAux.setDateBegEv(dateBegEv);
 
+        this->nmEvTree->remove(eventAux.getEventName());
         this->eventTree->remove(eventAux);
         msj.setText("\nEl evento se ha eliminado con exito\t\n");
         msj.exec();

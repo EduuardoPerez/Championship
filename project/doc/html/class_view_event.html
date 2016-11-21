@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <p>Clase <a class="el" href="class_view_event.html" title="Clase ViewEvent. ">ViewEvent</a>.  
  <a href="class_view_event.html#details">Más...</a></p>
 
-<p><code>#include &lt;<a class="el" href="viewevent_8h_source.html">viewevent.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="vieweventwindow_8h_source.html">vieweventwindow.h</a>&gt;</code></p>
 <div class="dynheader">
 Diagrama de herencias de ViewEvent</div>
 <div class="dyncontent">
@@ -113,9 +113,9 @@ Diagrama de colaboración para ViewEvent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:a674c31c1f63107f55491087839be2e77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_event.html#a674c31c1f63107f55491087839be2e77">ViewEvent</a> (DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *<a class="el" href="class_view_event.html#a4a5575a712fa3139027258e5f2bb1201">eventTree</a>, const <a class="el" href="class_event.html">Event</a> &amp;<a class="el" href="class_view_event.html#a3a9469ca9e317bfc5bce5d9341d0b2a1">event</a>, QWidget *parent=0)</td></tr>
-<tr class="memdesc:a674c31c1f63107f55491087839be2e77"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_view_event.html" title="Clase ViewEvent. ">ViewEvent</a>.  <a href="#a674c31c1f63107f55491087839be2e77">Más...</a><br /></td></tr>
-<tr class="separator:a674c31c1f63107f55491087839be2e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa658be5ff516e8b7ba6f611ef350ce86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_event.html#aa658be5ff516e8b7ba6f611ef350ce86">ViewEvent</a> (DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *<a class="el" href="class_view_event.html#a4a5575a712fa3139027258e5f2bb1201">eventTree</a>, DynSetTree&lt; string, Avl_Tree &gt; *<a class="el" href="class_view_event.html#a37f2e050e0d8b837d40bdaa6f81aab20">nmEvTree</a>, const <a class="el" href="class_event.html">Event</a> &amp;<a class="el" href="class_view_event.html#a3a9469ca9e317bfc5bce5d9341d0b2a1">event</a>, QWidget *parent=0)</td></tr>
+<tr class="memdesc:aa658be5ff516e8b7ba6f611ef350ce86"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_view_event.html" title="Clase ViewEvent. ">ViewEvent</a>.  <a href="#aa658be5ff516e8b7ba6f611ef350ce86">Más...</a><br /></td></tr>
+<tr class="separator:aa658be5ff516e8b7ba6f611ef350ce86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Campos de datos</h2></td></tr>
@@ -123,6 +123,10 @@ Campos de datos</h2></td></tr>
 DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_event.html#a4a5575a712fa3139027258e5f2bb1201">eventTree</a></td></tr>
 <tr class="memdesc:a4a5575a712fa3139027258e5f2bb1201"><td class="mdescLeft">&#160;</td><td class="mdescRight">eventTree árbol para administrar los eventos <br /></td></tr>
 <tr class="separator:a4a5575a712fa3139027258e5f2bb1201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f2e050e0d8b837d40bdaa6f81aab20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37f2e050e0d8b837d40bdaa6f81aab20"></a>
+DynSetTree&lt; string, Avl_Tree &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_event.html#a37f2e050e0d8b837d40bdaa6f81aab20">nmEvTree</a></td></tr>
+<tr class="memdesc:a37f2e050e0d8b837d40bdaa6f81aab20"><td class="mdescLeft">&#160;</td><td class="mdescRight">eventTree árbol para administrar los nombres de los eventos <br /></td></tr>
+<tr class="separator:a37f2e050e0d8b837d40bdaa6f81aab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a9469ca9e317bfc5bce5d9341d0b2a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a9469ca9e317bfc5bce5d9341d0b2a1"></a>
 <a class="el" href="class_event.html">Event</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_view_event.html#a3a9469ca9e317bfc5bce5d9341d0b2a1">event</a></td></tr>
 <tr class="memdesc:a3a9469ca9e317bfc5bce5d9341d0b2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">event event del cual se cargarán los datos en la ventana <br /></td></tr>
@@ -131,9 +135,9 @@ DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Clase <a class="el" href="class_view_event.html" title="Clase ViewEvent. ">ViewEvent</a>. </p>
 
-<p>Definición en la línea <a class="el" href="viewevent_8h_source.html#l00014">14</a> del archivo <a class="el" href="viewevent_8h_source.html">viewevent.h</a>.</p>
+<p>Definición en la línea <a class="el" href="vieweventwindow_8h_source.html#l00014">14</a> del archivo <a class="el" href="vieweventwindow_8h_source.html">vieweventwindow.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
-<a class="anchor" id="a674c31c1f63107f55491087839be2e77"></a>
+<a class="anchor" id="aa658be5ff516e8b7ba6f611ef350ce86"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -145,6 +149,12 @@ DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&
           <td>(</td>
           <td class="paramtype">DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&#160;</td>
           <td class="paramname"><em>eventTree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DynSetTree&lt; string, Avl_Tree &gt; *&#160;</td>
+          <td class="paramname"><em>nmEvTree</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -175,19 +185,20 @@ DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">eventTree</td><td>árbol para administrar los eventos </td></tr>
+    <tr><td class="paramname">nmEvTree</td><td>árbol para administrar los nombres de los eventos </td></tr>
     <tr><td class="paramname">event</td><td>event del cual se cargarán los datos en la ventana </td></tr>
     <tr><td class="paramname">parent</td><td>padre de componentes </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definición en la línea <a class="el" href="viewevent_8cpp_source.html#l00004">4</a> del archivo <a class="el" href="viewevent_8cpp_source.html">viewevent.cpp</a>.</p>
+<p>Definición en la línea <a class="el" href="vieweventwindow_8cpp_source.html#l00004">4</a> del archivo <a class="el" href="vieweventwindow_8cpp_source.html">vieweventwindow.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
-<li>/home/eduuardoperez/pr3/championship-PR3_ULA/project/<a class="el" href="viewevent_8h_source.html">viewevent.h</a></li>
-<li>/home/eduuardoperez/pr3/championship-PR3_ULA/project/<a class="el" href="viewevent_8cpp_source.html">viewevent.cpp</a></li>
+<li>/home/eduuardoperez/pr3/championship-PR3_ULA/project/<a class="el" href="vieweventwindow_8h_source.html">vieweventwindow.h</a></li>
+<li>/home/eduuardoperez/pr3/championship-PR3_ULA/project/<a class="el" href="vieweventwindow_8cpp_source.html">vieweventwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

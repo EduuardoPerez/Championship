@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++1y -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../project -I. -I../../../Librerias/aleph -I../../../Qt/5.7/gcc_64/include -I../../../Qt/5.7/gcc_64/include/QtWidgets -I../../../Qt/5.7/gcc_64/include/QtGui -I../../../Qt/5.7/gcc_64/include/QtCore -I. -I. -I../../../Qt/5.7/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../project -I. -I../../../Librerias/aleph -I../../../Qt/5.7/gcc_64/include -I../../../Qt/5.7/gcc_64/include/QtPrintSupport -I../../../Qt/5.7/gcc_64/include/QtWidgets -I../../../Qt/5.7/gcc_64/include/QtGui -I../../../Qt/5.7/gcc_64/include/QtCore -I. -I. -I../../../Qt/5.7/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/eduuardoperez/Qt/5.7/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -36,7 +36,7 @@ DISTNAME      = Championship1.0.0
 DISTDIR = /home/eduuardoperez/pr3/championship-PR3_ULA/build-project-Desktop_Qt_5_7_0_GCC_64bit-Debug/.tmp/Championship1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-O1 -Wl,-rpath,/home/eduuardoperez/Qt/5.7/gcc_64/lib
-LIBS          = $(SUBLIBS) -L/home/eduuardoperez/pr3/championship-PR3_ULA/project/3rdparty/Librerias/aleph -lm -lgsl -lgslcblas -lgmp -lmpfr -lasprintf -lc -L/home/eduuardoperez/pr3/championship-PR3_ULA/project/../../../Librerias/aleph/ -lAleph -L/home/eduuardoperez/Qt/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -L/home/eduuardoperez/pr3/championship-PR3_ULA/project/3rdparty/Librerias/aleph -lm -lgsl -lgslcblas -lgmp -lmpfr -lasprintf -lc -L/home/eduuardoperez/pr3/championship-PR3_ULA/project/../../../Librerias/aleph/ -lAleph -L/home/eduuardoperez/Qt/5.7/gcc_64/lib -lQt5PrintSupport -L/usr/lib64 -lQt5Widgets -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -57,7 +57,12 @@ SOURCES       = ../project/main.cpp \
 		../project/organizingwindow.cpp \
 		../project/regeventwindow.cpp \
 		../project/modeventwindow.cpp \
-		../project/viewevent.cpp qrc_logo.cpp \
+		../project/regpartwindow.cpp \
+		../project/vieweventwindow.cpp \
+		../project/modpartwindow.cpp \
+		../project/searchpartwindow.cpp \
+		../project/peopleregwindow.cpp \
+		../project/bydatewindow.cpp qrc_logo.cpp \
 		qrc_fondo1.cpp \
 		qrc_logo-big.cpp \
 		moc_mainwindow.cpp \
@@ -65,7 +70,12 @@ SOURCES       = ../project/main.cpp \
 		moc_organizingwindow.cpp \
 		moc_regeventwindow.cpp \
 		moc_modeventwindow.cpp \
-		moc_viewevent.cpp
+		moc_regpartwindow.cpp \
+		moc_vieweventwindow.cpp \
+		moc_modpartwindow.cpp \
+		moc_searchpartwindow.cpp \
+		moc_peopleregwindow.cpp \
+		moc_bydatewindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		participant.o \
@@ -75,7 +85,12 @@ OBJECTS       = main.o \
 		organizingwindow.o \
 		regeventwindow.o \
 		modeventwindow.o \
-		viewevent.o \
+		regpartwindow.o \
+		vieweventwindow.o \
+		modpartwindow.o \
+		searchpartwindow.o \
+		peopleregwindow.o \
+		bydatewindow.o \
 		qrc_logo.o \
 		qrc_fondo1.o \
 		qrc_logo-big.o \
@@ -84,7 +99,12 @@ OBJECTS       = main.o \
 		moc_organizingwindow.o \
 		moc_regeventwindow.o \
 		moc_modeventwindow.o \
-		moc_viewevent.o
+		moc_regpartwindow.o \
+		moc_vieweventwindow.o \
+		moc_modpartwindow.o \
+		moc_searchpartwindow.o \
+		moc_peopleregwindow.o \
+		moc_bydatewindow.o
 DIST          = ../../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.7/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.7/gcc_64/mkspecs/common/linux.conf \
@@ -242,7 +262,13 @@ DIST          = ../../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../project/organizingwindow.h \
 		../project/regeventwindow.h \
 		../project/modeventwindow.h \
-		../project/viewevent.h ../project/main.cpp \
+		../project/regpartwindow.h \
+		../project/vieweventwindow.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../project/peopleregwindow.h \
+		../project/bydatewindow.h ../project/main.cpp \
 		../project/mainwindow.cpp \
 		../project/participant.cpp \
 		../project/date.cpp \
@@ -251,7 +277,12 @@ DIST          = ../../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../project/organizingwindow.cpp \
 		../project/regeventwindow.cpp \
 		../project/modeventwindow.cpp \
-		../project/viewevent.cpp
+		../project/regpartwindow.cpp \
+		../project/vieweventwindow.cpp \
+		../project/modpartwindow.cpp \
+		../project/searchpartwindow.cpp \
+		../project/peopleregwindow.cpp \
+		../project/bydatewindow.cpp
 QMAKE_TARGET  = Championship
 DESTDIR       = 
 TARGET        = Championship
@@ -260,7 +291,7 @@ TARGET        = Championship
 first: all
 ####### Build rules
 
-$(TARGET): /home/eduuardoperez/pr3/championship-PR3_ULA/project/../../../Librerias/aleph/libAleph.a ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_viewevent.h $(OBJECTS)  
+$(TARGET): /home/eduuardoperez/pr3/championship-PR3_ULA/project/../../../Librerias/aleph/libAleph.a ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_regpartwindow.h ui_vieweventwindow.h ui_modpartwindow.h ui_searchpartwindow.h ui_peopleregwindow.h ui_bydatewindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../project/project.pro ../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf ../../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
@@ -416,6 +447,7 @@ Makefile: ../project/project.pro ../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.
 		../project/img/logo.qrc \
 		../project/img/fondo1.qrc \
 		../project/img/logo-big.qrc \
+		../../../Qt/5.7/gcc_64/lib/libQt5PrintSupport.prl \
 		../../../Qt/5.7/gcc_64/lib/libQt5Widgets.prl \
 		../../../Qt/5.7/gcc_64/lib/libQt5Gui.prl \
 		../../../Qt/5.7/gcc_64/lib/libQt5Core.prl
@@ -573,6 +605,7 @@ Makefile: ../project/project.pro ../../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.
 ../project/img/logo.qrc:
 ../project/img/fondo1.qrc:
 ../project/img/logo-big.qrc:
+../../../Qt/5.7/gcc_64/lib/libQt5PrintSupport.prl:
 ../../../Qt/5.7/gcc_64/lib/libQt5Widgets.prl:
 ../../../Qt/5.7/gcc_64/lib/libQt5Gui.prl:
 ../../../Qt/5.7/gcc_64/lib/libQt5Core.prl:
@@ -591,9 +624,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../project/img/logo.qrc ../project/img/fondo1.qrc ../project/img/logo-big.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../project/mainwindow.h ../project/participant.h ../project/date.h ../project/event.h ../project/sportywindow.h ../project/organizingwindow.h ../project/regeventwindow.h ../project/modeventwindow.h ../project/viewevent.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../project/main.cpp ../project/mainwindow.cpp ../project/participant.cpp ../project/date.cpp ../project/event.cpp ../project/sportywindow.cpp ../project/organizingwindow.cpp ../project/regeventwindow.cpp ../project/modeventwindow.cpp ../project/viewevent.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../project/mainwindow.ui ../project/sportywindow.ui ../project/organizingwindow.ui ../project/regeventwindow.ui ../project/modeventwindow.ui ../project/viewevent.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../project/mainwindow.h ../project/participant.h ../project/date.h ../project/event.h ../project/sportywindow.h ../project/organizingwindow.h ../project/regeventwindow.h ../project/modeventwindow.h ../project/regpartwindow.h ../project/vieweventwindow.h ../project/definition.h ../project/modpartwindow.h ../project/searchpartwindow.h ../project/peopleregwindow.h ../project/bydatewindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../project/main.cpp ../project/mainwindow.cpp ../project/participant.cpp ../project/date.cpp ../project/event.cpp ../project/sportywindow.cpp ../project/organizingwindow.cpp ../project/regeventwindow.cpp ../project/modeventwindow.cpp ../project/regpartwindow.cpp ../project/vieweventwindow.cpp ../project/modpartwindow.cpp ../project/searchpartwindow.cpp ../project/peopleregwindow.cpp ../project/bydatewindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../project/mainwindow.ui ../project/sportywindow.ui ../project/organizingwindow.ui ../project/regeventwindow.ui ../project/modeventwindow.ui ../project/regpartwindow.ui ../project/vieweventwindow.ui ../project/modpartwindow.ui ../project/searchpartwindow.ui ../project/peopleregwindow.ui ../project/bydatewindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -635,9 +668,9 @@ qrc_logo-big.cpp: ../project/img/logo-big.qrc \
 		../project/img/logo-big.png
 	/home/eduuardoperez/Qt/5.7/gcc_64/bin/rcc -name logo-big ../project/img/logo-big.qrc -o qrc_logo-big.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_sportywindow.cpp moc_organizingwindow.cpp moc_regeventwindow.cpp moc_modeventwindow.cpp moc_viewevent.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_sportywindow.cpp moc_organizingwindow.cpp moc_regeventwindow.cpp moc_modeventwindow.cpp moc_regpartwindow.cpp moc_vieweventwindow.cpp moc_modpartwindow.cpp moc_searchpartwindow.cpp moc_peopleregwindow.cpp moc_bydatewindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_sportywindow.cpp moc_organizingwindow.cpp moc_regeventwindow.cpp moc_modeventwindow.cpp moc_viewevent.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_sportywindow.cpp moc_organizingwindow.cpp moc_regeventwindow.cpp moc_modeventwindow.cpp moc_regpartwindow.cpp moc_vieweventwindow.cpp moc_modpartwindow.cpp moc_searchpartwindow.cpp moc_peopleregwindow.cpp moc_bydatewindow.cpp
 moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
@@ -750,6 +783,8 @@ moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../project/sportywindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Librerias/aleph/ahSort.H \
 		../../../Librerias/aleph/ahFunctional.H \
 		../../../Librerias/aleph/tpl_sort_utils.H \
@@ -792,20 +827,31 @@ moc_mainwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Librerias/aleph/rbNode.H \
 		../../../Librerias/aleph/tpl_splay_tree.H \
 		../../../Librerias/aleph/tpl_nodePool.H \
-		../project/event.h \
+		../project/participant.h \
 		../project/date.h \
-		../project/organizingwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
-		../project/regeventwindow.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/regpartwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/organizingwindow.h \
+		../project/regeventwindow.h \
 		../project/modeventwindow.h \
 		../project/mainwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/mainwindow.h -o moc_mainwindow.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/mainwindow.h -o moc_mainwindow.cpp
 
 moc_sportywindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -910,6 +956,8 @@ moc_sportywindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Librerias/aleph/ahSort.H \
 		../../../Librerias/aleph/ahFunctional.H \
 		../../../Librerias/aleph/tpl_sort_utils.H \
@@ -952,11 +1000,29 @@ moc_sportywindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Librerias/aleph/rbNode.H \
 		../../../Librerias/aleph/tpl_splay_tree.H \
 		../../../Librerias/aleph/tpl_nodePool.H \
-		../project/event.h \
+		../project/participant.h \
 		../project/date.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
 		../project/sportywindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/sportywindow.h -o moc_sportywindow.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/sportywindow.h -o moc_sportywindow.cpp
 
 moc_organizingwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -1116,7 +1182,7 @@ moc_organizingwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../project/modeventwindow.h \
 		../project/organizingwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/organizingwindow.h -o moc_organizingwindow.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/organizingwindow.h -o moc_organizingwindow.cpp
 
 moc_regeventwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -1276,7 +1342,7 @@ moc_regeventwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../project/modeventwindow.h \
 		../project/regeventwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/regeventwindow.h -o moc_regeventwindow.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/regeventwindow.h -o moc_regeventwindow.cpp
 
 moc_modeventwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
@@ -1436,9 +1502,9 @@ moc_modeventwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../project/modeventwindow.h \
 		../project/modeventwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/modeventwindow.h -o moc_modeventwindow.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/modeventwindow.h -o moc_modeventwindow.cpp
 
-moc_viewevent.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+moc_regpartwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
@@ -1536,15 +1602,939 @@ moc_viewevent.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		../project/viewevent.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/regpartwindow.h \
 		../../../Qt/5.7/gcc_64/bin/moc
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/viewevent.h -o moc_viewevent.cpp
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/regpartwindow.h -o moc_regpartwindow.cpp
+
+moc_vieweventwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/vieweventwindow.h \
+		../../../Qt/5.7/gcc_64/bin/moc
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/vieweventwindow.h -o moc_vieweventwindow.cpp
+
+moc_modpartwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/modpartwindow.h \
+		../../../Qt/5.7/gcc_64/bin/moc
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/modpartwindow.h -o moc_modpartwindow.cpp
+
+moc_searchpartwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../project/peopleregwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/bin/moc
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/searchpartwindow.h -o moc_searchpartwindow.cpp
+
+moc_peopleregwindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/peopleregwindow.h \
+		../../../Qt/5.7/gcc_64/bin/moc
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/peopleregwindow.h -o moc_peopleregwindow.cpp
+
+moc_bydatewindow.cpp: ../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/bydatewindow.h \
+		../../../Qt/5.7/gcc_64/bin/moc
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/eduuardoperez/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/eduuardoperez/pr3/championship-PR3_ULA/project -I/home/eduuardoperez/Librerias/aleph -I/home/eduuardoperez/Qt/5.7/gcc_64/include -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtPrintSupport -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtWidgets -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtGui -I/home/eduuardoperez/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../project/bydatewindow.h -o moc_bydatewindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_viewevent.h
+compiler_uic_make_all: ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_regpartwindow.h ui_vieweventwindow.h ui_modpartwindow.h ui_searchpartwindow.h ui_peopleregwindow.h ui_bydatewindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_viewevent.h
+	-$(DEL_FILE) ui_mainwindow.h ui_sportywindow.h ui_organizingwindow.h ui_regeventwindow.h ui_modeventwindow.h ui_regpartwindow.h ui_vieweventwindow.h ui_modpartwindow.h ui_searchpartwindow.h ui_peopleregwindow.h ui_bydatewindow.h
 ui_mainwindow.h: ../project/mainwindow.ui \
 		../../../Qt/5.7/gcc_64/bin/uic
 	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/mainwindow.ui -o ui_mainwindow.h
@@ -1565,9 +2555,29 @@ ui_modeventwindow.h: ../project/modeventwindow.ui \
 		../../../Qt/5.7/gcc_64/bin/uic
 	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/modeventwindow.ui -o ui_modeventwindow.h
 
-ui_viewevent.h: ../project/viewevent.ui \
+ui_regpartwindow.h: ../project/regpartwindow.ui \
 		../../../Qt/5.7/gcc_64/bin/uic
-	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/viewevent.ui -o ui_viewevent.h
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/regpartwindow.ui -o ui_regpartwindow.h
+
+ui_vieweventwindow.h: ../project/vieweventwindow.ui \
+		../../../Qt/5.7/gcc_64/bin/uic
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/vieweventwindow.ui -o ui_vieweventwindow.h
+
+ui_modpartwindow.h: ../project/modpartwindow.ui \
+		../../../Qt/5.7/gcc_64/bin/uic
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/modpartwindow.ui -o ui_modpartwindow.h
+
+ui_searchpartwindow.h: ../project/searchpartwindow.ui \
+		../../../Qt/5.7/gcc_64/bin/uic
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/searchpartwindow.ui -o ui_searchpartwindow.h
+
+ui_peopleregwindow.h: ../project/peopleregwindow.ui \
+		../../../Qt/5.7/gcc_64/bin/uic
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/peopleregwindow.ui -o ui_peopleregwindow.h
+
+ui_bydatewindow.h: ../project/bydatewindow.ui \
+		../../../Qt/5.7/gcc_64/bin/uic
+	/home/eduuardoperez/Qt/5.7/gcc_64/bin/uic ../project/bydatewindow.ui -o ui_bydatewindow.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -1692,6 +2702,8 @@ main.o: ../project/main.cpp ../project/mainwindow.h \
 		../project/sportywindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Librerias/aleph/ahSort.H \
 		../../../Librerias/aleph/ahFunctional.H \
 		../../../Librerias/aleph/tpl_sort_utils.H \
@@ -1734,16 +2746,27 @@ main.o: ../project/main.cpp ../project/mainwindow.h \
 		../../../Librerias/aleph/rbNode.H \
 		../../../Librerias/aleph/tpl_splay_tree.H \
 		../../../Librerias/aleph/tpl_nodePool.H \
-		../project/event.h \
+		../project/participant.h \
 		../project/date.h \
-		../project/organizingwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
-		../project/regeventwindow.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/regpartwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/organizingwindow.h \
+		../project/regeventwindow.h \
 		../project/modeventwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
@@ -1866,6 +2889,8 @@ mainwindow.o: ../project/mainwindow.cpp ../project/mainwindow.h \
 		../project/sportywindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Librerias/aleph/ahSort.H \
 		../../../Librerias/aleph/ahFunctional.H \
 		../../../Librerias/aleph/tpl_sort_utils.H \
@@ -1908,16 +2933,27 @@ mainwindow.o: ../project/mainwindow.cpp ../project/mainwindow.h \
 		../../../Librerias/aleph/rbNode.H \
 		../../../Librerias/aleph/tpl_splay_tree.H \
 		../../../Librerias/aleph/tpl_nodePool.H \
-		../project/event.h \
+		../project/participant.h \
 		../project/date.h \
-		../project/organizingwindow.h \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
-		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
-		../project/regeventwindow.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/regpartwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		../project/organizingwindow.h \
+		../project/regeventwindow.h \
 		../project/modeventwindow.h \
 		ui_mainwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
@@ -2075,6 +3111,8 @@ sportywindow.o: ../project/sportywindow.cpp ../project/sportywindow.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
 		../../../Librerias/aleph/ahSort.H \
 		../../../Librerias/aleph/ahFunctional.H \
 		../../../Librerias/aleph/tpl_sort_utils.H \
@@ -2117,8 +3155,25 @@ sportywindow.o: ../project/sportywindow.cpp ../project/sportywindow.h \
 		../../../Librerias/aleph/rbNode.H \
 		../../../Librerias/aleph/tpl_splay_tree.H \
 		../../../Librerias/aleph/tpl_nodePool.H \
-		../project/event.h \
+		../project/participant.h \
 		../project/date.h \
+		../project/event.h \
+		../project/vieweventwindow.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
 		ui_sportywindow.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
@@ -2792,7 +3847,7 @@ modeventwindow.o: ../project/modeventwindow.cpp ../project/modeventwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modeventwindow.o ../project/modeventwindow.cpp
 
-viewevent.o: ../project/viewevent.cpp ../project/viewevent.h \
+regpartwindow.o: ../project/regpartwindow.cpp ../project/regpartwindow.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
@@ -2891,8 +3946,1195 @@ viewevent.o: ../project/viewevent.cpp ../project/viewevent.h \
 		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		ui_viewevent.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewevent.o ../project/viewevent.cpp
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		ui_regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDate \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatetime.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDateEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o regpartwindow.o ../project/regpartwindow.cpp
+
+vieweventwindow.o: ../project/vieweventwindow.cpp ../project/vieweventwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		ui_vieweventwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDate \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatetime.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDateEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QTextBrowser \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextbrowser.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o vieweventwindow.o ../project/vieweventwindow.cpp
+
+modpartwindow.o: ../project/modpartwindow.cpp ../project/modpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		ui_modpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDate \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatetime.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDateEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget \
+		../../../Qt/5.7/gcc_64/include/QtCore/QDebug
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o modpartwindow.o ../project/modpartwindow.cpp
+
+searchpartwindow.o: ../project/searchpartwindow.cpp ../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/peopleregwindow.h \
+		ui_searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QTextBrowser \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextbrowser.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o searchpartwindow.o ../project/searchpartwindow.cpp
+
+peopleregwindow.o: ../project/peopleregwindow.cpp ../project/peopleregwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		ui_peopleregwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QTextBrowser \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextbrowser.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qtextedit.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextdocument.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QWidget
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o peopleregwindow.o ../project/peopleregwindow.cpp
+
+bydatewindow.o: ../project/bydatewindow.cpp ../project/bydatewindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../project/vieweventwindow.h \
+		../project/sportywindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QStyle \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QDesktopWidget \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../../Librerias/aleph/ahSort.H \
+		../../../Librerias/aleph/ahFunctional.H \
+		../../../Librerias/aleph/tpl_sort_utils.H \
+		../../../Librerias/aleph/ahUtils.H \
+		../../../Librerias/aleph/ahAssert.H \
+		../../../Librerias/aleph/ahFunction.H \
+		../../../Librerias/aleph/tpl_arrayStack.H \
+		../../../Librerias/aleph/aleph.H \
+		../../../Librerias/aleph/ahDefs.H \
+		../../../Librerias/aleph/htlist.H \
+		../../../Librerias/aleph/ah-iterator.H \
+		../../../Librerias/aleph/ah-dry.H \
+		../../../Librerias/aleph/tpl_dynDlist.H \
+		../../../Librerias/aleph/ahDry.H \
+		../../../Librerias/aleph/ahIterator.H \
+		../../../Librerias/aleph/tpl_dnode.H \
+		../../../Librerias/aleph/dlink.H \
+		../../../Librerias/aleph/tpl_memArray.H \
+		../../../Librerias/aleph/array_it.H \
+		../../../Librerias/aleph/tpl_array.H \
+		../../../Librerias/aleph/tpl_dynArray.H \
+		../../../Librerias/aleph/tpl_dynSetTree.H \
+		../../../Librerias/aleph/tpl_binNodeUtils.H \
+		../../../Librerias/aleph/tpl_arrayQueue.H \
+		../../../Librerias/aleph/tpl_dynListQueue.H \
+		../../../Librerias/aleph/bitArray.H \
+		../../../Librerias/aleph/tpl_binNode.H \
+		../../../Librerias/aleph/tpl_binNodeXt.H \
+		../../../Librerias/aleph/tpl_binTree.H \
+		../../../Librerias/aleph/tpl_binTreeOps.H \
+		../../../Librerias/aleph/tpl_treap.H \
+		../../../Librerias/aleph/treapNode.H \
+		../../../Librerias/aleph/tpl_treapRk.H \
+		../../../Librerias/aleph/ran_array.h \
+		../../../Librerias/aleph/tpl_avl.H \
+		../../../Librerias/aleph/avlNode.H \
+		../../../Librerias/aleph/tpl_rand_tree.H \
+		../../../Librerias/aleph/tpl_randNode.H \
+		../../../Librerias/aleph/tpl_rb_tree.H \
+		../../../Librerias/aleph/rbNode.H \
+		../../../Librerias/aleph/tpl_splay_tree.H \
+		../../../Librerias/aleph/tpl_nodePool.H \
+		../project/participant.h \
+		../project/date.h \
+		../project/event.h \
+		../project/definition.h \
+		../project/regpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../../Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../project/modpartwindow.h \
+		../project/searchpartwindow.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/QPrinter \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qprinter.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagelayout.h \
+		../../../Qt/5.7/gcc_64/include/QtGui/qpagesize.h \
+		../../../Qt/5.7/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../project/peopleregwindow.h \
+		ui_bydatewindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bydatewindow.o ../project/bydatewindow.cpp
 
 qrc_logo.o: qrc_logo.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_logo.o qrc_logo.cpp
@@ -2918,8 +5160,23 @@ moc_regeventwindow.o: moc_regeventwindow.cpp
 moc_modeventwindow.o: moc_modeventwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_modeventwindow.o moc_modeventwindow.cpp
 
-moc_viewevent.o: moc_viewevent.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_viewevent.o moc_viewevent.cpp
+moc_regpartwindow.o: moc_regpartwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_regpartwindow.o moc_regpartwindow.cpp
+
+moc_vieweventwindow.o: moc_vieweventwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_vieweventwindow.o moc_vieweventwindow.cpp
+
+moc_modpartwindow.o: moc_modpartwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_modpartwindow.o moc_modpartwindow.cpp
+
+moc_searchpartwindow.o: moc_searchpartwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_searchpartwindow.o moc_searchpartwindow.cpp
+
+moc_peopleregwindow.o: moc_peopleregwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_peopleregwindow.o moc_peopleregwindow.cpp
+
+moc_bydatewindow.o: moc_bydatewindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_bydatewindow.o moc_bydatewindow.cpp
 
 ####### Install
 

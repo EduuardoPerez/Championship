@@ -28,16 +28,23 @@ public:
   /**
    * @brief ModEventWindow
    * @param eventTree árbol para administrar los eventos
+   * @param nmEvTree árbol para administrar los nombres de los eventos
    * @param event event del cual se cargarán los datos en la ventana
    * @param parent padre de componentes
    */
   explicit ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                          DynSetTree<string, Avl_Tree> *nmEvTree,
                           const Event& event, QWidget *parent = 0);
 
   /**
    * @brief eventTree árbol para administrar los eventos
    */
   DynSetTree<Event, Avl_Tree> *eventTree;
+
+  /**
+   * @brief nmEvTree árbol para administrar los nombres de los eventos
+   */
+  DynSetTree<string, Avl_Tree> *nmEvTree;
 
   /**
    * @brief event event del cual se cargarán los datos en la ventana

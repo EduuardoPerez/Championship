@@ -1,0 +1,103 @@
+\hypertarget{class_view_event_window}{}\section{Referencia de la Clase View\+Event\+Window}
+\label{class_view_event_window}\index{View\+Event\+Window@{View\+Event\+Window}}
+
+
+Clase \hyperlink{class_view_event_window}{View\+Event\+Window}.  
+
+
+
+
+{\ttfamily \#include $<$vieweventwindow.\+h$>$}
+
+
+
+Diagrama de herencias de View\+Event\+Window\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_view_event_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para View\+Event\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{class_view_event_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_view_event_window_a16d9b6e5f1f49d6f4c88d6fec5a18c97}{View\+Event\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_view_event_window_abd2eb5de94df8494ee40fe415345df82}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_view_event_window_adb04549d83a31b181e9e30b8eab928de}{nm\+Ev\+Tree}, Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_view_event_window_a7441ec3b0af9820d62c51a8d6da8c798}{part\+Tree}, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$\hyperlink{class_view_event_window_a97cd14a17389087aaf93daa48f283400}{ev\+Part\+Tree}, const \hyperlink{class_event}{Event} \&\hyperlink{class_view_event_window_a54296d443c15b3e7593e826bb9525b2e}{event}, Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_view_event_window}{View\+Event\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Campos de datos}
+\begin{DoxyCompactItemize}
+\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_view_event_window_abd2eb5de94df8494ee40fe415345df82}{event\+Tree}\hypertarget{class_view_event_window_abd2eb5de94df8494ee40fe415345df82}{}\label{class_view_event_window_abd2eb5de94df8494ee40fe415345df82}
+
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_view_event_window_adb04549d83a31b181e9e30b8eab928de}{nm\+Ev\+Tree}\hypertarget{class_view_event_window_adb04549d83a31b181e9e30b8eab928de}{}\label{class_view_event_window_adb04549d83a31b181e9e30b8eab928de}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ \hyperlink{class_participant}{Participant}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_view_event_window_a7441ec3b0af9820d62c51a8d6da8c798}{part\+Tree}\hypertarget{class_view_event_window_a7441ec3b0af9820d62c51a8d6da8c798}{}\label{class_view_event_window_a7441ec3b0af9820d62c51a8d6da8c798}
+
+\begin{DoxyCompactList}\small\item\em part\+Tree árbol para administrar los participantes \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_view_event_window_a97cd14a17389087aaf93daa48f283400}{ev\+Part\+Tree}\hypertarget{class_view_event_window_a97cd14a17389087aaf93daa48f283400}{}\label{class_view_event_window_a97cd14a17389087aaf93daa48f283400}
+
+\begin{DoxyCompactList}\small\item\em ev\+Part\+Tree árbol auxiliar para administrar los participantes \end{DoxyCompactList}\item 
+\hyperlink{class_event}{Event} \hyperlink{class_view_event_window_a54296d443c15b3e7593e826bb9525b2e}{event}\hypertarget{class_view_event_window_a54296d443c15b3e7593e826bb9525b2e}{}\label{class_view_event_window_a54296d443c15b3e7593e826bb9525b2e}
+
+\begin{DoxyCompactList}\small\item\em event event del cual se cargarán los datos en la ventana \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+Clase \hyperlink{class_view_event_window}{View\+Event\+Window}. 
+
+Definición en la línea 20 del archivo vieweventwindow.\+h.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{View\+Event\+Window@{View\+Event\+Window}!View\+Event\+Window@{View\+Event\+Window}}
+\index{View\+Event\+Window@{View\+Event\+Window}!View\+Event\+Window@{View\+Event\+Window}}
+\subsubsection[{\texorpdfstring{View\+Event\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ $\ast$event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$nm\+Ev\+Tree, Dyn\+Set\+Tree$<$ Participant, Avl\+\_\+\+Tree $>$ $\ast$part\+Tree, Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$ev\+Part\+Tree, const Event \&event, Q\+Widget $\ast$parent=0)}{ViewEventWindow(DynSetTree< Event, Avl_Tree > *eventTree, DynSetTree< string, Avl_Tree > *nmEvTree, DynSetTree< Participant, Avl_Tree > *partTree, DynSetTree< Pair, Avl_Tree > *evPartTree, const Event &event, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}View\+Event\+Window\+::\+View\+Event\+Window (
+\begin{DoxyParamCaption}
+\item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ $\ast$}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$}]{nm\+Ev\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ {\bf Participant}, Avl\+\_\+\+Tree $>$ $\ast$}]{part\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ Pair, Avl\+\_\+\+Tree $>$ $\ast$}]{ev\+Part\+Tree, }
+\item[{const {\bf Event} \&}]{event, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_view_event_window_a16d9b6e5f1f49d6f4c88d6fec5a18c97}{}\label{class_view_event_window_a16d9b6e5f1f49d6f4c88d6fec5a18c97}
+
+
+\hyperlink{class_view_event_window}{View\+Event\+Window}. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
+\hline
+{\em part\+Tree} & árbol para administrar los participantes \\
+\hline
+{\em ev\+Part\+Tree} & árbol auxiliar para administrar los participantes \\
+\hline
+{\em event} & event del cual se cargarán los datos en la ventana \\
+\hline
+{\em parent} & padre de componentes \\
+\hline
+\end{DoxyParams}
+
+
+Definición en la línea 5 del archivo vieweventwindow.\+cpp.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/vieweventwindow.\+h\item 
+/home/eduuardoperez/pr3/championship-\/\+P\+R3\+\_\+\+U\+L\+A/project/vieweventwindow.\+cpp\end{DoxyCompactItemize}

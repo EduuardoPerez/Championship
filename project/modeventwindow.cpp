@@ -10,13 +10,17 @@
 #include <QDebug>
 
 ModEventWindow::ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                               DynSetTree<string, Avl_Tree> *nmEvTree,
                                const Event& event, QWidget *parent) :
   QDialog(parent),
   ui(new Ui::ModEventWindow)
 {
   ui->setupUi(this);
   this->eventTree = eventTree;
+  this->nmEvTree = nmEvTree;
   this->event = event;
+
+  ui->lPicture->hide();
   ui->lPicture->setFixedWidth(80);
   ui->lPicture->setFixedHeight(80);
   ui->lePicture->hide();
@@ -65,6 +69,9 @@ ModEventWindow::ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
   ui->teHourBegMate->setTime(hourBegMate);
   ui->teHourFinMate->setTime(hourFinMate);
 
+  if(picture != "")
+    ui->lPicture->show();
+
   this->setGeometry(
         QStyle::alignedRect(
           Qt::LeftToRight,
@@ -82,7 +89,8 @@ ModEventWindow::~ModEventWindow()
 
 void ModEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(*this->eventTree, this);
+  OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
+                                                  *this->nmEvTree, this);
   window->setModal(false);
   window->show();
 }
@@ -145,11 +153,7 @@ void ModEventWindow::on_pbGuardar_clicked()
 
   else
   {
-    DynSetTree<string, Avl_Tree> nameTree;
     ofstream fileOut;
-
-    for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
-      nameTree.insert(it.get_curr().getEventName());
 
     if(this->event.getEventName() == name)
     {
@@ -171,7 +175,7 @@ void ModEventWindow::on_pbGuardar_clicked()
       }
     }
 
-    else if(nameTree.exist(name))
+    else if(this->nmEvTree->insert(name) == nullptr)
       msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
                   " usted ha ingresado, utilice un nombre diferente\n");
     else
@@ -205,4 +209,7 @@ void ModEventWindow::on_pbExaminar_clicked()
                                                     " *.xpm)"));
   ui->lePicture->setText(picture);
   ui->lPicture->setPixmap(picture);
+
+  if(picture != "")
+    ui->lPicture->show();
 }

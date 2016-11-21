@@ -9,13 +9,19 @@
 #include "ui_sportywindow.h"
 #include <QDebug>
 
-SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree>& eventTree,
+SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree> &eventTree,
+                           DynSetTree<string, Avl_Tree> &nmEvTree,
+                           DynSetTree<Participant, Avl_Tree> &partTree,
+                           DynSetTree<Pair, Avl_Tree> &evPartTree,
                            QWidget *parent) :
   QDialog(parent),
   ui(new Ui::SportyWindow)
 {
   ui->setupUi(this);
   this->eventTree = &eventTree;
+  this->nmEvTree = &nmEvTree;
+  this->partTree = &partTree;
+  this->evPartTree = &evPartTree;
 
   this->setGeometry(
         QStyle::alignedRect(
@@ -102,8 +108,10 @@ void SportyWindow::on_pbVerEvento_clicked()
       event = *(this->eventTree->search(eventAux));
       this->close();
 
-      ViewEvent *viewEv_i;
-      viewEv_i=new ViewEvent(this->eventTree, event, this);
+      ViewEventWindow *viewEv_i;
+      viewEv_i = new ViewEventWindow(this->eventTree, this->nmEvTree,
+                                     this->partTree, this->evPartTree,
+                                     event, this);
       viewEv_i->setModal(false);
       viewEv_i->show();
     }

@@ -10,13 +10,17 @@
 #include <QDebug>
 
 RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
+                               DynSetTree<string, Avl_Tree> *nmEvTree,
                                QWidget *parent) :
   QDialog(parent),
   ui(new Ui::RegEventWindow)
 {
   ui->setupUi(this);
   this->eventTree = eventTree;
+  this->nmEvTree = nmEvTree;
+
   ui->lePicture->hide();
+  ui->lPicture->hide();
   ui->lPicture->setFixedWidth(80);
   ui->lPicture->setFixedHeight(80);
   ui->deCurrDate->hide();
@@ -35,10 +39,6 @@ RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
           qApp->desktop()->availableGeometry()
       )
   );
-/*
-  for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
-    qDebug()<<QString::fromStdString(it.get_curr().getEventName());
-*/
 }
 
 RegEventWindow::~RegEventWindow()
@@ -48,7 +48,8 @@ RegEventWindow::~RegEventWindow()
 
 void RegEventWindow::on_pbRegresar_clicked()
 {
-  OrganizingWindow *window = new OrganizingWindow(*this->eventTree, this);
+  OrganizingWindow *window = new OrganizingWindow(*this->eventTree,
+                                                  *this->nmEvTree, this);
   window->setModal(false);
   window->show();
 }
@@ -110,12 +111,7 @@ void RegEventWindow::on_pbRegistrar_clicked()
                 " de la entrega del material\n");
 
   else{
-    Event event;
-    event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
-                 eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
-                 matePlace, description, picture);
-
-    if(this->eventTree->insert(event) == nullptr)
+    if(this->nmEvTree->insert(name) == nullptr)
       msj.setText("\t\tERROR\nYa se ha registrado un evento con el nombre que"
                   " usted ha ingresado, utilice un nombre diferente\n");
     else
@@ -127,6 +123,12 @@ void RegEventWindow::on_pbRegistrar_clicked()
         msj.setText("\tERROR\nEl evento no se pudo registrar\n");
       else
       {
+        Event event;
+        event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
+                     eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
+                     matePlace, description, picture);
+
+        this->eventTree->insert(event);
         for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
           fileOut << it.get_curr();
         fileOut.close();
@@ -146,4 +148,7 @@ void RegEventWindow::on_pbExaminar_clicked()
                                                     " *.xpm)"));
   ui->lePicture->setText(picture);
   ui->lPicture->setPixmap(picture);
+
+  if(picture != "")
+    ui->lePicture->show();
 }

@@ -31,6 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
   ifstream fileIn;
   ofstream fileOut;
   Event event;
+  Participant participant;
   Date currDate;
 
   currDate.fromString((ui->deCurrDate->text()).toStdString());
@@ -52,9 +53,12 @@ MainWindow::MainWindow(QWidget *parent) :
     {
       while(!fileIn.eof() && fileIn>>event)
         if(event.getDateBegEv() >= currDate)
+        {
           this->eventTree.insert(event);
-      fileIn.close();
+          this->nmEvTree.insert(event.getEventName());
+        }
     }
+    fileIn.close();
   }
 
   fileOut.open("../BD/eventos.txt");
@@ -68,6 +72,51 @@ MainWindow::MainWindow(QWidget *parent) :
     for(auto it=this->eventTree.begin(); it.has_curr(); it.next())
       fileOut << it.get_curr();
     fileOut.close();
+  }
+
+  fileIn.open("../BD/participantes.txt");
+  if(!fileIn.good())
+  {
+    msj.setText("\tERROR(3)\nEl programa no funcionará correctamente\n");
+    msj.exec();
+  }
+  else
+  {
+    if(not(is_emptyFile(fileIn)))
+      while(!fileIn.eof() && fileIn>>participant)
+        if(this->nmEvTree.exist(participant.getEventName()))
+        {
+          unsigned int id = participant.getId();
+          string evName = participant.getEventName();
+
+          Pair evPart = make_pair(id, evName);
+
+          this->evPartTree.insert(evPart);
+          this->partTree.insert(participant);
+        }
+    fileIn.close();
+  }
+
+  fileOut.open("../BD/participantes.txt");
+  if(!fileOut.good())
+  {
+    msj.setText("\tERROR(4)\nHa ocurrido un error interno\n");
+    msj.exec();
+  }
+  else
+  {
+    for(auto it=this->partTree.begin(); it.has_curr(); it.next())
+      fileOut << it.get_curr();
+    fileOut.close();
+/*
+    for(auto it=this->tupleTree.begin(); it.has_curr(); it.next())
+    {
+      qDebug()<<QString::fromStdString(Uint2String(get<0>(it.get_curr())))+" "+
+                QString::fromStdString(get<1>(it.get_curr()))+" "+
+                QString::fromStdString(get<2>(it.get_curr()).toString())+" "+
+                QString::fromStdString(get<3>(it.get_curr()).toString());
+    }
+*/
   }
 
   /*
@@ -94,14 +143,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbDeportista_clicked()
 {
-  sporty_i = new SportyWindow(this->eventTree, this);
+  sporty_i = new SportyWindow(this->eventTree, this->nmEvTree, this->partTree,
+                              this->evPartTree, this);
   sporty_i->setModal(false);
   sporty_i->show();
 }
 
 void MainWindow::on_pbOrganizador_clicked()
 {
-  organizing_i = new OrganizingWindow(this->eventTree, this);
+  organizing_i = new OrganizingWindow(this->eventTree, this->nmEvTree, this);
   organizing_i->setModal(false);
   organizing_i->show();
 }

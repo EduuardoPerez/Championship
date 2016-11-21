@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['participant',['Participant',['../class_participant.html',1,'']]]
+  ['organizingwindow',['OrganizingWindow',['../class_organizing_window.html',1,'']]]
 ];

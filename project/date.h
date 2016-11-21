@@ -86,7 +86,7 @@ public:
    * @brief Método toString
    * @return tipo Date convertido a string
    */
-  string toString();
+  string toString() const;
 
   /**
    * @brief Método cmpDate

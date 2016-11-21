@@ -29,6 +29,8 @@ string \hyperlink{class_participant_a14ab6b07cc3e632fa353d15ecabcab8b}{get\+Cate
 \begin{DoxyCompactList}\small\item\em Observador get\+Category. \end{DoxyCompactList}\item 
 \hyperlink{class_date}{Date} \hyperlink{class_participant_a0d720e44b2611994d03a7f8de682e414}{get\+Inscription\+Date} () const 
 \begin{DoxyCompactList}\small\item\em Observador get\+Inscription\+Date. \end{DoxyCompactList}\item 
+string \hyperlink{class_participant_a008dd576c2d2a1ab246a7c4bf1f606ab}{get\+Event\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Observador get\+Event\+Name. \end{DoxyCompactList}\item 
 string \hyperlink{class_participant_a72fd0d83aa250c01a2f438deee6d0a37}{get\+Picture} () const 
 \begin{DoxyCompactList}\small\item\em Observador get\+Picture. \end{DoxyCompactList}\item 
 void \hyperlink{class_participant_a5d4303c88eb763113724a6f99166ff1d}{set\+Id} (const unsigned int \&)\hypertarget{class_participant_a5d4303c88eb763113724a6f99166ff1d}{}\label{class_participant_a5d4303c88eb763113724a6f99166ff1d}
@@ -52,10 +54,13 @@ void \hyperlink{class_participant_a42bf4d1082274e44657829fc2aa83f11}{set\+Catego
 void \hyperlink{class_participant_a1ae8d99347f3690e3e7f50392a0674b2}{set\+Inscription\+Date} (const \hyperlink{class_date}{Date} \&)\hypertarget{class_participant_a1ae8d99347f3690e3e7f50392a0674b2}{}\label{class_participant_a1ae8d99347f3690e3e7f50392a0674b2}
 
 \begin{DoxyCompactList}\small\item\em Modificador set\+Inscription\+Date. \end{DoxyCompactList}\item 
+void \hyperlink{class_participant_afdba140f41d1328ee8ee9ae32a710c85}{set\+Event\+Name} (const string \&)\hypertarget{class_participant_afdba140f41d1328ee8ee9ae32a710c85}{}\label{class_participant_afdba140f41d1328ee8ee9ae32a710c85}
+
+\begin{DoxyCompactList}\small\item\em Modificador set\+Event\+Name. \end{DoxyCompactList}\item 
 void \hyperlink{class_participant_a99a298d23801e7080efd59c514711b22}{set\+Picture} (const string \&)\hypertarget{class_participant_a99a298d23801e7080efd59c514711b22}{}\label{class_participant_a99a298d23801e7080efd59c514711b22}
 
 \begin{DoxyCompactList}\small\item\em Modificador set\+Picture. \end{DoxyCompactList}\item 
-void \hyperlink{class_participant_aacee4e07ebfe68b4521217b2c3b6dbf5}{assign} (unsigned int, string, string, \hyperlink{class_date}{Date}, unsigned int, string, \hyperlink{class_date}{Date}, string)\hypertarget{class_participant_aacee4e07ebfe68b4521217b2c3b6dbf5}{}\label{class_participant_aacee4e07ebfe68b4521217b2c3b6dbf5}
+void \hyperlink{class_participant_a1d365d9818206db0f4fa07a34179b13c}{assign} (unsigned int, string, string, \hyperlink{class_date}{Date}, unsigned int, string, \hyperlink{class_date}{Date}, string, string)\hypertarget{class_participant_a1d365d9818206db0f4fa07a34179b13c}{}\label{class_participant_a1d365d9818206db0f4fa07a34179b13c}
 
 \begin{DoxyCompactList}\small\item\em Método assign. \end{DoxyCompactList}\item 
 \hyperlink{class_participant}{Participant} \hyperlink{class_participant_af7f2abaadf20275a00ef287ec81ca546}{operator=} (const \hyperlink{class_participant}{Participant} \&)
@@ -88,7 +93,7 @@ this-\/$>$age
 \end{DoxyReturn}
 
 
-Definición en la línea 79 del archivo participant.\+h.
+Definición en la línea 80 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Born\+Date@{get\+Born\+Date}}
 \index{get\+Born\+Date@{get\+Born\+Date}!Participant@{Participant}}
@@ -106,7 +111,7 @@ this-\/$>$born\+Date
 \end{DoxyReturn}
 
 
-Definición en la línea 70 del archivo participant.\+h.
+Definición en la línea 71 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Category@{get\+Category}}
 \index{get\+Category@{get\+Category}!Participant@{Participant}}
@@ -124,7 +129,25 @@ this-\/$>$category
 \end{DoxyReturn}
 
 
-Definición en la línea 88 del archivo participant.\+h.
+Definición en la línea 89 del archivo participant.\+h.
+
+\index{Participant@{Participant}!get\+Event\+Name@{get\+Event\+Name}}
+\index{get\+Event\+Name@{get\+Event\+Name}!Participant@{Participant}}
+\subsubsection[{\texorpdfstring{get\+Event\+Name() const }{getEventName() const }}]{\setlength{\rightskip}{0pt plus 5cm}string Participant\+::get\+Event\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_participant_a008dd576c2d2a1ab246a7c4bf1f606ab}{}\label{class_participant_a008dd576c2d2a1ab246a7c4bf1f606ab}
+
+
+Observador get\+Event\+Name. 
+
+\begin{DoxyReturn}{Devuelve}
+dirección lógica de this-\/$>$picture 
+\end{DoxyReturn}
+
+
+Definición en la línea 107 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Id@{get\+Id}}
 \index{get\+Id@{get\+Id}!Participant@{Participant}}
@@ -142,7 +165,7 @@ this-\/$>$id
 \end{DoxyReturn}
 
 
-Definición en la línea 43 del archivo participant.\+h.
+Definición en la línea 44 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Inscription\+Date@{get\+Inscription\+Date}}
 \index{get\+Inscription\+Date@{get\+Inscription\+Date}!Participant@{Participant}}
@@ -160,7 +183,7 @@ this-\/$>$inscription\+Date
 \end{DoxyReturn}
 
 
-Definición en la línea 97 del archivo participant.\+h.
+Definición en la línea 98 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Last\+Name@{get\+Last\+Name}}
 \index{get\+Last\+Name@{get\+Last\+Name}!Participant@{Participant}}
@@ -178,7 +201,7 @@ this-\/$>$last\+Name
 \end{DoxyReturn}
 
 
-Definición en la línea 61 del archivo participant.\+h.
+Definición en la línea 62 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Name@{get\+Name}}
 \index{get\+Name@{get\+Name}!Participant@{Participant}}
@@ -196,7 +219,7 @@ this-\/$>$name
 \end{DoxyReturn}
 
 
-Definición en la línea 52 del archivo participant.\+h.
+Definición en la línea 53 del archivo participant.\+h.
 
 \index{Participant@{Participant}!get\+Picture@{get\+Picture}}
 \index{get\+Picture@{get\+Picture}!Participant@{Participant}}
@@ -214,7 +237,7 @@ dirección lógica de this-\/$>$picture
 \end{DoxyReturn}
 
 
-Definición en la línea 106 del archivo participant.\+h.
+Definición en la línea 116 del archivo participant.\+h.
 
 \index{Participant@{Participant}!operator=@{operator=}}
 \index{operator=@{operator=}!Participant@{Participant}}
@@ -232,7 +255,7 @@ operator =
 \end{DoxyReturn}
 
 
-Definición en la línea 96 del archivo participant.\+cpp.
+Definición en la línea 105 del archivo participant.\+cpp.
 
 \index{Participant@{Participant}!operator==@{operator==}}
 \index{operator==@{operator==}!Participant@{Participant}}
@@ -250,7 +273,7 @@ true si this es igual a participant, fasle de lo contrario.
 \end{DoxyReturn}
 
 
-Definición en la línea 109 del archivo participant.\+cpp.
+Definición en la línea 119 del archivo participant.\+cpp.
 
 
 

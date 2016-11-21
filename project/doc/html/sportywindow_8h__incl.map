@@ -1,5 +1,12 @@
 <map id="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/sportywindow.h" name="/home/eduuardoperez/pr3/championship&#45;PR3_ULA/project/sportywindow.h">
-<area shape="rect" id="node8" href="$event_8h.html" title="Clase Event. " alt="" coords="760,109,826,136"/>
-<area shape="rect" id="node15" href="$viewevent_8h_source.html" title="viewevent.h" alt="" coords="644,109,736,136"/>
-<area shape="rect" id="node10" href="$date_8h.html" title="Clase Date. " alt="" coords="806,184,865,211"/>
+<area shape="rect" id="node8" href="$participant_8h.html" title="Clase Participant. " alt="" coords="896,109,989,136"/>
+<area shape="rect" id="node15" href="$event_8h.html" title="Clase Event. " alt="" coords="1014,109,1079,136"/>
+<area shape="rect" id="node16" href="$vieweventwindow_8h_source.html" title="vieweventwindow.h" alt="" coords="400,109,536,136"/>
+<area shape="rect" id="node19" href="$definition_8h_source.html" title="definition.h" alt="" coords="604,259,689,285"/>
+<area shape="rect" id="node10" href="$date_8h.html" title="Clase Date. " alt="" coords="869,333,928,360"/>
+<area shape="rect" id="node17" href="$regpartwindow_8h_source.html" title="regpartwindow.h" alt="" coords="184,184,301,211"/>
+<area shape="rect" id="node20" href="$modpartwindow_8h_source.html" title="modpartwindow.h" alt="" coords="483,184,607,211"/>
+<area shape="rect" id="node21" href="$searchpartwindow_8h_source.html" title="searchpartwindow.h" alt="" coords="683,184,821,211"/>
+<area shape="rect" id="node23" href="$peopleregwindow_8h_source.html" title="peopleregwindow.h" alt="" coords="325,184,459,211"/>
+<area shape="rect" id="node24" href="$bydatewindow_8h_source.html" title="bydatewindow.h" alt="" coords="43,184,159,211"/>
 </map>

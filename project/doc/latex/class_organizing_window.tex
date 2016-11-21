@@ -30,14 +30,17 @@ Diagrama de colaboración para Organizing\+Window\+:\nopagebreak
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_organizing_window_ac364fadd69b47d7ce67af56b8019c896}{Organizing\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_organizing_window_a2658600a27160da36da9a20584300aac}{event\+Tree}, Q\+Widget $\ast$parent=0)
+\hyperlink{class_organizing_window_a26d627dc9556ccc133f72c1039eb5942}{Organizing\+Window} (Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_organizing_window_a2658600a27160da36da9a20584300aac}{event\+Tree}, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&\hyperlink{class_organizing_window_ada5d0fdbd1c783d2350a3f6d939e646b}{nm\+Ev\+Tree}, Q\+Widget $\ast$parent=0)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_organizing_window}{Organizing\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Campos de datos}
 \begin{DoxyCompactItemize}
 \item 
 Dyn\+Set\+Tree$<$ \hyperlink{class_event}{Event}, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_organizing_window_a2658600a27160da36da9a20584300aac}{event\+Tree}\hypertarget{class_organizing_window_a2658600a27160da36da9a20584300aac}{}\label{class_organizing_window_a2658600a27160da36da9a20584300aac}
 
-\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em event\+Tree árbol para administrar los eventos \end{DoxyCompactList}\item 
+Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ $\ast$ \hyperlink{class_organizing_window_ada5d0fdbd1c783d2350a3f6d939e646b}{nm\+Ev\+Tree}\hypertarget{class_organizing_window_ada5d0fdbd1c783d2350a3f6d939e646b}{}\label{class_organizing_window_ada5d0fdbd1c783d2350a3f6d939e646b}
+
+\begin{DoxyCompactList}\small\item\em nm\+Ev\+Tree árbol para administrar los nombres de los eventos \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Descripción detallada}
@@ -50,12 +53,13 @@ Definición en la línea 26 del archivo organizingwindow.\+h.
 \subsection{Documentación del constructor y destructor}
 \index{Organizing\+Window@{Organizing\+Window}!Organizing\+Window@{Organizing\+Window}}
 \index{Organizing\+Window@{Organizing\+Window}!Organizing\+Window@{Organizing\+Window}}
-\subsubsection[{\texorpdfstring{Organizing\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ \&event\+Tree, Q\+Widget $\ast$parent=0)}{OrganizingWindow(DynSetTree< Event, Avl_Tree > &eventTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Organizing\+Window\+::\+Organizing\+Window (
+\subsubsection[{\texorpdfstring{Organizing\+Window(\+Dyn\+Set\+Tree$<$ Event, Avl\+\_\+\+Tree $>$ \&event\+Tree, Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&nm\+Ev\+Tree, Q\+Widget $\ast$parent=0)}{OrganizingWindow(DynSetTree< Event, Avl_Tree > &eventTree, DynSetTree< string, Avl_Tree > &nmEvTree, QWidget *parent=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Organizing\+Window\+::\+Organizing\+Window (
 \begin{DoxyParamCaption}
 \item[{Dyn\+Set\+Tree$<$ {\bf Event}, Avl\+\_\+\+Tree $>$ \&}]{event\+Tree, }
+\item[{Dyn\+Set\+Tree$<$ string, Avl\+\_\+\+Tree $>$ \&}]{nm\+Ev\+Tree, }
 \item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_organizing_window_ac364fadd69b47d7ce67af56b8019c896}{}\label{class_organizing_window_ac364fadd69b47d7ce67af56b8019c896}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_organizing_window_a26d627dc9556ccc133f72c1039eb5942}{}\label{class_organizing_window_a26d627dc9556ccc133f72c1039eb5942}
 
 
 \hyperlink{class_organizing_window}{Organizing\+Window}. 
@@ -63,6 +67,8 @@ Definición en la línea 26 del archivo organizingwindow.\+h.
 
 \begin{DoxyParams}{Parámetros}
 {\em event\+Tree} & árbol para administrar los eventos \\
+\hline
+{\em nm\+Ev\+Tree} & árbol para administrar los nombres de los eventos \\
 \hline
 {\em parent} & padre de componentes \\
 \hline

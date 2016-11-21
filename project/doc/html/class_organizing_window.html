@@ -110,9 +110,9 @@ Diagrama de colaboración para OrganizingWindow:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr class="memitem:ac364fadd69b47d7ce67af56b8019c896"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organizing_window.html#ac364fadd69b47d7ce67af56b8019c896">OrganizingWindow</a> (DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; &amp;<a class="el" href="class_organizing_window.html#a2658600a27160da36da9a20584300aac">eventTree</a>, QWidget *parent=0)</td></tr>
-<tr class="memdesc:ac364fadd69b47d7ce67af56b8019c896"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_organizing_window.html" title="Clase OrganizingWindow. ">OrganizingWindow</a>.  <a href="#ac364fadd69b47d7ce67af56b8019c896">Más...</a><br /></td></tr>
-<tr class="separator:ac364fadd69b47d7ce67af56b8019c896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d627dc9556ccc133f72c1039eb5942"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organizing_window.html#a26d627dc9556ccc133f72c1039eb5942">OrganizingWindow</a> (DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; &amp;<a class="el" href="class_organizing_window.html#a2658600a27160da36da9a20584300aac">eventTree</a>, DynSetTree&lt; string, Avl_Tree &gt; &amp;<a class="el" href="class_organizing_window.html#ada5d0fdbd1c783d2350a3f6d939e646b">nmEvTree</a>, QWidget *parent=0)</td></tr>
+<tr class="memdesc:a26d627dc9556ccc133f72c1039eb5942"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_organizing_window.html" title="Clase OrganizingWindow. ">OrganizingWindow</a>.  <a href="#a26d627dc9556ccc133f72c1039eb5942">Más...</a><br /></td></tr>
+<tr class="separator:a26d627dc9556ccc133f72c1039eb5942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Campos de datos</h2></td></tr>
@@ -120,13 +120,17 @@ Campos de datos</h2></td></tr>
 DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organizing_window.html#a2658600a27160da36da9a20584300aac">eventTree</a></td></tr>
 <tr class="memdesc:a2658600a27160da36da9a20584300aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">eventTree árbol para administrar los eventos <br /></td></tr>
 <tr class="separator:a2658600a27160da36da9a20584300aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5d0fdbd1c783d2350a3f6d939e646b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada5d0fdbd1c783d2350a3f6d939e646b"></a>
+DynSetTree&lt; string, Avl_Tree &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_organizing_window.html#ada5d0fdbd1c783d2350a3f6d939e646b">nmEvTree</a></td></tr>
+<tr class="memdesc:ada5d0fdbd1c783d2350a3f6d939e646b"><td class="mdescLeft">&#160;</td><td class="mdescRight">nmEvTree árbol para administrar los nombres de los eventos <br /></td></tr>
+<tr class="separator:ada5d0fdbd1c783d2350a3f6d939e646b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
 <div class="textblock"><p>Clase <a class="el" href="class_organizing_window.html" title="Clase OrganizingWindow. ">OrganizingWindow</a>. </p>
 
 <p>Definición en la línea <a class="el" href="organizingwindow_8h_source.html#l00026">26</a> del archivo <a class="el" href="organizingwindow_8h_source.html">organizingwindow.h</a>.</p>
 </div><h2 class="groupheader">Documentación del constructor y destructor</h2>
-<a class="anchor" id="ac364fadd69b47d7ce67af56b8019c896"></a>
+<a class="anchor" id="a26d627dc9556ccc133f72c1039eb5942"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -138,6 +142,12 @@ DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&
           <td>(</td>
           <td class="paramtype">DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; &amp;&#160;</td>
           <td class="paramname"><em>eventTree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DynSetTree&lt; string, Avl_Tree &gt; &amp;&#160;</td>
+          <td class="paramname"><em>nmEvTree</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -162,6 +172,7 @@ DynSetTree&lt; <a class="el" href="class_event.html">Event</a>, Avl_Tree &gt; *&
 <dl class="params"><dt>Parámetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">eventTree</td><td>árbol para administrar los eventos </td></tr>
+    <tr><td class="paramname">nmEvTree</td><td>árbol para administrar los nombres de los eventos </td></tr>
     <tr><td class="paramname">parent</td><td>padre de componentes </td></tr>
   </table>
   </dd>

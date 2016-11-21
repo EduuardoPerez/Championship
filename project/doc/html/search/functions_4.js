@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fromstring',['fromString',['../class_date.html#a4ca1e1caba11928c842f6c62a2c851ab',1,'Date']]]
+  ['event',['Event',['../class_event.html#ac540d5e149dc8f0670ce49d1a1bc4d98',1,'Event']]]
 ];

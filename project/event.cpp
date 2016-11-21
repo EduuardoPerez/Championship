@@ -278,9 +278,9 @@ istream& operator>>(istream& event, Event &aux){
   return(event);
 }
 
-string Uint2String(unsigned int num)
+string float2String(float num)
 {
-    stringstream flux;
-    flux << num;
-    return(flux.str());
+  stringstream flux;
+  flux << num;
+  return(flux.str());
 }

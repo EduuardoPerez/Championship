@@ -15,6 +15,7 @@
 #include <QThread>
 #include "sportywindow.h"
 #include "organizingwindow.h"
+#include "definition.h"
 
 namespace Ui {
 class MainWindow;
@@ -39,6 +40,20 @@ public:
      */
     DynSetTree<Event, Avl_Tree> eventTree;
 
+    /**
+     * @brief nmEvTree árbol para administrar los nombres de los eventos
+     */
+    DynSetTree<string, Avl_Tree> nmEvTree;
+
+    /**
+     * @brief partTree árbol para administrar los participantes
+     */
+    DynSetTree<Participant, Avl_Tree> partTree;
+
+    /**
+     * @brief evPartTree árbol auxiliar para administrar los participantes
+     */
+    DynSetTree<Pair, Avl_Tree> evPartTree;
     //QThread *thread;
 
     ~MainWindow();
