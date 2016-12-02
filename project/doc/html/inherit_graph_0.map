@@ -1,12 +1,3 @@
 <map id="Representación gráfica de la clase" name="Representación gráfica de la clase">
-<area shape="rect" id="node2" href="$class_by_date_window.html" title="Clase ByDateWindow. " alt="" coords="133,5,247,32"/>
-<area shape="rect" id="node3" href="$class_mod_event_window.html" title="Clase ModEventWindow. " alt="" coords="126,56,254,83"/>
-<area shape="rect" id="node4" href="$class_mod_part_window.html" title="Clase ModPartWindow. " alt="" coords="131,107,249,133"/>
-<area shape="rect" id="node5" href="$class_organizing_window.html" title="Clase OrganizingWindow. " alt="" coords="125,157,255,184"/>
-<area shape="rect" id="node6" href="$class_people_reg_window.html" title="Clase PeopleRegWindow. " alt="" coords="123,208,257,235"/>
-<area shape="rect" id="node7" href="$class_reg_event_window.html" title="Clase RegEventWindow. " alt="" coords="127,259,253,285"/>
-<area shape="rect" id="node8" href="$class_reg_part_window.html" title="Clase RegPartWindow. " alt="" coords="131,309,249,336"/>
-<area shape="rect" id="node9" href="$class_search_part_window.html" title="Clase SearchPartWindow. " alt="" coords="123,360,257,387"/>
-<area shape="rect" id="node10" href="$class_sporty_window.html" title="Clase SportyWindow. " alt="" coords="137,411,243,437"/>
-<area shape="rect" id="node11" href="$class_view_event_window.html" title="Clase ViewEventWindow. " alt="" coords="124,461,256,488"/>
+<area shape="rect" id="node2" href="$class_backup.html" title="Clase Backup. " alt="" coords="124,5,191,32"/>
 </map>

@@ -1,6 +1,5 @@
 #include "vieweventwindow.h"
 #include "ui_vieweventwindow.h"
-#include <QDebug>
 
 ViewEventWindow::ViewEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
                                  DynSetTree<string, Avl_Tree> *nmEvTree,

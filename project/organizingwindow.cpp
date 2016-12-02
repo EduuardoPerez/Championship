@@ -7,7 +7,6 @@
  */
 #include "organizingwindow.h"
 #include "ui_organizingwindow.h"
-#include <QDebug>
 
 OrganizingWindow::OrganizingWindow(DynSetTree<Event, Avl_Tree>& eventTree,
                                    DynSetTree<string, Avl_Tree>& nmEvTree,

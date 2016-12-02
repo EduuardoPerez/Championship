@@ -15,6 +15,7 @@
 #include <QThread>
 #include "sportywindow.h"
 #include "organizingwindow.h"
+#include "backup.h"
 #include "definition.h"
 
 namespace Ui {
@@ -54,15 +55,17 @@ public:
      * @brief evPartTree árbol auxiliar para administrar los participantes
      */
     DynSetTree<Pair, Avl_Tree> evPartTree;
-    //QThread *thread;
+
+    /**
+     * @brief thread hilo para realizar el autoguardado
+     */
+    QThread *thread;
 
     ~MainWindow();
 
 private slots:
   void on_pbDeportista_clicked();
   void on_pbOrganizador_clicked();
-  void on_pbSalir_clicked();
-  //void backup();
 
 private:
     Ui::MainWindow *ui;
@@ -75,6 +78,5 @@ private:
  * @return true si file esta vacio, false de lo contrario
  */
 bool is_emptyFile(ifstream&);
-//void backup(const string&, const DynSetTree<Event, Avl_Tree>& eventTree);
 
 #endif // MAINWINDOW_H

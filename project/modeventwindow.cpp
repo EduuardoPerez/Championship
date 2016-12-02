@@ -7,7 +7,6 @@
  */
 #include "modeventwindow.h"
 #include "ui_modeventwindow.h"
-#include <QDebug>
 
 ModEventWindow::ModEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
                                DynSetTree<string, Avl_Tree> *nmEvTree,

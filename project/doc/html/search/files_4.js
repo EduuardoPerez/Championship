@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['participant_2ecpp',['participant.cpp',['../participant_8cpp.html',1,'']]],
-  ['participant_2eh',['participant.h',['../participant_8h.html',1,'']]]
+  ['organizingwindow_2ecpp',['organizingwindow.cpp',['../organizingwindow_8cpp.html',1,'']]],
+  ['organizingwindow_2eh',['organizingwindow.h',['../organizingwindow_8h.html',1,'']]]
 ];

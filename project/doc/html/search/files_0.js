@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['date_2ecpp',['date.cpp',['../date_8cpp.html',1,'']]],
-  ['date_2eh',['date.h',['../date_8h.html',1,'']]]
+  ['backup_2ecpp',['backup.cpp',['../backup_8cpp.html',1,'']]],
+  ['backup_2eh',['backup.h',['../backup_8h.html',1,'']]],
+  ['bydatewindow_2ecpp',['bydatewindow.cpp',['../bydatewindow_8cpp.html',1,'']]],
+  ['bydatewindow_2eh',['bydatewindow.h',['../bydatewindow_8h.html',1,'']]]
 ];

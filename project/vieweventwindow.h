@@ -70,7 +70,6 @@ private slots:
   void on_pbModificar_clicked();
   void on_pbBuscar_clicked();
   void on_pbVerPer_clicked();
-
   void on_pbVer_clicked();
 
 private:

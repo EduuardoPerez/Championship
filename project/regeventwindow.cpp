@@ -7,7 +7,6 @@
  */
 #include "regeventwindow.h"
 #include "ui_regeventwindow.h"
-#include <QDebug>
 
 RegEventWindow::RegEventWindow(DynSetTree<Event, Avl_Tree> *eventTree,
                                DynSetTree<string, Avl_Tree> *nmEvTree,
@@ -125,8 +124,8 @@ void RegEventWindow::on_pbRegistrar_clicked()
       {
         Event event;
         event.assign(name, dateBegEv, dateFinEv, inscripValue, eventHour,
-                     eventPlace, dateBegMate, dateFinMate, hourBegMate, hourFinMate,
-                     matePlace, description, picture);
+                     eventPlace, dateBegMate, dateFinMate, hourBegMate,
+                     hourFinMate, matePlace, description, picture);
 
         this->eventTree->insert(event);
         for(auto it=this->eventTree->begin(); it.has_curr(); it.next())
@@ -150,5 +149,5 @@ void RegEventWindow::on_pbExaminar_clicked()
   ui->lPicture->setPixmap(picture);
 
   if(picture != "")
-    ui->lePicture->show();
+    ui->lPicture->show();
 }

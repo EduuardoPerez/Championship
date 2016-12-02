@@ -1,6 +1,5 @@
 #include "regpartwindow.h"
 #include "ui_regpartwindow.h"
-#include <QDebug>
 
 RegPartWindow::RegPartWindow(DynSetTree<Event, Avl_Tree> *eventTree,
                              DynSetTree<string, Avl_Tree> *nmEvTree,
@@ -142,12 +141,13 @@ void RegPartWindow::on_pbInscribir_clicked()
         auto categor=QString::fromStdString(category);
 
         msj.setText("\n\tINSCRIPCIÓN REALIZADA CON ÉXITO\n\n"
-                    "Fecha de realización del evento: "+evDtBeg+" - "+evDtFin+'\n'+
-                    "Lugar: "+evPlace+'\n'+
-                    "Fecha de entrega del material necesario para el evento: "+mateDtB+" - "+mateDtF+'\n'+
-                    "Horario de entrega del material: "+mateHrB+" - "+mateHrF+'\n'+
-                    "Lugar de entrega del material: "+matePlc+"\n\n"+
-                    "La categoría en la que usted quedó inscrito/a es: "+categor);
+                    "Fecha de realización del evento: "+evDtBeg+" - "+evDtFin+
+                    '\n'+"Lugar: "+evPlace+'\n'+
+                    "Fecha de entrega del material necesario para el evento: "+
+                    mateDtB+" - "+mateDtF+'\n'+
+                    "Horario de entrega del material: "+mateHrB+" - "+mateHrF+
+                    '\n'+"Lugar de entrega del material: "+matePlc+"\n\n"+
+                  "La categoría en la que usted quedó inscrito/a es: "+categor);
       }
     }
   }

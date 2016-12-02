@@ -1,6 +1,5 @@
 #include "modpartwindow.h"
 #include "ui_modpartwindow.h"
-#include <QDebug>
 
 ModPartWindow::ModPartWindow(DynSetTree<Event, Avl_Tree> *eventTree,
                              DynSetTree<string, Avl_Tree> *nmEvTree,

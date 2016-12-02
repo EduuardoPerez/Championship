@@ -1,3 +1,10 @@
+/**
+ @file bydatewindow.cpp
+ @brief Implementación de la clase ByDateWindow
+ @author Eduardo Perez (edujpp1@gmail.com)
+ @version 1.0
+ @date Noviembre, 2016
+*/
 #include "bydatewindow.h"
 #include "ui_bydatewindow.h"
 

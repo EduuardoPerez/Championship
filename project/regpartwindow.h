@@ -62,9 +62,7 @@ public:
 
 private slots:
   void on_pbRegresar_clicked();
-
   void on_pbExaminar_clicked();
-
   void on_pbInscribir_clicked();
 
 private:

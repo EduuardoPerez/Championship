@@ -14,10 +14,14 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDateEdit>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,12 +30,41 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QLabel *qlTitulo;
-    QLabel *qlImg;
-    QPushButton *pbSalir;
-    QPushButton *pbOrganizador;
-    QPushButton *pbDeportista;
     QDateEdit *deCurrDate;
+    QWidget *widget;
+    QGridLayout *gridLayout;
+    QHBoxLayout *horizontalLayout;
+    QLabel *qlImg;
+    QLabel *qlTitulo;
+    QFormLayout *formLayout;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_12;
+    QSpacerItem *horizontalSpacer_11;
+    QSpacerItem *horizontalSpacer_10;
+    QSpacerItem *horizontalSpacer_9;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *horizontalSpacer_6;
+    QSpacerItem *horizontalSpacer_21;
+    QSpacerItem *horizontalSpacer_20;
+    QSpacerItem *horizontalSpacer_22;
+    QPushButton *pbSalir;
+    QSpacerItem *horizontalSpacer_5;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_4;
+    QPushButton *pbOrganizador;
+    QSpacerItem *horizontalSpacer;
+    QSpacerItem *horizontalSpacer_2;
+    QPushButton *pbDeportista;
+    QSpacerItem *horizontalSpacer_18;
+    QSpacerItem *horizontalSpacer_19;
+    QSpacerItem *horizontalSpacer_17;
+    QSpacerItem *horizontalSpacer_16;
+    QSpacerItem *horizontalSpacer_15;
+    QSpacerItem *horizontalSpacer_13;
+    QSpacerItem *horizontalSpacer_14;
+    QSpacerItem *horizontalSpacer_3;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -43,30 +76,173 @@ public:
         MainWindow->setWindowIcon(icon);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        qlTitulo = new QLabel(centralWidget);
-        qlTitulo->setObjectName(QStringLiteral("qlTitulo"));
-        qlTitulo->setGeometry(QRect(110, 20, 341, 55));
-        QFont font;
-        font.setPointSize(40);
-        qlTitulo->setFont(font);
-        qlImg = new QLabel(centralWidget);
-        qlImg->setObjectName(QStringLiteral("qlImg"));
-        qlImg->setGeometry(QRect(50, 90, 441, 351));
-        qlImg->setPixmap(QPixmap(QString::fromUtf8(":/fondo1/fondo1.jpg")));
-        qlImg->setScaledContents(true);
-        pbSalir = new QPushButton(centralWidget);
-        pbSalir->setObjectName(QStringLiteral("pbSalir"));
-        pbSalir->setGeometry(QRect(650, 460, 80, 20));
-        pbOrganizador = new QPushButton(centralWidget);
-        pbOrganizador->setObjectName(QStringLiteral("pbOrganizador"));
-        pbOrganizador->setGeometry(QRect(580, 320, 99, 20));
-        pbDeportista = new QPushButton(centralWidget);
-        pbDeportista->setObjectName(QStringLiteral("pbDeportista"));
-        pbDeportista->setGeometry(QRect(590, 250, 80, 20));
         deCurrDate = new QDateEdit(centralWidget);
         deCurrDate->setObjectName(QStringLiteral("deCurrDate"));
         deCurrDate->setEnabled(false);
-        deCurrDate->setGeometry(QRect(690, 0, 110, 22));
+        deCurrDate->setGeometry(QRect(710, 0, 110, 22));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(20, 20, 761, 481));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        qlImg = new QLabel(widget);
+        qlImg->setObjectName(QStringLiteral("qlImg"));
+        qlImg->setPixmap(QPixmap(QString::fromUtf8(":/logo-big/logo-big.png")));
+        qlImg->setScaledContents(true);
+
+        horizontalLayout->addWidget(qlImg);
+
+        qlTitulo = new QLabel(widget);
+        qlTitulo->setObjectName(QStringLiteral("qlTitulo"));
+        QFont font;
+        font.setFamily(QStringLiteral("Ubuntu Condensed"));
+        font.setPointSize(64);
+        font.setBold(true);
+        font.setItalic(false);
+        font.setUnderline(false);
+        font.setWeight(75);
+        font.setStrikeOut(false);
+        font.setKerning(false);
+        qlTitulo->setFont(font);
+        qlTitulo->setTextFormat(Qt::AutoText);
+        qlTitulo->setScaledContents(true);
+
+        horizontalLayout->addWidget(qlTitulo);
+
+
+        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
+
+        formLayout = new QFormLayout();
+        formLayout->setSpacing(6);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        verticalSpacer = new QSpacerItem(20, 13, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        formLayout->setItem(1, QFormLayout::FieldRole, verticalSpacer);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_12);
+
+        horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_11);
+
+        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_10);
+
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_9);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_8);
+
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_7);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_6);
+
+        horizontalSpacer_21 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_21);
+
+        horizontalSpacer_20 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_20);
+
+        horizontalSpacer_22 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_22);
+
+        pbSalir = new QPushButton(widget);
+        pbSalir->setObjectName(QStringLiteral("pbSalir"));
+
+        horizontalLayout_3->addWidget(pbSalir);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_5);
+
+
+        formLayout->setLayout(2, QFormLayout::SpanningRole, horizontalLayout_3);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_4);
+
+        pbOrganizador = new QPushButton(widget);
+        pbOrganizador->setObjectName(QStringLiteral("pbOrganizador"));
+
+        horizontalLayout_2->addWidget(pbOrganizador);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        pbDeportista = new QPushButton(widget);
+        pbDeportista->setObjectName(QStringLiteral("pbDeportista"));
+
+        horizontalLayout_2->addWidget(pbDeportista);
+
+        horizontalSpacer_18 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_18);
+
+        horizontalSpacer_19 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_19);
+
+        horizontalSpacer_17 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_17);
+
+        horizontalSpacer_16 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_16);
+
+        horizontalSpacer_15 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_15);
+
+        horizontalSpacer_13 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_13);
+
+        horizontalSpacer_14 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_14);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_3);
+
+
+        formLayout->setLayout(0, QFormLayout::SpanningRole, horizontalLayout_2);
+
+
+        gridLayout->addLayout(formLayout, 1, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
@@ -78,12 +254,12 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Championship", 0));
-        qlTitulo->setText(QApplication::translate("MainWindow", "Championship", 0));
+        deCurrDate->setDisplayFormat(QApplication::translate("MainWindow", "d/M/yyyy", 0));
         qlImg->setText(QString());
+        qlTitulo->setText(QApplication::translate("MainWindow", "hampionship", 0));
         pbSalir->setText(QApplication::translate("MainWindow", "Salir", 0));
         pbOrganizador->setText(QApplication::translate("MainWindow", "Organizador", 0));
         pbDeportista->setText(QApplication::translate("MainWindow", "Deportista", 0));
-        deCurrDate->setDisplayFormat(QApplication::translate("MainWindow", "d/M/yyyy", 0));
     } // retranslateUi
 
 };

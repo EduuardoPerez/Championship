@@ -7,7 +7,6 @@
  */
 #include "sportywindow.h"
 #include "ui_sportywindow.h"
-#include <QDebug>
 
 SportyWindow::SportyWindow(DynSetTree<Event, Avl_Tree> &eventTree,
                            DynSetTree<string, Avl_Tree> &nmEvTree,

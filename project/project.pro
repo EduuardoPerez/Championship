@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     modpartwindow.cpp \
     searchpartwindow.cpp \
     peopleregwindow.cpp \
-    bydatewindow.cpp
+    bydatewindow.cpp \
+    backup.cpp
 
 HEADERS  += mainwindow.h \
     participant.h \
@@ -47,7 +48,8 @@ HEADERS  += mainwindow.h \
     modpartwindow.h \
     searchpartwindow.h \
     peopleregwindow.h \
-    bydatewindow.h
+    bydatewindow.h \
+    backup.h
 
 FORMS    += mainwindow.ui \
     sportywindow.ui \

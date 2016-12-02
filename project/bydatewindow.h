@@ -1,3 +1,10 @@
+/**
+ * @file bydatewindow.h
+ * @brief Clase ByDateWindow
+ * @author Eduardo Perez (edujpp1@gmail.com)
+ * @version 1.0
+ * @date Noviembre, 2016
+*/
 #ifndef BYDATEWINDOW_H
 #define BYDATEWINDOW_H
 
